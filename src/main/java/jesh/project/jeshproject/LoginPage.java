@@ -1,15 +1,19 @@
 package jesh.project.jeshproject;
+
 import javafx.application.Application;
+import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
-public class LoginPage extends Application {
+import javafx.fxml.FXML;
 
-    public static void main(String[] args) {
-        launch(args);
-    }
+public class LoginPage {
 
-    @Override
-    public void start(Stage primaryStage) {
-        
+    @FXML private TextField passwordField;
+    @FXML private TextField usernameField;
+
+
+    @FXML
+    private void login() {
+        // Code to handle login
     }
 }
