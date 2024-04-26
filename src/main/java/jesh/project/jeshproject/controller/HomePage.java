@@ -1,4 +1,4 @@
-package jesh.project.jeshproject;
+package jesh.project.jeshproject.controller;
 
 import javafx.application.Application;
 import javafx.event.ActionEvent;

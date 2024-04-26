@@ -4,14 +4,20 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.VBox?>
 
+<?import javafx.scene.control.Label?>
 <VBox xmlns:fx="http://javafx.com/fxml/1" fx:controller="jesh.project.jeshproject.SignupPage">
-    <children>
-        <TextField fx:id="firstNameField" promptText="First Name"/>
-        <TextField fx:id="lastNameField" promptText="Last Name"/>
-        <TextField fx:id="birthdayField" promptText="Birthday"/>
-        <TextField fx:id="emailField" promptText="Email"/>
-        <TextField fx:id="usernameField" promptText="Username"/>
-        <TextField fx:id="passwordField" promptText="Password"/>
-        <Button text="Sign Up" onAction="#signup"/>
-    </children>
+    <TextField fx:id="firstNameField" promptText="First Name"/>
+    <Label fx:id="firstNameErrorLabel"/>
+    <TextField fx:id="lastNameField" promptText="Last Name"/>
+    <Label fx:id="lastNameErrorLabel"/>
+    <TextField fx:id="birthdayField" promptText="Birthday"/>
+    <Label fx:id="birthdayErrorLabel"/>
+    <TextField fx:id="emailField" promptText="Email"/>
+    <Label fx:id="emailErrorLabel"/>
+    <TextField fx:id="usernameField" promptText="Username"/>
+    <Label fx:id="usernameErrorLabel"/>
+    <TextField fx:id="passwordField" promptText="Password"/>
+    <Label fx:id="passwordErrorLabel"/>
+    <Button text="Sign Up" onAction="#signup"/>
+    <Button fx:id="goBackButton" onAction="#goBacktoHome" text="Go Back"/>
 </VBox>
