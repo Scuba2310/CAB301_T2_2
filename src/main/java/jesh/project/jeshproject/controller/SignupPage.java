@@ -1,8 +1,7 @@
-package jesh.project.jeshproject;
+package jesh.project.jeshproject.controller;
 
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
-//import javafx.scene.control.Alert;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
