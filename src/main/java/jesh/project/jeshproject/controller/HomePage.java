@@ -8,6 +8,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
+import jesh.project.jeshproject.HelloApplication;
 
 import java.io.IOException;
 
