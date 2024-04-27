@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+
+<?import javafx.scene.text.Text?>
+<?import javafx.scene.text.Font?>
+<VBox alignment="CENTER" spacing="40.0" xmlns:fx="http://javafx.com/fxml"
+      fx:controller="jesh.project.jeshproject.MainPage">
+
+    <padding>
+        <Insets bottom="60.0" left="20.0" right="20.0" top="4.0"/>
+    </padding>
+
+    <HBox>
+        <Button fx:id="signoutbutton" text="Sign Out"/>
+        <Button fx:id="settingsbutton" text="Settings"/>
+        <Button fx:id="profilebutton" text="Profile"/>
+        <Text fx:id="sleepWell">
+            <font>
+                <Font name="Arial Black" size="20.0" />
+            </font>
+        </Text>
+    </HBox>
+
+    <HBox>
+        <Text fx:id="timelineName">
+            <font>
+                <Font name="Arial Black" size="26.0" />
+            </font>
+        </Text>
+        <Button fx:id="saveButton" text="Save"/>
+    </HBox>
+
+    <Slider fx:id="timelineSlider"/>
+
+    <VBox fx:id="infoBox">
+        <HBox>
+          <Text fx:id="startTimeText">
+              <font>
+                  <Font name="Arial Black" size="18.0" />
+              </font>
+          </Text>
+          <Text fx:id="endTimeText">
+              <font>
+                  <Font name="Arial Black" size="18.0" />
+              </font>
+          </Text>
+          <Text fx:id="brightnessLevelTitle">
+              <font>
+                  <Font name="Arial Black" size="18.0" />
+              </font>
+          </Text>
+        </HBox>
+        <HBox>
+            <Button fx:id="nightModeButton" text="Night Mode"/>
+            <Slider fx:id="brightnessSlider"/>
+        </HBox>
+    </VBox>
+</VBox>
