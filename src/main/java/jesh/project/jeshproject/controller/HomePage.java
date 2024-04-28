@@ -8,6 +8,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
+import jesh.project.jeshproject.model.mockDB;
 
 import java.io.IOException;
 
@@ -22,6 +23,9 @@ public class HomePage {
     public void initialize() {
         title.setText("JESH PROJECT NAME !! ");
     }
+
+
+    public mockDB userDAO = new mockDB();
 
     // Code to switch to login page
     // Load LoginPage.fxml and switch scene
