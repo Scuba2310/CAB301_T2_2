@@ -2,16 +2,22 @@
 
 package jesh.project.jeshproject.controller;
 
+import jesh.project.jeshproject.HelloApplication;
+import jesh.project.jeshproject.exceptions.*;
+import jesh.project.jeshproject.model.User;
+import jesh.project.jeshproject.model.mockDB;
+
 import javafx.fxml.FXMLLoader;
-import javafx.scene.Scene;
+import javafx.scene.*;
+import javafx.scene.control.*;
 import javafx.scene.input.KeyEvent;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.control.TextField;
-import javafx.stage.Stage;
+import javafx.stage.*;
 import javafx.fxml.FXML;
 
 import java.io.IOException;
+
+//import jdk.internal.vm.annotation.Stable;
+
 
 public class SignupPage {
     @FXML private Button goBackButton;
@@ -28,6 +34,9 @@ public class SignupPage {
     @FXML private Label emailErrorLabel;
     @FXML private Label usernameErrorLabel;
     @FXML private Label passwordErrorLabel;
+
+
+    mockDB userDAO = new mockDB();
     @FXML
     private void signup() {
         // Reset error labels and field styles
@@ -43,41 +52,83 @@ public class SignupPage {
 
         boolean hasError = false;
 
-        if (firstName.isEmpty()) {
-            setErrorMessageAndStyle(firstNameField, firstNameErrorLabel, "Please enter your first name");
-            hasError = true;
+
+        // experimental code that should make unit testing easier
+        String[] enteredAttributes = {firstName, lastName, birthday, email, username, password};
+        String[] attributes = {"first name", "last name", "birthday", "email", "username", "password"};
+        TextField[] attributeFields = {firstNameField, lastNameField, birthdayField, emailField, usernameField, passwordField};
+        Label[] attributeLabels = {firstNameErrorLabel, lastNameErrorLabel, birthdayErrorLabel, emailErrorLabel, usernameErrorLabel, passwordErrorLabel};
+
+        for (int i = 0 ; i < attributes.length ; i++) {
+            try {
+                if (enteredAttributes[i].isEmpty()) {
+                    throw new EmptyFieldException("Please enter your " + attributes[i]);
+                }
+                else if (attributes[i].equals("birthday") & !isValidBirthday(birthday)) {
+                    throw new InvalidFieldException("Please enter a valid birthday in the format DD/MM/YYYY.");
+                }
+                else if (attributes[i].equals("email")) {
+                    if (!isValidEmail(email)) {
+                        throw new InvalidFieldException("Please enter a valid email address.");
+                    }
+                    else if (emailExists(email)) {
+                        throw new InvalidFieldException("An account with this email already exists.");
+                    }
+                }
+                else if (usernameExists(username)) {
+                    throw new InvalidFieldException("Username is already taken.");
+                }
+            } catch (Exception exception) {
+                hasError = true;
+                setErrorMessageAndStyle(attributeFields[i], attributeLabels[i], exception.getMessage());
+            }
         }
 
-        if (lastName.isEmpty()) {
-            setErrorMessageAndStyle(lastNameField, lastNameErrorLabel, "Please enter your last name");
-            hasError = true;
-        }
+        // end experiment
 
-        if (username.isEmpty()) {
-            setErrorMessageAndStyle(usernameField, usernameErrorLabel, "Please enter your username");
-            hasError = true;
-        }
-
-        if (password.isEmpty()) {
-            setErrorMessageAndStyle(passwordField, passwordErrorLabel, "Please enter your password");
-            hasError = true;
-        }
-
-        if (!isValidBirthday(birthday)) {
-            setErrorMessageAndStyle(birthdayField, birthdayErrorLabel, "Please enter a valid birthday in the format DD/MM/YYYY.");
-            hasError = true;
-        }
-
-        if (!isValidEmail(email)) {
-            setErrorMessageAndStyle(emailField, emailErrorLabel, "Please enter a valid email address.");
-            hasError = true;
-        }
-
+//        if (firstName.isEmpty()) {
+//            setErrorMessageAndStyle(firstNameField, firstNameErrorLabel, "Please enter your first name");
+//            hasError = true;
+//        }
+//
+//        if (lastName.isEmpty()) {
+//            setErrorMessageAndStyle(lastNameField, lastNameErrorLabel, "Please enter your last name");
+//            hasError = true;
+//        }
+//
+//        if (username.isEmpty()) {
+//            setErrorMessageAndStyle(usernameField, usernameErrorLabel, "Please enter your username");
+//            hasError = true;
+//        }
+//
+//        if (password.isEmpty()) {
+//            setErrorMessageAndStyle(passwordField, passwordErrorLabel, "Please enter your password");
+//            hasError = true;
+//        }
+//
+//        if (!isValidBirthday(birthday)) {
+//            setErrorMessageAndStyle(birthdayField, birthdayErrorLabel, "Please enter a valid birthday in the format DD/MM/YYYY.");
+//            hasError = true;
+//        }
+//
+//        if (!isValidEmail(email)) {
+//            setErrorMessageAndStyle(emailField, emailErrorLabel, "Please enter a valid email address.");
+//            hasError = true;
+//        }
+//
         if (hasError) {
-            return;
+            // keep user on sign up page
+        }
+        else { // means all fields are valid
+            mockDB.addUser(new User(firstName, lastName, birthday, email, username, password));
+            successMessage();
+            try {
+                goBacktoHome();
+            } catch (IOException exception) {
+                // ?????
+            }
         }
 
-        // Proceed with signup
     }
 
     private void resetErrorLabelsAndStyles() {
@@ -138,13 +189,31 @@ public class SignupPage {
         return email.matches("[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}");
     }
 
-    //private void showAlert(String title, String message) {
-    //    Alert alert = new Alert(Alert.AlertType.ERROR);
-    //    alert.setTitle(title);
-    //    alert.setHeaderText(null);
-    //    alert.setContentText(message);
-    //    alert.showAndWait();
-    //}
+    private boolean emailExists(String email) {
+        for (User user : userDAO.users) // update for real db
+            if (email.equals(user.getEmail())) {
+                return true;
+        }
+        return false;
+    }
+
+    private boolean usernameExists(String username) {
+        for (User user : userDAO.users)
+            if (username.equals(user.getUsername())) { // update for real db
+                return true;
+            }
+        return false;
+    }
+
+    private void successMessage() {
+        Alert alert = new Alert(Alert.AlertType.NONE);
+        alert.setTitle("Success!");
+        alert.setHeaderText(null);
+        alert.setContentText("New user successfully created");
+        alert.getDialogPane().getButtonTypes().add(ButtonType.OK);
+        alert.show();
+        //alert.showAndWait();
+    }
 
     @FXML
     private void goBacktoHome() throws IOException {
@@ -154,6 +223,7 @@ public class SignupPage {
         Scene scene = new Scene(fxmlLoader.load(), HelloApplication.WIDTH, HelloApplication.HEIGHT);
         stage.setScene(scene);
     }
+
 }
 
 **/

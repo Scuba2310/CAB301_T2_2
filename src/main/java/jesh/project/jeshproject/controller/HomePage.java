@@ -2,15 +2,14 @@
 
 package jesh.project.jeshproject.controller;
 
-import javafx.application.Application;
-import javafx.event.ActionEvent;
-import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.text.Text;
-import javafx.stage.Stage;
+import jesh.project.jeshproject.HelloApplication;
+import jesh.project.jeshproject.model.mockDB;
 
+import javafx.fxml.*;
+import javafx.scene.*;
+import javafx.scene.control.*;
+import javafx.scene.text.*;
+import javafx.stage.*;
 import java.io.IOException;
 
 public class HomePage {
@@ -20,10 +19,13 @@ public class HomePage {
     private Button loginButton;
     @FXML
     private Button signupButton;
+
     @FXML
     public void initialize() {
         title.setText("JESH PROJECT NAME !! ");
     }
+
+    public mockDB userDAO = new mockDB();
 
     // Code to switch to login page
     // Load LoginPage.fxml and switch scene

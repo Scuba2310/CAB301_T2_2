@@ -7,7 +7,10 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
 <?import javafx.geometry.Insets?>
+<?import javafx.scene.text.*?>
 
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0"
@@ -66,6 +69,7 @@
                     showTickMarks="true" showTickLabels="true"/>
         </HBox>
 
+    <Slider fx:id="timelineSlider"/>
 
         <!-- End Time Slider -->
         <HBox spacing="10.0" AnchorPane.rightAnchor="0.0">

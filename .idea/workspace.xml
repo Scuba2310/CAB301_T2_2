@@ -5,15 +5,33 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="132ae876-e9f9-4e86-bb5a-2986248d85f1" name="Changes" comment="creating the javaFX controls for MainPage">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/jesh/project/jeshproject/exceptions/EmptyFieldException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/jesh/project/jeshproject/exceptions/InvalidFieldException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/jesh/project/jeshproject/model/IUserDAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/jesh/project/jeshproject/model/SqliteUserDAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/jesh/project/jeshproject/model/mockDB.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/jesh/project/jeshproject/tests/AuthenticateTests.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/jesh/project/jeshproject/tests/SignUpTests.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/jesh/project/jeshproject/tests/UserTests.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/jesh/project/jeshproject/LoginPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/jesh/project/jeshproject/LoginPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/jesh/project/jeshproject/MainPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/jesh/project/jeshproject/MainPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/jesh/project/jeshproject/HomePage.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/jesh/project/jeshproject/IUserDAO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/jesh/project/jeshproject/LoginPage.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/jesh/project/jeshproject/MainPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/jesh/project/jeshproject/controller/MainPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/jesh/project/jeshproject/MockUserDatabase.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/jesh/project/jeshproject/SignupPage.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/jesh/project/jeshproject/controller/HomePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/jesh/project/jeshproject/controller/HomePage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/jesh/project/jeshproject/controller/LoginPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/jesh/project/jeshproject/controller/LoginPage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/jesh/project/jeshproject/controller/SignupPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/jesh/project/jeshproject/controller/SignupPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/jesh/project/jeshproject/model/SqliteConnection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/jesh/project/jeshproject/model/SqliteConnection.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/jesh/project/jeshproject/model/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/jesh/project/jeshproject/model/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/jesh/project/jeshproject/HomePage.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/jesh/project/jeshproject/HomePage.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/jesh/project/jeshproject/Login.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/jesh/project/jeshproject/Login.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/jesh/project/jeshproject/MainPage.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/jesh/project/jeshproject/MainPage.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/jesh/project/jeshproject/SignUp.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/jesh/project/jeshproject/SignUp.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,37 +43,40 @@
       <list>
         <option value="FxmlFile" />
         <option value="JavaFXApplication" />
-        <option value="Class" />
         <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="master" />
+        <entry key="$PROJECT_DIR$" value="Login" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
-  "lastFilter": {
-    "state": "OPEN",
-    "assignee": "Sanda223"
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;Sanda223&quot;
   }
-}]]></component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/Scuba2310/CAB302_A1.git",
-    "accountId": "9d98e094-86dc-4277-8dcc-7547a85b8295"
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/Scuba2310/CAB302_A1.git&quot;,
+    &quot;accountId&quot;: &quot;9d98e094-86dc-4277-8dcc-7547a85b8295&quot;
   }
-}]]></component>
+}</component>
   <component name="MavenImportPreferences">
     <option name="generalSettings">
       <MavenGeneralSettings>
         <option name="mavenHomeTypeForPersistence" value="WRAPPER" />
       </MavenGeneralSettings>
     </option>
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 4
@@ -71,7 +92,8 @@
     "Application.HelloApplication.executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "MainPage-FXML-SN",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "git-widget-placeholder": "Merging MainPage-FXML-SN",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "C:/Users/LizaJ/IdeaProjects/jesh-project",
     "project.structure.last.edited": "Project",
@@ -87,13 +109,13 @@
   </component>
   <component name="RunManager">
     <configuration name="HelloApplication" type="Application" factoryName="Application" nameIsGenerated="true">
-      <option name="ALTERNATIVE_JRE_PATH" value="corretto-17" />
+      <option name="ALTERNATIVE_JRE_PATH" value="17" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
       <option name="MAIN_CLASS_NAME" value="jesh.project.jeshproject.HelloApplication" />
       <module name="jesh-project" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="jesh.project.jeshproject.*" />
+          <option name="PATTERN" value="jesh.project.jeshproject.exceptions.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -111,6 +133,15 @@
       <option name="presentableId" value="Default" />
       <updated>1709874108984</updated>
     </task>
+    <task id="LOCAL-00001" summary="correcting errors">
+      <option name="closed" value="true" />
+      <created>1714445724919</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1714445724919</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -138,6 +169,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="error messages for input fields on signup page" />
+    <MESSAGE value="correcting errors" />
     <MESSAGE value="creating the javaFX controls for MainPage" />
     <option name="LAST_COMMIT_MESSAGE" value="creating the javaFX controls for MainPage" />
   </component>
