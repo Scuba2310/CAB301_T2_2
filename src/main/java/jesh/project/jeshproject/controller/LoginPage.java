@@ -1,18 +1,13 @@
 package jesh.project.jeshproject.controller;
 
-import javafx.application.Application;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.control.TextField;
-import javafx.stage.Stage;
-
-import javafx.fxml.FXML;
 import jesh.project.jeshproject.HelloApplication;
 import jesh.project.jeshproject.model.User;
 import jesh.project.jeshproject.model.mockDB;
 
+import javafx.scene.Scene;
+import javafx.scene.control.*;
+import javafx.stage.Stage;
+import javafx.fxml.*;
 import java.io.IOException;
 
 public class LoginPage {

@@ -6,7 +6,7 @@ import javafx.scene.layout.VBox;
 import javafx.scene.text.Text;
 
 import javafx.fxml.FXML;
-import java.io.IOException;
+
 public class MainPage {
     @FXML private Button nightModeButton;
     @FXML private Slider brightnessSlider;
