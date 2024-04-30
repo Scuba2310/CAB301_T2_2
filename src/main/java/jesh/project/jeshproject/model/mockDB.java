@@ -16,7 +16,7 @@ public class mockDB implements IUserDAO{
         addUser( new User("John", "Doe", "01/01/1992", "johndoe@example.com", "john_doe92", "password") );
     }
 
-    public void addUser(User user) {
+    public static void addUser(User user) {
         user.setId(autoIncrementId);
         autoIncrementId++;
         users.add(user);

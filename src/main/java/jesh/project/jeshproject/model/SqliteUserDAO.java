@@ -9,16 +9,6 @@ public class SqliteUserDAO implements IUserDAO {
     }
 
     @Override
-    public void updateUser(User user) {
-
-    }
-
-    @Override
-    public void deleteUser(User user) {
-
-    }
-
-    @Override
     public User getUser(int id) {
         return null;
     }

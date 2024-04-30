@@ -1,5 +1,3 @@
-/**
-
 package jesh.project.jeshproject.controller;
 
 import jesh.project.jeshproject.HelloApplication;
@@ -225,5 +223,3 @@ public class SignupPage {
     }
 
 }
-
-**/
