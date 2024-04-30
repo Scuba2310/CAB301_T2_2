@@ -2,7 +2,6 @@ package jesh.project.jeshproject.model;
 
 import java.util.ArrayList;
 import java.util.List;
-import jesh.project.jeshproject.model.User;
 
 public class mockDB implements IUserDAO{
 
@@ -16,7 +15,7 @@ public class mockDB implements IUserDAO{
         addUser( new User("John", "Doe", "01/01/1992", "johndoe@example.com", "john_doe92", "password") );
     }
 
-    public static void addUser(User user) {
+    public void addUser(User user) {
         user.setId(autoIncrementId);
         autoIncrementId++;
         users.add(user);

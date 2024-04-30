@@ -1,9 +1,6 @@
-/**
-
 package jesh.project.jeshproject.controller;
 
 import jesh.project.jeshproject.HelloApplication;
-import jesh.project.jeshproject.model.mockDB;
 
 import javafx.fxml.*;
 import javafx.scene.*;
@@ -25,7 +22,7 @@ public class HomePage {
         title.setText("JESH PROJECT NAME !! ");
     }
 
-    public mockDB userDAO = new mockDB();
+    //public mockDB userDAO = new mockDB();
 
     // Code to switch to login page
     // Load LoginPage.fxml and switch scene
@@ -47,5 +44,3 @@ public class HomePage {
         stage.setScene(scene);
     }
 }
-
- **/

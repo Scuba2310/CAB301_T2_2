@@ -16,7 +16,6 @@ import java.io.IOException;
 
 //import jdk.internal.vm.annotation.Stable;
 
-
 public class SignupPage {
     @FXML private Button goBackButton;
     @FXML private TextField birthdayField;
@@ -33,8 +32,8 @@ public class SignupPage {
     @FXML private Label usernameErrorLabel;
     @FXML private Label passwordErrorLabel;
 
-
     mockDB userDAO = new mockDB();
+
     @FXML
     private void signup() {
         // Reset error labels and field styles
@@ -118,7 +117,7 @@ public class SignupPage {
             // keep user on sign up page
         }
         else { // means all fields are valid
-            mockDB.addUser(new User(firstName, lastName, birthday, email, username, password));
+            userDAO.addUser(new User(firstName, lastName, birthday, email, username, password));
             successMessage();
             try {
                 goBacktoHome();
