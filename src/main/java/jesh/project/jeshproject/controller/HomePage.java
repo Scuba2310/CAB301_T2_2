@@ -8,6 +8,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
+import jesh.project.jeshproject.HelloApplication;
 import jesh.project.jeshproject.model.mockDB;
 
 import java.io.IOException;

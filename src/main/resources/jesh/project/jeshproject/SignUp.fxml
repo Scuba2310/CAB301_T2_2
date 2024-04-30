@@ -5,7 +5,7 @@
 <?import javafx.scene.layout.VBox?>
 
 <?import javafx.scene.control.Label?>
-<VBox xmlns:fx="http://javafx.com/fxml/1" fx:controller="jesh.project.jeshproject.SignupPage">
+<VBox xmlns:fx="http://javafx.com/fxml/1" fx:controller="jesh.project.jeshproject.controller.SignupPage">
     <TextField fx:id="firstNameField" promptText="First Name"/>
     <Label fx:id="firstNameErrorLabel"/>
     <TextField fx:id="lastNameField" promptText="Last Name"/>

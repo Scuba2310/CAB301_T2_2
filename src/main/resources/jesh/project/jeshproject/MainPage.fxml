@@ -11,7 +11,7 @@
 <?import javafx.scene.text.Text?>
 <?import javafx.scene.text.Font?>
 <VBox alignment="CENTER" spacing="40.0" xmlns:fx="http://javafx.com/fxml"
-      fx:controller="jesh.project.jeshproject.MainPage">
+      fx:controller="jesh.project.jeshproject.controller.MainPage">
 
     <padding>
         <Insets bottom="60.0" left="20.0" right="20.0" top="4.0"/>

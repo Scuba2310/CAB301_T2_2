@@ -1,21 +1,21 @@
 package jesh.project.jeshproject.controller;
 
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Scene;
-//import javafx.scene.control.Alert;
-import javafx.scene.control.*;
-import javafx.scene.input.KeyEvent;
-import javafx.stage.Stage;
-import javafx.fxml.FXML;
-
-import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
-
-import jdk.internal.vm.annotation.Stable;
+import jesh.project.jeshproject.HelloApplication;
 import jesh.project.jeshproject.exceptions.*;
 import jesh.project.jeshproject.model.User;
 import jesh.project.jeshproject.model.mockDB;
+
+import javafx.fxml.FXMLLoader;
+import javafx.scene.*;
+import javafx.scene.control.*;
+import javafx.scene.input.KeyEvent;
+import javafx.stage.*;
+import javafx.fxml.FXML;
+
+import java.io.IOException;
+
+//import jdk.internal.vm.annotation.Stable;
+
 
 public class SignupPage {
     @FXML private Button goBackButton;
@@ -59,7 +59,7 @@ public class SignupPage {
 
         for (int i = 0 ; i < attributes.length ; i++) {
             try {
-                if (enteredAttributes[i].isEmpty() == true) {
+                if (enteredAttributes[i].isEmpty()) {
                     throw new EmptyFieldException("Please enter your " + attributes[i]);
                 }
                 else if (attributes[i].equals("birthday") & !isValidBirthday(birthday)) {
