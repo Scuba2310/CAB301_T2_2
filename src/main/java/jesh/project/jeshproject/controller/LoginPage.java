@@ -21,7 +21,7 @@ public class LoginPage {
     mockDB userDAO = new mockDB();
 
     @FXML
-    private void login() {
+    private void login() throws IOException {
         // Code to handle login
         String username = usernameField.getText();
         String password = passwordField.getText();
@@ -41,6 +41,11 @@ public class LoginPage {
                 errorMessage.setText("Username or password is incorrect.");
             }
         }
+
+        Stage stage = (Stage) loginButton.getScene().getWindow();
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("MainPage.fxml"));
+        Scene scene = new Scene(fxmlLoader.load(), HelloApplication.WIDTH, HelloApplication.HEIGHT);
+        stage.setScene(scene);
     }
 
     @FXML
@@ -60,3 +65,4 @@ public class LoginPage {
         stage.setScene(scene);
     }
 }
+

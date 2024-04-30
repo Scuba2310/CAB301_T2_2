@@ -1,9 +1,10 @@
 package jesh.project.jeshproject.model;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
+import java.util.List;
+import jesh.project.jeshproject.model.User;
 
-public class mockDB {
+public class mockDB implements IUserDAO{
 
     public static final ArrayList<User> users = new ArrayList<>();
     public static int autoIncrementId = 0;

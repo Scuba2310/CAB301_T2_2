@@ -38,6 +38,7 @@ public class User {
     public String getEmail() {
         return email;
     }
+
     public String getUsername() {
         return username;
     }
@@ -48,5 +49,9 @@ public class User {
 
     public void setId(int id) {
         this.id = id;
+    }
+
+    public int getId() {
+        return this.id;
     }
 }
