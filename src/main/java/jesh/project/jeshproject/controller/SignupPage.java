@@ -2,6 +2,7 @@ package jesh.project.jeshproject.controller;
 
 import jesh.project.jeshproject.HelloApplication;
 import jesh.project.jeshproject.exceptions.*;
+import jesh.project.jeshproject.model.SqliteUserDAO;
 import jesh.project.jeshproject.model.User;
 import jesh.project.jeshproject.model.mockDB;
 
@@ -18,6 +19,7 @@ import java.io.IOException;
 
 public class SignupPage {
     @FXML private Button goBackButton;
+    @FXML private Button signUpButton;
     @FXML private TextField birthdayField;
     @FXML private TextField usernameField;
     @FXML private TextField passwordField;
@@ -32,10 +34,10 @@ public class SignupPage {
     @FXML private Label usernameErrorLabel;
     @FXML private Label passwordErrorLabel;
 
-    mockDB userDAO = new mockDB();
+    SqliteUserDAO userDAO = new SqliteUserDAO();
 
     @FXML
-    private void signup() {
+    private void signup() throws IOException {
         // Reset error labels and field styles
         resetErrorLabelsAndStyles();
 
@@ -119,14 +121,15 @@ public class SignupPage {
         else { // means all fields are valid
             userDAO.addUser(new User(firstName, lastName, birthday, email, username, password));
             successMessage();
-            try {
-                goBacktoHome();
-            } catch (IOException exception) {
-                // ?????
-            }
+
+            Stage stage = (Stage) signUpButton.getScene().getWindow();
+            FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("HomePage.fxml"));
+            Scene scene = new Scene(fxmlLoader.load(), HelloApplication.WIDTH, HelloApplication.HEIGHT);
+            stage.setScene(scene);
         }
 
     }
+
 
     private void resetErrorLabelsAndStyles() {
         firstNameErrorLabel.setText("");
@@ -154,6 +157,7 @@ public class SignupPage {
         // Reset style and error message when the user starts typing
         TextField field = (TextField) event.getSource();
         field.setStyle("");
+        // possibly change switch statement to field.setText(""); ??
         switch (field.getId()) {
             case "firstNameField":
                 firstNameErrorLabel.setText("");
@@ -187,7 +191,7 @@ public class SignupPage {
     }
 
     private boolean emailExists(String email) {
-        for (User user : userDAO.users) // update for real db
+        for (User user : userDAO.getAllUsers())
             if (email.equals(user.getEmail())) {
                 return true;
         }
@@ -195,8 +199,8 @@ public class SignupPage {
     }
 
     private boolean usernameExists(String username) {
-        for (User user : userDAO.users)
-            if (username.equals(user.getUsername())) { // update for real db
+        for (User user : userDAO.getAllUsers())
+            if (username.equals(user.getUsername())) {
                 return true;
             }
         return false;
@@ -209,7 +213,6 @@ public class SignupPage {
         alert.setContentText("New user successfully created");
         alert.getDialogPane().getButtonTypes().add(ButtonType.OK);
         alert.show();
-        //alert.showAndWait();
     }
 
     @FXML

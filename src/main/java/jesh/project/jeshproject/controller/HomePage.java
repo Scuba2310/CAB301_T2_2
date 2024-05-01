@@ -43,4 +43,14 @@ public class HomePage {
         Scene scene = new Scene(fxmlLoader.load(), HelloApplication.WIDTH, HelloApplication.HEIGHT);
         stage.setScene(scene);
     }
+
+    // DELETE WHEN TESTING IS DONE ** as well as fxml button
+    @FXML Button bypassButton;
+    @FXML
+    private void goToMainPage() throws IOException {
+        Stage stage = (Stage) bypassButton.getScene().getWindow();
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("MainPage.fxml"));
+        Scene scene = new Scene(fxmlLoader.load(), HelloApplication.WIDTH, HelloApplication.HEIGHT);
+        stage.setScene(scene);
+    }
 }
