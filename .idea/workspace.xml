@@ -4,9 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="132ae876-e9f9-4e86-bb5a-2986248d85f1" name="Changes" comment="creating the javaFX controls for MainPage">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="132ae876-e9f9-4e86-bb5a-2986248d85f1" name="Changes" comment="creating the javaFX controls for MainPage" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -134,7 +132,47 @@
       <option name="project" value="LOCAL" />
       <updated>1714646297709</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="creating the javaFX controls for MainPage">
+      <option name="closed" value="true" />
+      <created>1714649742132</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1714649742133</updated>
+    </task>
+    <task id="LOCAL-00005" summary="creating the javaFX controls for MainPage">
+      <option name="closed" value="true" />
+      <created>1714649766725</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1714649766725</updated>
+    </task>
+    <task id="LOCAL-00006" summary="creating the javaFX controls for MainPage">
+      <option name="closed" value="true" />
+      <created>1714649820340</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1714649820340</updated>
+    </task>
+    <task id="LOCAL-00007" summary="creating the javaFX controls for MainPage">
+      <option name="closed" value="true" />
+      <created>1714649828227</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1714649828227</updated>
+    </task>
+    <task id="LOCAL-00008" summary="creating the javaFX controls for MainPage">
+      <option name="closed" value="true" />
+      <created>1714649886354</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1714649886354</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
