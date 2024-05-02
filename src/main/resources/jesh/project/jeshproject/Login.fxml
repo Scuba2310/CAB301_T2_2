@@ -2,11 +2,26 @@
 
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
-<VBox xmlns:fx="http://javafx.com/fxml" fx:controller="jesh.project.jeshproject.controller.LoginPage">
-    <TextField fx:id="usernameField" promptText="Username"/>
-    <TextField fx:id="passwordField" promptText="Password"/>
+<?xml-stylesheet type="text/css" href="Login.css"?>
+
+<VBox fx:id="mainBox" xmlns:fx="http://javafx.com/fxml" fx:controller="jesh.project.jeshproject.controller.LoginPage">
+    <VBox fx:id="LoginBox">
+    <Text fx:id="title">
+        <font>
+            <Font name="Arial Black" size="36.0" />
+        </font>
+    </Text>
+        <VBox fx:id="Fields">
+            <TextField fx:id="usernameField" promptText="Username"/>
+            <TextField fx:id="passwordField" promptText="Password"/>
+        </VBox>
     <Label fx:id="errorMessage"/>
-    <Button fx:id="loginButton" text="Login" onAction="#login"/>
-    <Button fx:id="goBackButton" onAction="#goBacktoHome" text="Go Back"/>
+        <HBox>
+            <Button fx:id="loginButton" text="Login" onAction="#login"/>
+            <Button fx:id="goBackButton" onAction="#goBacktoHome" text="Go Back"/>
+        </HBox>
+        <Text fx:id="signupLink">Dont have an account? Signup</Text>
+    </VBox>
 </VBox>

@@ -5,7 +5,9 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.text.*?>
 
+<?xml-stylesheet type="text/css" href="HomePage.css"?>
 
+<?import javafx.scene.layout.HBox?>
 <VBox alignment="CENTER" spacing="40.0" xmlns:fx="http://javafx.com/fxml"
       fx:controller="jesh.project.jeshproject.controller.HomePage">
     <padding>
@@ -16,6 +18,8 @@
             <Font name="Arial Black" size="36.0" />
         </font>
     </Text>
-    <Button fx:id="loginButton" text="Login" onAction="#goToLoginPage"/>
-    <Button fx:id="signupButton" text="Sign Up" onAction="#goToSignupPage"/>
+    <HBox>
+        <Button fx:id="loginButton" text="Login" onAction="#goToLoginPage"/>
+        <Button fx:id="signupButton" text="Sign Up" onAction="#goToSignupPage"/>
+    </HBox>
 </VBox>

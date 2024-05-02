@@ -1,0 +1,23 @@
+VBox {
+    -fx-background-color: #FDFBF6;
+}
+HBox {
+    -fx-alignment: CENTER;
+    -fx-padding: 30px;
+}
+#loginButton {
+    -fx-background-color: #588157;
+    -fx-padding: 15px;
+    -fx-font-size: 15.0;
+    -fx-font-color: white;
+    -fx-margin: 10px;
+}
+#signupButton {
+    -fx-background-color: #588157;
+    -fx-padding: 15px;
+    -fx-font-size: 15.0;
+}
+# Button {
+    -fx-margin:20px;
+    -fx-padding:20px;
+}

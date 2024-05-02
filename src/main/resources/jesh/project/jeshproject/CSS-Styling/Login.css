@@ -1,0 +1,20 @@
+#mainBox {
+    -fx-background-color: #A3B18A;
+    -fx-padding: 40px;
+}
+#LoginBox{
+    -fx-background-color: #FDFBF6;
+    -fx-padding: 60px;
+}
+HBox {
+    -fx-alignment: CENTER;
+}
+#signupLink {
+    -fx-alignment: CENTER;
+}
+#usernameField {
+    -fx-padding: 10px;
+}
+#passwordField {
+    -fx-padding: 10px;
+}

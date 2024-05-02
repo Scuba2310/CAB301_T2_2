@@ -69,7 +69,6 @@
                     showTickMarks="true" showTickLabels="true"/>
         </HBox>
 
-    <Slider fx:id="timelineSlider"/>
 
         <!-- End Time Slider -->
         <HBox spacing="10.0" AnchorPane.rightAnchor="0.0">

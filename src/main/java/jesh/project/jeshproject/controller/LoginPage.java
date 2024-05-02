@@ -9,14 +9,20 @@ import javafx.scene.control.*;
 import javafx.stage.Stage;
 import javafx.fxml.*;
 import java.io.IOException;
+import javafx.scene.text.*;
 
 public class LoginPage {
+    @FXML private Text title;
     @FXML private Button loginButton;
     @FXML private Button goBackButton;
     @FXML private TextField passwordField;
     @FXML private TextField usernameField;
     @FXML private Label errorMessage;
 
+    @FXML
+    public void initialize() {
+        title.setText("Login");
+    }
 
     mockDB userDAO = new mockDB();
 
