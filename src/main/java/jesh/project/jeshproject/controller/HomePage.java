@@ -19,7 +19,7 @@ public class HomePage {
 
     @FXML
     public void initialize() {
-        title.setText("JESH PROJECT NAME !! ");
+        title.setText("SleepWell");
     }
 
     //public mockDB userDAO = new mockDB();

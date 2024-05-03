@@ -14,6 +14,7 @@ HBox {
 }
 #usernameField {
     -fx-padding: 10px;
+    -fx-margin-bottom: 20px;
 }
 #passwordField {
     -fx-padding: 10px;

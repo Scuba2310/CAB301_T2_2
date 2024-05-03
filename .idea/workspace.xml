@@ -4,7 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="132ae876-e9f9-4e86-bb5a-2986248d85f1" name="Changes" comment="creating the javaFX controls for MainPage" />
+    <list default="true" id="132ae876-e9f9-4e86-bb5a-2986248d85f1" name="Changes" comment="Revert &quot;css login&quot;&#10;&#10;This reverts commit b0e32e49ba764c511aa0739b8c1e19fea6fd6302.">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/jesh/project/jeshproject/HelloApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/jesh/project/jeshproject/HelloApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/jesh/project/jeshproject/controller/HomePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/jesh/project/jeshproject/controller/HomePage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/jesh/project/jeshproject/CSS-Styling/HomePage.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/jesh/project/jeshproject/CSS-Styling/HomePage.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/jesh/project/jeshproject/CSS-Styling/Login.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/jesh/project/jeshproject/CSS-Styling/Login.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/jesh/project/jeshproject/HomePage.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/jesh/project/jeshproject/HomePage.fxml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -34,12 +41,14 @@
     &quot;assignee&quot;: &quot;Sanda223&quot;
   }
 }</component>
-  <component name="GithubPullRequestsUISettings">{
-  &quot;selectedUrlAndAccountId&quot;: {
-    &quot;url&quot;: &quot;https://github.com/Scuba2310/CAB302_A1.git&quot;,
-    &quot;accountId&quot;: &quot;9d98e094-86dc-4277-8dcc-7547a85b8295&quot;
-  }
-}</component>
+  <component name="GithubPullRequestsUISettings">
+    <option name="selectedUrlAndAccountId">
+      <UrlAndAccount>
+        <option name="accountId" value="1b159e3a-f93c-47ec-a148-70e5650054c8" />
+        <option name="url" value="https://github.com/Scuba2310/CAB302_A1.git" />
+      </UrlAndAccount>
+    </option>
+  </component>
   <component name="ProblemsViewState">
     <option name="selectedTabId" value="CurrentFile" />
   </component>
@@ -52,21 +61,21 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Application.HelloApplication.executor": "Run",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "CSS-JS",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/jessm/IdeaProjects/CAB302_A1_3/src/main/resources/jesh/project/jeshproject",
-    "project.structure.last.edited": "Project",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "vcs.Git"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.HelloApplication.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;CSS-JS&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/jessm/IdeaProjects/CAB302_A1_3/src/main/resources/jesh/project/jeshproject&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;vcs.Git&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\jessm\IdeaProjects\CAB302_A1_3\src\main\resources\jesh\project\jeshproject" />
@@ -172,10 +181,33 @@
       <option name="project" value="LOCAL" />
       <updated>1714649886354</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Revert &quot;creating the javaFX controls for MainPage&quot;&#10;&#10;This reverts commit b0e32e49ba764c511aa0739b8c1e19fea6fd6302.">
+      <option name="closed" value="true" />
+      <created>1714651321788</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1714651321788</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
+    <option name="RECENT_FILTERS">
+      <map>
+        <entry key="Branch">
+          <value>
+            <list>
+              <RecentGroup>
+                <option name="FILTER_VALUES">
+                  <option value="CSS-JS" />
+                </option>
+              </RecentGroup>
+            </list>
+          </value>
+        </entry>
+      </map>
+    </option>
     <option name="TAB_STATES">
       <map>
         <entry key="MAIN">
@@ -186,7 +218,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="master" />
+                        <option value="CSS-JS" />
                       </list>
                     </value>
                   </entry>
@@ -201,7 +233,12 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="error messages for input fields on signup page" />
     <MESSAGE value="correcting errors" />
-    <MESSAGE value="creating the javaFX controls for MainPage" />
-    <option name="LAST_COMMIT_MESSAGE" value="creating the javaFX controls for MainPage" />
+    <MESSAGE value="css login" />
+    <MESSAGE value="css stylinf for login and home page" />
+    <MESSAGE value="Revert &quot;css login&quot;&#10;&#10;This reverts commit b0e32e49ba764c511aa0739b8c1e19fea6fd6302." />
+    <MESSAGE value="css homepage" />
+    <MESSAGE value="css link to xml and java" />
+    <MESSAGE value="css files created" />
+    <option name="LAST_COMMIT_MESSAGE" value="Revert &quot;css login&quot;&#10;&#10;This reverts commit b0e32e49ba764c511aa0739b8c1e19fea6fd6302." />
   </component>
 </project>
