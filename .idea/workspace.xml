@@ -5,13 +5,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="132ae876-e9f9-4e86-bb5a-2986248d85f1" name="Changes" comment="creating the javaFX controls for MainPage">
+      <change afterPath="$PROJECT_DIR$/src/test/java/tests/SignUpTests.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/tests/UserTests.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/jesh/project/jeshproject/controller/HomePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/jesh/project/jeshproject/controller/HomePage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/jesh/project/jeshproject/controller/LoginPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/jesh/project/jeshproject/controller/LoginPage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/jesh/project/jeshproject/controller/SignupPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/jesh/project/jeshproject/controller/SignupPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/jesh/project/jeshproject/HomePage.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/jesh/project/jeshproject/HomePage.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/jesh/project/jeshproject/Login.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/jesh/project/jeshproject/Login.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/jesh/project/jeshproject/SignUp.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/jesh/project/jeshproject/SignUp.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/jesh/project/jeshproject/model/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/jesh/project/jeshproject/model/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/jesh/project/jeshproject/model/mockDB.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/jesh/project/jeshproject/model/MockUserDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/jesh/project/jeshproject/tests/AuthenticateTests.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/jesh/project/jeshproject/tests/SignUpTests.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/jesh/project/jeshproject/tests/UserTests.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -23,15 +28,15 @@
       <list>
         <option value="JavaFXApplication" />
         <option value="Interface" />
-        <option value="Class" />
         <option value="FxmlFile" />
+        <option value="Class" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="MainPage-FXML-SN" />
+        <entry key="$PROJECT_DIR$" value="authentication" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -49,7 +54,7 @@
   }
 }</component>
   <component name="ProblemsViewState">
-    <option name="selectedTabId" value="CurrentFile" />
+    <option name="selectedTabId" value="DEPENDENCY_CHECKER_PROBLEMS_TAB" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 4
@@ -64,6 +69,13 @@
   "keyToString": {
     "Application.HelloApplication.executor": "Run",
     "Downloaded.Files.Path.Enabled": "false",
+    "JUnit.All in jesh-project.executor": "Run",
+    "JUnit.SignUpTests.executor": "Run",
+    "JUnit.UserTests.executor": "Run",
+    "JUnit.jesh.project.jeshproject.tests in jesh-project.executor": "Run",
+    "JUnit.testUser.executor": "Run",
+    "JUnit.tests in jesh-project.executor": "Run",
+    "Maven.jesh-project [package,-DforkCount=0...].executor": "Debug",
     "Repository.Attach.Annotations": "false",
     "Repository.Attach.JavaDocs": "false",
     "Repository.Attach.Sources": "false",
@@ -71,20 +83,28 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "git-widget-placeholder": "master",
+    "ignore.virus.scanning.warn.message": "true",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "C:/Users/LizaJ/IdeaProjects/jesh-project",
     "project.structure.last.edited": "Libraries",
     "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "vcs.Git"
+    "project.structure.side.proportion": "0.4091954",
+    "settings.editor.selected.configurable": "preferences.pluginManager"
   }
 }]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\LizaJ\IdeaProjects\jesh-project\src\main\resources\jesh\project\jeshproject" />
+      <recent name="C:\Users\sunse\Documents\Sem 1 - 2024\CAB302\CAB302_A1\src\test\java" />
+      <recent name="C:\Users\sunse\Documents\Sem 1 - 2024\CAB302\CAB302_A1\src" />
+      <recent name="C:\Users\sunse\Documents\Sem 1 - 2024\CAB302\CAB302_A1\src\main" />
+      <recent name="C:\Users\sunse\Documents\Sem 1 - 2024\CAB302\CAB302_A1\src\main\tests" />
+      <recent name="C:\Users\sunse\Documents\Sem 1 - 2024\CAB302\CAB302_A1\src\main\java\jesh\project\jeshproject" />
+    </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="JUnit.tests in jesh-project">
     <configuration name="HelloApplication" type="Application" factoryName="Application" nameIsGenerated="true">
       <option name="ALTERNATIVE_JRE_PATH" value="17" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
@@ -100,6 +120,83 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="SignUpTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="jesh-project" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="tests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="tests" />
+      <option name="MAIN_CLASS_NAME" value="tests.SignUpTests" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="UserTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="jesh-project" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="tests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="tests" />
+      <option name="MAIN_CLASS_NAME" value="tests.UserTests" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="tests in jesh-project" type="JUnit" factoryName="JUnit" nameIsGenerated="true">
+      <module name="jesh-project" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value=".*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="tests" />
+      <option name="TEST_OBJECT" value="package" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="tests in jesh-project" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="jesh-project" />
+      <option name="PACKAGE_NAME" value="tests" />
+      <option name="MAIN_CLASS_NAME" value="" />
+      <option name="METHOD_NAME" value="" />
+      <option name="TEST_OBJECT" value="package" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="tests in jesh-project" type="JUnit" factoryName="JUnit" nameIsGenerated="true">
+      <module name="jesh-project" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value=".*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="tests" />
+      <option name="MAIN_CLASS_NAME" value="" />
+      <option name="METHOD_NAME" value="" />
+      <option name="TEST_OBJECT" value="package" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.SignUpTests" />
+        <item itemvalue="JUnit.UserTests" />
+        <item itemvalue="JUnit.tests in jesh-project" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -140,7 +237,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="MainPage-FXML-SN" />
+                        <option value="unit-tests" />
                       </list>
                     </value>
                   </entry>

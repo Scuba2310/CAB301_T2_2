@@ -4,7 +4,6 @@ import jesh.project.jeshproject.HelloApplication;
 import jesh.project.jeshproject.exceptions.*;
 import jesh.project.jeshproject.model.SqliteUserDAO;
 import jesh.project.jeshproject.model.User;
-import jesh.project.jeshproject.model.mockDB;
 
 import javafx.fxml.FXMLLoader;
 import javafx.scene.*;
@@ -115,10 +114,8 @@ public class SignupPage {
 //            hasError = true;
 //        }
 //
-        if (hasError) {
-            // keep user on sign up page
-        }
-        else { // means all fields are valid
+        if (!hasError) {
+            // all fields are valid
             userDAO.addUser(new User(firstName, lastName, birthday, email, username, password));
             successMessage();
 

@@ -3,7 +3,6 @@ package jesh.project.jeshproject.controller;
 import jesh.project.jeshproject.HelloApplication;
 import jesh.project.jeshproject.model.SqliteUserDAO;
 import jesh.project.jeshproject.model.User;
-import jesh.project.jeshproject.model.mockDB;
 
 import javafx.scene.Scene;
 import javafx.scene.control.*;
