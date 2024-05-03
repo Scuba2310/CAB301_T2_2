@@ -1,0 +1,32 @@
+#mainBox {
+    -fx-background-color: #A3B18A;
+    -fx-padding: 40px;
+    -fx-spacing: 0px;
+}
+#SignupBox {
+    -fx-background-color: #FDFBF6;
+    -fx-padding: 25px;
+}
+#signupTitle {
+    -fx-spacing: 20px;
+}
+#fieldsBox {
+ -fx-spacing: 40px;
+ -fx-alignment: CENTER;
+}
+#buttonBox {
+    -fx-spacing: 25px;
+    -fx-alignment: CENTER;
+}
+#login {
+    -fx-alignment: CENTER;
+    -fx-padding: 20px;
+}
+#signupButton{
+    -fx-background-color: #588157;
+    -fx-padding: 12px;
+}
+#goBackButton {
+    -fx-background-color: #588157;
+    -fx-padding: 12px;
+}

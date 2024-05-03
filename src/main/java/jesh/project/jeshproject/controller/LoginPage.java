@@ -3,6 +3,7 @@ package jesh.project.jeshproject.controller;
 import jesh.project.jeshproject.HelloApplication;
 import jesh.project.jeshproject.model.User;
 import jesh.project.jeshproject.model.mockDB;
+import jesh.project.jeshproject.controller.SignupPage;
 
 import javafx.scene.Scene;
 import javafx.scene.control.*;
@@ -18,6 +19,8 @@ public class LoginPage {
     @FXML private TextField passwordField;
     @FXML private TextField usernameField;
     @FXML private Label errorMessage;
+    @FXML private Button SignupLink;
+
 
     @FXML
     public void initialize() {
@@ -74,6 +77,17 @@ public class LoginPage {
         Scene scene = new Scene(fxmlLoader.load(), HelloApplication.WIDTH, HelloApplication.HEIGHT);
 
         String stylesheet = HelloApplication.class.getResource("CSS-Styling/HomePage.css").toExternalForm();
+        scene.getStylesheets().add(stylesheet);
+
+        stage.setScene(scene);
+    }
+    @FXML
+    private void goToSignupPage() throws IOException {
+        Stage stage = (Stage) SignupLink.getScene().getWindow();
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("SignUp.fxml"));
+        Scene scene = new Scene(fxmlLoader.load(), HelloApplication.WIDTH, HelloApplication.HEIGHT);
+
+        String stylesheet = HelloApplication.class.getResource("CSS-Styling/SignUp.css").toExternalForm();
         scene.getStylesheets().add(stylesheet);
 
         stage.setScene(scene);

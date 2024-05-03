@@ -26,6 +26,7 @@ public class SignupPage {
     @FXML private TextField firstNameField;
     @FXML private TextField lastNameField;
     @FXML private TextField emailField;
+    @FXML private Button loginLink;
 
     @FXML private Label firstNameErrorLabel;
     @FXML private Label lastNameErrorLabel;
@@ -226,6 +227,17 @@ public class SignupPage {
         Scene scene = new Scene(fxmlLoader.load(), HelloApplication.WIDTH, HelloApplication.HEIGHT);
 
         String stylesheet = HelloApplication.class.getResource("CSS-Styling/HomePage.css").toExternalForm();
+        scene.getStylesheets().add(stylesheet);
+
+        stage.setScene(scene);
+    }
+    @FXML
+    private void goToLoginPage() throws IOException {
+        Stage stage = (Stage) loginLink.getScene().getWindow();
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("Login.fxml"));
+        Scene scene = new Scene(fxmlLoader.load(), HelloApplication.WIDTH, HelloApplication.HEIGHT);
+
+        String stylesheet = HelloApplication.class.getResource("CSS-Styling/Login.css").toExternalForm();
         scene.getStylesheets().add(stylesheet);
 
         stage.setScene(scene);

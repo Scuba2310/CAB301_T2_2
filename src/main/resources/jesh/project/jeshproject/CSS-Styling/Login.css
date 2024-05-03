@@ -4,10 +4,16 @@
 }
 #LoginBox{
     -fx-background-color: #FDFBF6;
-    -fx-padding: 40px;
+    -fx-padding: 30px;
+}
+#LoginFields {
+    -fx-padding: 20px;
 }
 HBox {
     -fx-alignment: CENTER;
+}
+#title{
+    -fx-padding: 20px;
 }
 Text {
     -fx-alignment: RIGHT;
@@ -29,11 +35,8 @@ Text {
 #Field2 {
     -fx-padding: 10px;
 }
-#loginbutton {
-    -fx-padding: 15px;
-}
-#gobackbutton {
-    -fx-padding: 15px;
+#ButtonBox {
+    -fx-spacing: 30px;
 }
 #loginButton {
     -fx-background-color: #588157;
