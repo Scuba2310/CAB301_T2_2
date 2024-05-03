@@ -4,13 +4,17 @@
 }
 #LoginBox{
     -fx-background-color: #FDFBF6;
-    -fx-padding: 60px;
+    -fx-padding: 40px;
 }
 HBox {
     -fx-alignment: CENTER;
 }
-#signupLink {
+Text {
+    -fx-alignment: RIGHT;
+}
+#signup{
     -fx-alignment: CENTER;
+    -fx-padding: 15px;
 }
 #usernameField {
     -fx-padding: 10px;
@@ -18,4 +22,25 @@ HBox {
 }
 #passwordField {
     -fx-padding: 10px;
+}
+#Field1 {
+    -fx-padding: 10px;
+}
+#Field2 {
+    -fx-padding: 10px;
+}
+#loginbutton {
+    -fx-padding: 15px;
+}
+#gobackbutton {
+    -fx-padding: 15px;
+}
+#loginButton {
+    -fx-background-color: #588157;
+    -fx-padding: 12px;
+}
+#goBackButton {
+    -fx-background-color: #588157;
+    -fx-padding: 12px;
+    -fx-color: #FDFBF6;
 }

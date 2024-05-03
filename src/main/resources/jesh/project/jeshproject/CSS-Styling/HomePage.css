@@ -1,5 +1,6 @@
 VBox {
     -fx-background-color: #FDFBF6;
+    -fx-padding: 10px;
 }
 HBox {
     -fx-alignment: CENTER;
@@ -9,15 +10,16 @@ HBox {
     -fx-background-color: #588157;
     -fx-padding: 15px;
     -fx-font-size: 15.0;
-    -fx-font-color: white;
+    -fx-color: #FDFBF6;
     -fx-margin: 10px;
 }
 #signupButton {
     -fx-background-color: #588157;
     -fx-padding: 15px;
     -fx-font-size: 15.0;
+    -fx-color: #FDFBF6;
 }
-# Button {
+#Button {
     -fx-margin:20px;
     -fx-padding:20px;
 }

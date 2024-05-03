@@ -13,15 +13,23 @@
             <Font name="Arial Black" size="36.0" />
         </font>
     </Text>
-        <VBox fx:id="Fields">
+        <VBox fx:id="Field1">
             <TextField fx:id="usernameField" promptText="Username"/>
+        </VBox>
+        <VBox fx:id="Field2">
             <TextField fx:id="passwordField" promptText="Password"/>
         </VBox>
     <Label fx:id="errorMessage"/>
         <HBox>
-            <Button fx:id="loginButton" text="Login" onAction="#login"/>
-            <Button fx:id="goBackButton" onAction="#goBacktoHome" text="Go Back"/>
+            <VBox fx:id="loginbutton">
+                <Button fx:id="loginButton" text="Login" onAction="#login"/>
+            </VBox>
+            <VBox fx:id="gobackbutton">
+                <Button fx:id="goBackButton" onAction="#goBacktoHome" text="Go Back"/>
+            </VBox>
         </HBox>
-        <Text fx:id="signupLink">Dont have an account? Signup</Text>
+        <VBox fx:id="signup">
+            <Text fx:id="signupLink">Dont have an account? Signup</Text>
+        </VBox>
     </VBox>
 </VBox>

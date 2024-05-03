@@ -11,12 +11,14 @@ import javafx.scene.control.*;
 import javafx.scene.input.KeyEvent;
 import javafx.stage.*;
 import javafx.fxml.FXML;
+import javafx.scene.text.*;
 
 import java.io.IOException;
 
 //import jdk.internal.vm.annotation.Stable;
 
 public class SignupPage {
+    @FXML private Text title;
     @FXML private Button goBackButton;
     @FXML private TextField birthdayField;
     @FXML private TextField usernameField;
@@ -34,6 +36,10 @@ public class SignupPage {
 
     mockDB userDAO = new mockDB();
 
+    @FXML
+    public void initialize() {
+        title.setText("Sign Up");
+    }
     @FXML
     private void signup() {
         // Reset error labels and field styles
@@ -218,6 +224,10 @@ public class SignupPage {
         Stage stage = (Stage) goBackButton.getScene().getWindow();
         FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("HomePage.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), HelloApplication.WIDTH, HelloApplication.HEIGHT);
+
+        String stylesheet = HelloApplication.class.getResource("CSS-Styling/HomePage.css").toExternalForm();
+        scene.getStylesheets().add(stylesheet);
+
         stage.setScene(scene);
     }
 
