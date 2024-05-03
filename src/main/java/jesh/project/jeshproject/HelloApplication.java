@@ -4,6 +4,9 @@ import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import jesh.project.jeshproject.model.SqliteConnection;
+
+import java.sql.Connection;
 
 import java.io.IOException;
 
@@ -23,6 +26,7 @@ public class HelloApplication extends Application {
     }
 
     public static void main(String[] args) {
+        Connection connection = SqliteConnection.getInstance();
         launch();
     }
 }

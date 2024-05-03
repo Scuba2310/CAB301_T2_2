@@ -7,6 +7,8 @@ import javafx.scene.*;
 import javafx.scene.control.*;
 import javafx.scene.text.*;
 import javafx.stage.*;
+import jesh.project.jeshproject.model.SqliteUserDAO;
+
 import java.io.IOException;
 
 public class HomePage {
@@ -22,8 +24,7 @@ public class HomePage {
         title.setText("JESH PROJECT NAME !! ");
     }
 
-    //public mockDB userDAO = new mockDB();
-
+    SqliteUserDAO userDAO = new SqliteUserDAO();
     // Code to switch to login page
     // Load LoginPage.fxml and switch scene
     @FXML
