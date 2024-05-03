@@ -10,7 +10,7 @@ HBox {
     -fx-background-color: #588157;
     -fx-padding: 15px;
     -fx-font-size: 15.0;
-    -fx-color: #FDFBF6;
+    -fx-text-fill #FDFBF6;
     -fx-margin: 10px;
 }
 #signupButton {
@@ -26,7 +26,10 @@ HBox {
 #description {
     -fx-maxWidth: 100;
 }
-#BoxDesc {
+#description {
+    -fx-padding: 20px;
+    -fx-pref-width: 200px;
+    -fx-pref-height: 300px;
 }
 #button1 {
     -fx-padding: 20px;

@@ -27,7 +27,7 @@
             <Button fx:id="goBackButton" onAction="#goBacktoHome" text="Go Back"/>
         </HBox>
             <HBox fx:id="signup">
-            <Text fx:id="signupLink">Dont have an account?</Text>
+            <Text fx:id="signupLink">Don't have an account?</Text>
             <Button fx:id="SignupLink" onAction="#goToSignupPage" text="Sign Up"/>
         </HBox>
     </VBox>

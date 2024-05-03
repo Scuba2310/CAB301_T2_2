@@ -20,7 +20,8 @@
         </font>
     </Text>
     <VBox fx:id="BoxDesc">
-        <Text fx:id="description">"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+        <Text fx:id="description">
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
             tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
             quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
             Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat
@@ -29,7 +30,7 @@
     </VBox>
     <HBox>
         <VBox fx:id="button1">
-        <Button fx:id="loginButton" text="Login" onAction="#goToLoginPage" style="margin-right: 20px"/>
+        <Button fx:id="loginButton" text="Login" onAction="#goToLoginPage" styleClass="loginButton" style="margin-right: 20px"/>
         </VBox>
         <VBox fx:id="button2">
         <Button fx:id="signupButton" text="Sign Up" onAction="#goToSignupPage"/>

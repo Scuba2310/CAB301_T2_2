@@ -42,7 +42,7 @@
         </HBox>
 
         <HBox fx:id="login">
-            <Text fx:id="LoginLink">Dont have an account?</Text>
+            <Text fx:id="LoginLink">Already have an account?</Text>
             <Button fx:id="loginLink" onAction="#goToLoginPage" text="Login"/>
         </HBox>
 
