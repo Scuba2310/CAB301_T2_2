@@ -6,7 +6,6 @@ public class AuthenticateTests {
 
     @BeforeEach
     void setup() {
-
     }
     // Sign Up
     @Test
@@ -19,27 +18,27 @@ public class AuthenticateTests {
     }
 
     @Test
-    void badName() {
+    void FirstnameFieldIsEmptyShouldThrowException() {
 
     }
     @Test
-    void badSurname() {
+    void SurnameFieldIsEmptyShouldThrowException() {
 
     }
     @Test
-    void badBirthday() {
+    void BirthdayDateIsInvalidShouldThrowException() {
 
     }
     @Test
-    void badEmail() {
+    void EmailIsNotValidShouldThrowException() {
 
     }
     @Test
-    void badUsernameOnSignUp() {
+    void UsernameFieldIsEmptyOnSignUpShouldThrowException() {
 
     }
     @Test
-    void badPasswordOnSignUp() {
+    void PasswordFieldIsEmptyOnSignUpShouldThrowException() {
 
     }
 
@@ -49,21 +48,14 @@ public class AuthenticateTests {
 
     }
     @Test
-    void wrongUsernameOnLogIn() {
+    void InvalidUsernameOnLogIn() {
 
     }
     @Test
-    void wrongPasswordOnLogin() {
+    void InvalidPasswordOnLoginShouldThrowException() {
 
     }
-    @Test
-    void invalidUsernameOnLogIn() {
 
-    }
-    @Test
-    void invalidPasswordOnLogIn() {
-
-    }
 
 
 
