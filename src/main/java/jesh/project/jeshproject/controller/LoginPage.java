@@ -58,7 +58,7 @@ public class LoginPage {
         }
         else { // don't bother checking db if a field is empty
             for (User user : userDAO.getAllUsers()) {
-                if (username.equals(user.getUsername()) & password.equals(user.getPassword())) {
+                if ((username.equals(user.getUsername())) & (password.equals(user.getPassword()))) {
                     correctUser = true;
                     break;
                 }
@@ -69,10 +69,7 @@ public class LoginPage {
             errorMessage.setText("Username or password is incorrect.");
         }
         else if (!emptyField) {
-            Stage stage = (Stage) loginButton.getScene().getWindow();
-            FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("MainPage.fxml"));
-            Scene scene = new Scene(fxmlLoader.load(), HelloApplication.WIDTH, HelloApplication.HEIGHT);
-            stage.setScene(scene);
+            goToMainPage();
         }
 
 
