@@ -1,5 +1,7 @@
 package jesh.project.jeshproject.brightness;
 
+import javafx.event.ActionEvent;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -34,5 +36,13 @@ public class BrightnessManager {
 
         }
         stderr.close();
+    }
+
+    public void testBrightness(ActionEvent actionEvent) {
+        try{
+            ChangeBrightness(50);
+        } catch (Exception exception) {
+
+        }
     }
 }

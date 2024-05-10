@@ -23,6 +23,8 @@ public class MainPage {
     @FXML private Button profileButton;
     @FXML private Button settingsButton;
 
+    @FXML private Button testButton;
+
     @FXML
     private TextField timeline_name;
 

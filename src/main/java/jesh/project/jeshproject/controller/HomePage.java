@@ -24,7 +24,7 @@ public class HomePage {
         title.setText("JESH PROJECT NAME !! ");
     }
 
-    SqliteUserDAO userDAO = new SqliteUserDAO();
+    //SqliteUserDAO userDAO = new SqliteUserDAO();
     // Code to switch to login page
     // Load LoginPage.fxml and switch scene
     @FXML
