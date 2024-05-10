@@ -57,62 +57,62 @@ public class SignupPage {
         TextField[] attributeFields = {firstNameField, lastNameField, birthdayField, emailField, usernameField, passwordField};
         Label[] attributeLabels = {firstNameErrorLabel, lastNameErrorLabel, birthdayErrorLabel, emailErrorLabel, usernameErrorLabel, passwordErrorLabel};
 
-        for (int i = 0 ; i < attributes.length ; i++) {
-            try {
-                if (enteredAttributes[i].isEmpty()) {
-                    throw new EmptyFieldException("Please enter your " + attributes[i]);
-                }
-                else if (attributes[i].equals("birthday") & !isValidBirthday(birthday)) {
-                    throw new InvalidFieldException("Please enter a valid birthday in the format DD/MM/YYYY.");
-                }
-                else if (attributes[i].equals("email")) {
-                    if (!isValidEmail(email)) {
-                        throw new InvalidFieldException("Please enter a valid email address.");
-                    }
-                    else if (emailExists(email)) {
-                        throw new InvalidFieldException("An account with this email already exists.");
-                    }
-                }
-                else if (usernameExists(username)) {
-                    throw new InvalidFieldException("Username is already taken.");
-                }
-            } catch (Exception exception) {
-                hasError = true;
-                setErrorMessageAndStyle(attributeFields[i], attributeLabels[i], exception.getMessage());
-            }
+//        for (int i = 0 ; i < attributes.length ; i++) {
+//            try {
+//                if (enteredAttributes[i].isEmpty()) {
+//                    throw new EmptyFieldException("Please enter your " + attributes[i]);
+//                }
+//                else if (attributes[i].equals("birthday") & !isValidBirthday(birthday)) {
+//                    throw new InvalidFieldException("Please enter a valid birthday in the format DD/MM/YYYY.");
+//                }
+//                else if (attributes[i].equals("email")) {
+//                    if (!isValidEmail(email)) {
+//                        throw new InvalidFieldException("Please enter a valid email address.");
+//                    }
+//                    else if (emailExists(email)) {
+//                        throw new InvalidFieldException("An account with this email already exists.");
+//                    }
+//                }
+//                else if (usernameExists(username)) {
+//                    throw new InvalidFieldException("Username is already taken.");
+//                }
+//            } catch (Exception exception) {
+//                hasError = true;
+//                setErrorMessageAndStyle(attributeFields[i], attributeLabels[i], exception.getMessage());
+//            }
+//        }
+//
+//        // end experiment
+
+        if (firstName.isEmpty()) {
+            setErrorMessageAndStyle(firstNameField, firstNameErrorLabel, "Please enter your first name");
+            hasError = true;
         }
 
-        // end experiment
+        if (lastName.isEmpty()) {
+            setErrorMessageAndStyle(lastNameField, lastNameErrorLabel, "Please enter your last name");
+            hasError = true;
+        }
 
-//        if (firstName.isEmpty()) {
-//            setErrorMessageAndStyle(firstNameField, firstNameErrorLabel, "Please enter your first name");
-//            hasError = true;
-//        }
-//
-//        if (lastName.isEmpty()) {
-//            setErrorMessageAndStyle(lastNameField, lastNameErrorLabel, "Please enter your last name");
-//            hasError = true;
-//        }
-//
-//        if (username.isEmpty()) {
-//            setErrorMessageAndStyle(usernameField, usernameErrorLabel, "Please enter your username");
-//            hasError = true;
-//        }
-//
-//        if (password.isEmpty()) {
-//            setErrorMessageAndStyle(passwordField, passwordErrorLabel, "Please enter your password");
-//            hasError = true;
-//        }
-//
-//        if (!isValidBirthday(birthday)) {
-//            setErrorMessageAndStyle(birthdayField, birthdayErrorLabel, "Please enter a valid birthday in the format DD/MM/YYYY.");
-//            hasError = true;
-//        }
-//
-//        if (!isValidEmail(email)) {
-//            setErrorMessageAndStyle(emailField, emailErrorLabel, "Please enter a valid email address.");
-//            hasError = true;
-//        }
+        if (username.isEmpty()) {
+            setErrorMessageAndStyle(usernameField, usernameErrorLabel, "Please enter your username");
+            hasError = true;
+        }
+
+        if (password.isEmpty()) {
+            setErrorMessageAndStyle(passwordField, passwordErrorLabel, "Please enter your password");
+            hasError = true;
+        }
+
+        if (!isValidBirthday(birthday)) {
+            setErrorMessageAndStyle(birthdayField, birthdayErrorLabel, "Please enter a valid birthday in the format DD/MM/YYYY.");
+            hasError = true;
+        }
+
+        if (!isValidEmail(email)) {
+            setErrorMessageAndStyle(emailField, emailErrorLabel, "Please enter a valid email address.");
+            hasError = true;
+        }
 //
         if (!hasError) {
             // all fields are valid
