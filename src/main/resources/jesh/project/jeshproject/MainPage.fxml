@@ -62,22 +62,20 @@
         <!-- Start Time Slider -->
         <HBox spacing="10.0" AnchorPane.rightAnchor="0.0">
             <padding>
-                <Insets top="-28.0" left="-105"/>
+                <Insets top="-28.0" left="-95"/>
             </padding>
             <Label text="Start Time:"/>
-            <Slider fx:id="start_time_slider" prefWidth="430" max="23" majorTickUnit="1"
+            <Slider fx:id="start_time_slider" prefWidth="430" max="24" majorTickUnit="1"
                     showTickMarks="true" showTickLabels="true"/>
         </HBox>
-
-    <Slider fx:id="timelineSlider"/>
 
         <!-- End Time Slider -->
         <HBox spacing="10.0" AnchorPane.rightAnchor="0.0">
             <padding>
-                <Insets left="-105"/>
+                <Insets left="-95"/>
             </padding>
             <Label text=" End Time:"/>
-            <Slider fx:id="end_time_slider" prefWidth="430" max="23" majorTickUnit="1"
+            <Slider fx:id="end_time_slider" prefWidth="430" max="24" majorTickUnit="1"
                     showTickMarks="true" showTickLabels="true"/>
         </HBox>
 
