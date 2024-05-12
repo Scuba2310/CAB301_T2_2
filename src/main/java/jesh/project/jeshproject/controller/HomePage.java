@@ -19,6 +19,10 @@ public class HomePage {
     @FXML
     private Button signupButton;
 
+//    public HomePage(){
+//        SqliteUserDAO userDAO = new SqliteUserDAO();
+//    }
+
     @FXML
     public void initialize() {
         title.setText("JESH PROJECT NAME !! ");

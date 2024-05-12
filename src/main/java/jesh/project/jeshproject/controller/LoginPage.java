@@ -36,43 +36,27 @@ public class LoginPage {
 
     @FXML
     private void login() throws IOException {
-
         resetErrorLabelsAndStyles();
         errorMessage.setText("");
-
-        boolean correctUser = false; // guilty until proven innocent
-        boolean emptyField = false;
 
         String username = usernameField.getText();
         String password = passwordField.getText();
 
-        if (username.isEmpty() | password.isEmpty()) {
+        if (username.isEmpty() || password.isEmpty()) {
             if (username.isEmpty()) {
                 setErrorMessageAndStyle(usernameField, usernameErrorLabel, "Please enter your username");
-                emptyField = true;
             }
             if (password.isEmpty()) {
                 setErrorMessageAndStyle(passwordField, passwordErrorLabel, "Please enter your password");
-                emptyField = true;
+            }
+        } else {
+            User user = userDAO.getUserByUsernameAndPassword(username, password);
+            if (user != null) {
+                goToMainPage();
+            } else {
+                errorMessage.setText("Username or password is incorrect.");
             }
         }
-        else { // don't bother checking db if a field is empty
-            for (User user : userDAO.getAllUsers()) {
-                if ((username.equals(user.getUsername())) & (password.equals(user.getPassword()))) {
-                    correctUser = true;
-                    break;
-                }
-            }
-        }
-
-        if (!correctUser & !emptyField) {
-            errorMessage.setText("Username or password is incorrect.");
-        }
-        else if (!emptyField) {
-            goToMainPage();
-        }
-
-
     }
 
     @FXML

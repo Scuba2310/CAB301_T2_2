@@ -18,7 +18,7 @@ public class SqliteConnection {
 
     public static Connection getInstance() {
         if (instance == null) {
-            new SqliteConnection();
+            new SqliteConnection(); // Initialize the connection
         }
         return instance;
     }
