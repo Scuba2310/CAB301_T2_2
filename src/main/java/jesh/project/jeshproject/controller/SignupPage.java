@@ -12,6 +12,7 @@ import javafx.stage.*;
 import javafx.fxml.FXML;
 
 import java.io.IOException;
+import java.sql.Connection;
 
 //import jdk.internal.vm.annotation.Stable;
 
@@ -47,6 +48,8 @@ public class SignupPage {
     @FXML
     private IUserDAO userDAO;
 
+    Connection connection = SqliteConnection.getInstance();
+    //SqliteUserDAO sqliteUserDAO = new SqliteUserDAO();
     public SignupPage() {
         userDAO = new SqliteUserDAO();
     }

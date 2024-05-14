@@ -26,8 +26,8 @@ public class HelloApplication extends Application {
     }
 
     public static void main(String[] args) {
-        SqliteUserDAO sqliteUserDAO = new SqliteUserDAO();
         Connection connection = SqliteConnection.getInstance();
+        SqliteUserDAO sqliteUserDAO = new SqliteUserDAO();
         launch();
     }
 }

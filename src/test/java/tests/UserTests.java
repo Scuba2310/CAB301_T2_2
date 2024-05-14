@@ -11,9 +11,9 @@ public class UserTests {
     private User user;
     @BeforeEach
     public void setup() {
-        user = new User("John", "Doe", "01/01/1992",
+        user = new User(0, "John", "Doe", "01/01/1992",
                 "johndoe@example.com", "john_doe92", "password");
-        user.setId(0); // usually set by the UserDAO
+        //user.setId(0); // usually set by the UserDAO
     }
 
     @Test

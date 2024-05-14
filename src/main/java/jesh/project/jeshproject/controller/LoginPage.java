@@ -1,6 +1,8 @@
 package jesh.project.jeshproject.controller;
 
+import javafx.scene.input.KeyEvent;
 import jesh.project.jeshproject.HelloApplication;
+import jesh.project.jeshproject.model.SqliteConnection;
 import jesh.project.jeshproject.model.SqliteUserDAO;
 import jesh.project.jeshproject.model.User;
 
@@ -9,6 +11,7 @@ import javafx.scene.control.*;
 import javafx.stage.Stage;
 import javafx.fxml.*;
 import java.io.IOException;
+import java.sql.Connection;
 
 public class LoginPage {
     @FXML private Button loginButton;
@@ -32,6 +35,8 @@ public class LoginPage {
         passwordField.setStyle("");
     }
 
+    Connection connection = SqliteConnection.getInstance();
+    //SqliteUserDAO sqliteUserDAO = new SqliteUserDAO();
     SqliteUserDAO userDAO = new SqliteUserDAO();
 
     @FXML
@@ -74,6 +79,24 @@ public class LoginPage {
         FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("HomePage.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), HelloApplication.WIDTH, HelloApplication.HEIGHT);
         stage.setScene(scene);
+    }
+
+    @FXML
+    private void handleFieldInput(KeyEvent event) {
+        // Reset style and error message when the user starts typing
+        TextField field = (TextField) event.getSource();
+        field.setStyle("");
+        // possibly change switch statement to field.setText(""); ??
+        switch (field.getId()) {
+            case "usernameField":
+                usernameErrorLabel.setText("");
+                break;
+            case "passwordField":
+                passwordErrorLabel.setText("");
+                break;
+            default:
+                break;
+        }
     }
 }
 

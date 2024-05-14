@@ -7,9 +7,11 @@ import javafx.scene.*;
 import javafx.scene.control.*;
 import javafx.scene.text.*;
 import javafx.stage.*;
+import jesh.project.jeshproject.model.SqliteConnection;
 import jesh.project.jeshproject.model.SqliteUserDAO;
 
 import java.io.IOException;
+import java.sql.Connection;
 
 public class HomePage {
     @FXML
@@ -19,9 +21,10 @@ public class HomePage {
     @FXML
     private Button signupButton;
 
-//    public HomePage(){
+    public HomePage(){
+//        Connection connection = SqliteConnection.getInstance();
 //        SqliteUserDAO userDAO = new SqliteUserDAO();
-//    }
+    }
 
     @FXML
     public void initialize() {
