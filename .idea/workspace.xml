@@ -6,10 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="132ae876-e9f9-4e86-bb5a-2986248d85f1" name="Changes" comment="signup and login css page almost done">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/jesh/project/jeshproject/HelloApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/jesh/project/jeshproject/HelloApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/jesh/project/jeshproject/CSS-Styling/HomePage.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/jesh/project/jeshproject/CSS-Styling/HomePage.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/jesh/project/jeshproject/CSS-Styling/SignUp.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/jesh/project/jeshproject/CSS-Styling/SignUp.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/jesh/project/jeshproject/HomePage.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/jesh/project/jeshproject/HomePage.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/jesh/project/jeshproject/MainPage.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/jesh/project/jeshproject/MainPage.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,25 +31,25 @@
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
-  "history": [
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;history&quot;: [
     {
-      "searchQuery": "git pull",
-      "state": "OPEN",
-      "assignee": "Sanda223"
+      &quot;searchQuery&quot;: &quot;git pull&quot;,
+      &quot;state&quot;: &quot;OPEN&quot;,
+      &quot;assignee&quot;: &quot;Sanda223&quot;
     },
     {
-      "searchQuery": "origin master",
-      "state": "OPEN",
-      "assignee": "Sanda223"
+      &quot;searchQuery&quot;: &quot;origin master&quot;,
+      &quot;state&quot;: &quot;OPEN&quot;,
+      &quot;assignee&quot;: &quot;Sanda223&quot;
     }
   ],
-  "lastFilter": {
-    "searchQuery": "origin master",
-    "state": "OPEN",
-    "assignee": "Sanda223"
+  &quot;lastFilter&quot;: {
+    &quot;searchQuery&quot;: &quot;origin master&quot;,
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;Sanda223&quot;
   }
-}]]></component>
+}</component>
   <component name="GithubPullRequestsUISettings">
     <option name="selectedUrlAndAccountId">
       <UrlAndAccount>
