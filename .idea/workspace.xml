@@ -4,9 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="132ae876-e9f9-4e86-bb5a-2986248d85f1" name="Changes" comment="signup and login css page almost done">
+    <list default="true" id="132ae876-e9f9-4e86-bb5a-2986248d85f1" name="Changes" comment="css mostly done">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/jesh/project/jeshproject/MainPage.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/jesh/project/jeshproject/MainPage.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -222,7 +221,15 @@
       <option name="project" value="LOCAL" />
       <updated>1714707676764</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="css mostly done">
+      <option name="closed" value="true" />
+      <created>1715668116556</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1715668116557</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -275,6 +282,7 @@
     <MESSAGE value="changes to homepage css" />
     <MESSAGE value="all css links made" />
     <MESSAGE value="signup and login css page almost done" />
-    <option name="LAST_COMMIT_MESSAGE" value="signup and login css page almost done" />
+    <MESSAGE value="css mostly done" />
+    <option name="LAST_COMMIT_MESSAGE" value="css mostly done" />
   </component>
 </project>
