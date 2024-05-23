@@ -4,9 +4,9 @@
 <?import javafx.scene.layout.*?>
 
 <VBox xmlns:fx="http://javafx.com/fxml" fx:controller="jesh.project.jeshproject.controller.LoginPage">
-    <TextField fx:id="usernameField" promptText="Username"/>
+    <TextField fx:id="usernameField" promptText="Username" onKeyPressed="#handleFieldInput"/>
     <Label fx:id="usernameErrorLabel"/>
-    <TextField fx:id="passwordField" promptText="Password"/>
+    <TextField fx:id="passwordField" promptText="Password" onKeyPressed="#handleFieldInput"/>
     <Label fx:id="passwordErrorLabel"/>
     <Label fx:id="errorMessage"/>
     <Button fx:id="loginButton" text="Login" onAction="#login"/>

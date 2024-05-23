@@ -5,7 +5,9 @@ import javafx.scene.control.Slider;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Text;
-
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
 import javafx.fxml.FXML;
 
 public class MainPage {
@@ -20,7 +22,8 @@ public class MainPage {
     @FXML private Button signoutButton;
     @FXML private Button profileButton;
     @FXML private Button settingsButton;
-    @FXML private Slider timelineSlider;
+
+    @FXML private Button testButton;
 
     @FXML
     private TextField timeline_name;
@@ -36,6 +39,7 @@ public class MainPage {
 
     @FXML
     private Slider start_time_slider;
+
 
     @FXML
     private Slider end_time_slider;
@@ -60,6 +64,7 @@ public class MainPage {
 
     @FXML
     private Slider brightness_slider;
+
 
 
 

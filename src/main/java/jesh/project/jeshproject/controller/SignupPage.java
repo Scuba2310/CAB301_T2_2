@@ -2,9 +2,7 @@ package jesh.project.jeshproject.controller;
 
 import jesh.project.jeshproject.HelloApplication;
 import jesh.project.jeshproject.exceptions.*;
-import jesh.project.jeshproject.model.SqliteUserDAO;
-import jesh.project.jeshproject.model.User;
-import jesh.project.jeshproject.model.mockDB;
+import jesh.project.jeshproject.model.*;
 
 import javafx.fxml.FXMLLoader;
 import javafx.scene.*;
@@ -14,27 +12,47 @@ import javafx.stage.*;
 import javafx.fxml.FXML;
 
 import java.io.IOException;
+import java.sql.Connection;
 
 //import jdk.internal.vm.annotation.Stable;
 
 public class SignupPage {
-    @FXML private Button goBackButton;
-    @FXML private Button signUpButton;
-    @FXML private TextField birthdayField;
-    @FXML private TextField usernameField;
-    @FXML private TextField passwordField;
-    @FXML private TextField firstNameField;
-    @FXML private TextField lastNameField;
-    @FXML private TextField emailField;
+    @FXML
+    private Button goBackButton;
+    @FXML
+    private Button signUpButton;
+    @FXML
+    private TextField birthdayField;
+    @FXML
+    private TextField usernameField;
+    @FXML
+    private TextField passwordField;
+    @FXML
+    private TextField firstNameField;
+    @FXML
+    private TextField lastNameField;
+    @FXML
+    private TextField emailField;
+    @FXML
+    private Label firstNameErrorLabel;
+    @FXML
+    private Label lastNameErrorLabel;
+    @FXML
+    private Label birthdayErrorLabel;
+    @FXML
+    private Label emailErrorLabel;
+    @FXML
+    private Label usernameErrorLabel;
+    @FXML
+    private Label passwordErrorLabel;
+    @FXML
+    private IUserDAO userDAO;
 
-    @FXML private Label firstNameErrorLabel;
-    @FXML private Label lastNameErrorLabel;
-    @FXML private Label birthdayErrorLabel;
-    @FXML private Label emailErrorLabel;
-    @FXML private Label usernameErrorLabel;
-    @FXML private Label passwordErrorLabel;
-
-    SqliteUserDAO userDAO = new SqliteUserDAO();
+    Connection connection = SqliteConnection.getInstance();
+    //SqliteUserDAO sqliteUserDAO = new SqliteUserDAO();
+    public SignupPage() {
+        userDAO = new SqliteUserDAO();
+    }
 
     @FXML
     private void signup() throws IOException {
@@ -58,23 +76,19 @@ public class SignupPage {
         TextField[] attributeFields = {firstNameField, lastNameField, birthdayField, emailField, usernameField, passwordField};
         Label[] attributeLabels = {firstNameErrorLabel, lastNameErrorLabel, birthdayErrorLabel, emailErrorLabel, usernameErrorLabel, passwordErrorLabel};
 
-        for (int i = 0 ; i < attributes.length ; i++) {
+        for (int i = 0; i < attributes.length; i++) {
             try {
                 if (enteredAttributes[i].isEmpty()) {
                     throw new EmptyFieldException("Please enter your " + attributes[i]);
-                }
-                else if (attributes[i].equals("birthday") & !isValidBirthday(birthday)) {
+                } else if (attributes[i].equals("birthday") & !isValidBirthday(birthday)) {
                     throw new InvalidFieldException("Please enter a valid birthday in the format DD/MM/YYYY.");
-                }
-                else if (attributes[i].equals("email")) {
+                } else if (attributes[i].equals("email")) {
                     if (!isValidEmail(email)) {
                         throw new InvalidFieldException("Please enter a valid email address.");
-                    }
-                    else if (emailExists(email)) {
+                    } else if (emailExists(email)) {
                         throw new InvalidFieldException("An account with this email already exists.");
                     }
-                }
-                else if (usernameExists(username)) {
+                } else if (usernameExists(username)) {
                     throw new InvalidFieldException("Username is already taken.");
                 }
             } catch (Exception exception) {
@@ -82,8 +96,8 @@ public class SignupPage {
                 setErrorMessageAndStyle(attributeFields[i], attributeLabels[i], exception.getMessage());
             }
         }
-
-        // end experiment
+//
+//        // end experiment
 
 //        if (firstName.isEmpty()) {
 //            setErrorMessageAndStyle(firstNameField, firstNameErrorLabel, "Please enter your first name");
@@ -114,12 +128,10 @@ public class SignupPage {
 //            setErrorMessageAndStyle(emailField, emailErrorLabel, "Please enter a valid email address.");
 //            hasError = true;
 //        }
-//
-        if (hasError) {
-            // keep user on sign up page
-        }
-        else { // means all fields are valid
-            userDAO.addUser(new User(firstName, lastName, birthday, email, username, password));
+////
+        if (!hasError) {
+            // all fields are valid
+            userDAO.addUser(new User(0, firstName, lastName, birthday, email, username, password));
             successMessage();
 
             Stage stage = (Stage) signUpButton.getScene().getWindow();
@@ -127,9 +139,7 @@ public class SignupPage {
             Scene scene = new Scene(fxmlLoader.load(), HelloApplication.WIDTH, HelloApplication.HEIGHT);
             stage.setScene(scene);
         }
-
     }
-
 
     private void resetErrorLabelsAndStyles() {
         firstNameErrorLabel.setText("");
@@ -191,19 +201,15 @@ public class SignupPage {
     }
 
     private boolean emailExists(String email) {
-        for (User user : userDAO.getAllUsers())
-            if (email.equals(user.getEmail())) {
-                return true;
-        }
-        return false;
+        // Check if a user with the provided email exists
+        User user = userDAO.getUser(email, UserIdentifierType.EMAIL);
+        return user != null;
     }
 
     private boolean usernameExists(String username) {
-        for (User user : userDAO.getAllUsers())
-            if (username.equals(user.getUsername())) {
-                return true;
-            }
-        return false;
+        // Check if a user with the provided username exists
+        User user = userDAO.getUser(username, UserIdentifierType.USERNAME);
+        return user != null;
     }
 
     private void successMessage() {
@@ -223,5 +229,5 @@ public class SignupPage {
         Scene scene = new Scene(fxmlLoader.load(), HelloApplication.WIDTH, HelloApplication.HEIGHT);
         stage.setScene(scene);
     }
-
 }
+
