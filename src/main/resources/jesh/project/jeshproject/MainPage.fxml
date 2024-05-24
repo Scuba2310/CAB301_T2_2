@@ -13,12 +13,9 @@
 <?import javafx.scene.text.*?>
 
 
-<?import javafx.scene.image.ImageView?>
-<?import javafx.scene.image.Image?>
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0"
             prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1"
-            fx:controller="jesh.project.jeshproject.controller.MainPage">
-<!--            fx:controller= "jesh.project.jeshproject.brightness.BrightnessManager">-->
+            fx:controller= "jesh.project.jeshproject.brightness.BrightnessManager">
     <VBox alignment="TOP_CENTER" layoutX="162.0" layoutY="100.0" spacing="10.0"
           style="-fx-padding: 10;">
 
@@ -39,20 +36,6 @@
             </padding>
             <TextField fx:id="sleepwell_logo" text="SleepWell" editable="false"
                        style="-fx-alignment: center;"/> <!-- cannot be changed by the usr -->
-        </HBox>
-
-        <!-- Profile Icon HBox (need new icon image) -->
-        <HBox spacing="10.0">
-            <padding>
-                <Insets top="-105.0" right="20.0"/>
-            </padding>
-            <Button fx:id="profileButton" onAction="#goToProfilePage">
-                <graphic>
-                    <ImageView fitHeight="24" fitWidth="24" preserveRatio="true">
-                        <Image url="@CSS-Styling/profileIcon.jpg"/>
-                    </ImageView>
-                </graphic>
-            </Button>
         </HBox>
 
         <!-- Save button HBox -->
@@ -154,8 +137,8 @@
 
     </VBox>
 
-<!--    <HBox>
+    <HBox>
         <Button fx:id="testButton" text="Test Brightness" onAction="#testBrightness"/>
-    </HBox>-->
+    </HBox>
 
 </AnchorPane>

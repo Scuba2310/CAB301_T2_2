@@ -69,12 +69,4 @@ public class MainPage {
     private Slider brightness_slider;
 
 
-    @FXML
-    private void goToProfilePage() throws IOException {
-        Stage stage = (Stage) profileButton.getScene().getWindow();
-        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("ProfilePage.fxml"));
-        Scene scene = new Scene(fxmlLoader.load(), HelloApplication.WIDTH, HelloApplication.HEIGHT);
-        stage.setScene(scene);
-    }
-
 }
