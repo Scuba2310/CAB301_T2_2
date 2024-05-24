@@ -28,7 +28,7 @@ public class HomePage {
 
     @FXML
     public void initialize() {
-        title.setText("JESH PROJECT NAME !! ");
+        title.setText("SleepWell");
     }
 
     //SqliteUserDAO userDAO = new SqliteUserDAO();
@@ -39,6 +39,10 @@ public class HomePage {
         Stage stage = (Stage) loginButton.getScene().getWindow();
         FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("Login.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), HelloApplication.WIDTH, HelloApplication.HEIGHT);
+
+        String stylesheet = HelloApplication.class.getResource("CSS-Styling/Login.css").toExternalForm();
+        scene.getStylesheets().add(stylesheet);
+
         stage.setScene(scene);
     }
 
@@ -49,6 +53,10 @@ public class HomePage {
         Stage stage = (Stage) signupButton.getScene().getWindow();
         FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("SignUp.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), HelloApplication.WIDTH, HelloApplication.HEIGHT);
+
+        String stylesheet = HelloApplication.class.getResource("CSS-Styling/SignUp.css").toExternalForm();
+        scene.getStylesheets().add(stylesheet);
+
         stage.setScene(scene);
     }
 

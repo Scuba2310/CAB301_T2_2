@@ -122,7 +122,7 @@
         <!-- Brightness Level title -->
         <HBox spacing="10.0">
             <padding>
-                <Insets top="-98.0" left="276"/>
+                <Insets  top="-98.0" left="276"/>
             </padding>
             <TextField fx:id="BL_title" text="Brightness Level" editable="false"
                        style="-fx-alignment: center;"/>

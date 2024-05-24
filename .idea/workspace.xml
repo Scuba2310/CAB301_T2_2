@@ -39,7 +39,20 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="GitHubPullRequestSearchHistory">{
+  &quot;history&quot;: [
+    {
+      &quot;searchQuery&quot;: &quot;git pull&quot;,
+      &quot;state&quot;: &quot;OPEN&quot;,
+      &quot;assignee&quot;: &quot;Sanda223&quot;
+    },
+    {
+      &quot;searchQuery&quot;: &quot;origin master&quot;,
+      &quot;state&quot;: &quot;OPEN&quot;,
+      &quot;assignee&quot;: &quot;Sanda223&quot;
+    }
+  ],
   &quot;lastFilter&quot;: {
+    &quot;searchQuery&quot;: &quot;origin master&quot;,
     &quot;state&quot;: &quot;OPEN&quot;,
     &quot;assignee&quot;: &quot;Sanda223&quot;
   }
@@ -81,8 +94,11 @@
     "project.structure.side.proportion": "0.53333336",
     "settings.editor.selected.configurable": "preferences.pluginManager"
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\jessm\IdeaProjects\CAB302_A1_3\src\main\resources\jesh\project\jeshproject" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\LizaJ\IdeaProjects\jesh-project\src\main\resources\jesh\project\jeshproject" />
     </key>
@@ -149,6 +165,13 @@
       </list>
     </recent_temporary>
   </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="jdk-17.0.10-corretto-17.0.10-4caba194b151-5cd809f4" />
+      </set>
+    </attachedChunks>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -202,6 +225,21 @@
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
+    <option name="RECENT_FILTERS">
+      <map>
+        <entry key="Branch">
+          <value>
+            <list>
+              <RecentGroup>
+                <option name="FILTER_VALUES">
+                  <option value="CSS-JS" />
+                </option>
+              </RecentGroup>
+            </list>
+          </value>
+        </entry>
+      </map>
+    </option>
     <option name="TAB_STATES">
       <map>
         <entry key="MAIN">
@@ -212,7 +250,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="origin/authentication" />
+                        <option value="CSS-JS" />
                       </list>
                     </value>
                   </entry>
@@ -231,7 +269,17 @@
     <MESSAGE value="working on tests" />
     <MESSAGE value="working on database" />
     <MESSAGE value="creating the javaFX controls for MainPage" />
-    <MESSAGE value="working on database." />
     <option name="LAST_COMMIT_MESSAGE" value="working on database." />
+    <MESSAGE value="css login" />
+    <MESSAGE value="css stylinf for login and home page" />
+    <MESSAGE value="Revert &quot;css login&quot;&#10;&#10;This reverts commit b0e32e49ba764c511aa0739b8c1e19fea6fd6302." />
+    <MESSAGE value="css homepage" />
+    <MESSAGE value="css link to xml and java" />
+    <MESSAGE value="css files created" />
+    <MESSAGE value="changes to homepage css" />
+    <MESSAGE value="all css links made" />
+    <MESSAGE value="signup and login css page almost done" />
+    <MESSAGE value="css mostly done" />
+    <option name="LAST_COMMIT_MESSAGE" value="css mostly done" />
   </component>
 </project>

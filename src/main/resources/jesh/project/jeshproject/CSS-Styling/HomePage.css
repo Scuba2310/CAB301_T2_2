@@ -1,0 +1,39 @@
+VBox {
+    -fx-background-color: #FDFBF6;
+    -fx-padding: 20px;
+}
+HBox {
+    -fx-alignment: CENTER;
+    -fx-padding: 30px;
+}
+#loginButton {
+    -fx-background-color: #588157;
+    -fx-padding: 15px;
+    -fx-font-size: 15.0;
+    -fx-text-fill #FDFBF6;
+    -fx-margin: 10px;
+}
+#signupButton {
+    -fx-background-color: #588157;
+    -fx-padding: 15px;
+    -fx-font-size: 15.0;
+    -fx-color: #FDFBF6;
+}
+#Button {
+    -fx-margin:20px;
+    -fx-padding:20px;
+}
+#description {
+    -fx-maxWidth: 100;
+}
+#description {
+    -fx-padding: 20px;
+    -fx-pref-width: 200px;
+    -fx-pref-height: 300px;
+}
+#button1 {
+    -fx-padding: 20px;
+}
+#button2 {
+    -fx-padding: 20px;
+}
