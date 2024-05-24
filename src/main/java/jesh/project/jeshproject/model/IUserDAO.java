@@ -4,7 +4,7 @@ import java.util.List;
 
 public interface IUserDAO {
 
-    void addUser(User user);
+    boolean addUser(User user);
 
     User getUser(int id);
 
@@ -13,4 +13,13 @@ public interface IUserDAO {
     List<User> getAllUsers();
 
     User getUserByUsernameAndPassword(String username, String password);
+
+    void updateUser(User user);
+    void deleteUser(User user);
+
+    Timeline getTimeline(String name, int userID);
+
+    boolean updateTimeline(String name, int userID, int startTime, int endTime, int brightness);
+
+    boolean addTimeline(Timeline timeline);
 }

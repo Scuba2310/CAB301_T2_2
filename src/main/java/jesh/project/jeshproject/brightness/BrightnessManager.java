@@ -7,7 +7,7 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 
 public class BrightnessManager {
-    private static void ChangeBrightness(int brightness)
+    public static void ChangeBrightness(int brightness)
             throws IOException {
         //Creates a powerShell command that will set the brightness to the requested value (0-100), after the requested delay (in milliseconds) has passed.
         String s = String.format("$brightness = %d;", brightness)
@@ -38,11 +38,4 @@ public class BrightnessManager {
         stderr.close();
     }
 
-    public void testBrightness(ActionEvent actionEvent) {
-        try{
-            ChangeBrightness(50);
-        } catch (Exception exception) {
-
-        }
-    }
 }

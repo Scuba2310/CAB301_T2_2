@@ -10,10 +10,14 @@ import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.stage.Stage;
 import javafx.fxml.*;
+import jesh.project.jeshproject.model.UserManager;
+
 import java.io.IOException;
 import java.sql.Connection;
+import jesh.project.jeshproject.controller.MainPage;
 
 public class LoginPage {
+    private UserManager userManager;
     @FXML private Button loginButton;
     @FXML private Button goBackButton;
     @FXML private TextField passwordField;
@@ -22,6 +26,11 @@ public class LoginPage {
 
     @FXML private Label usernameErrorLabel;
     @FXML private Label passwordErrorLabel;
+
+
+    public LoginPage() {
+        userManager = new UserManager(new SqliteUserDAO());
+    }
 
     private void setErrorMessageAndStyle(TextField field, Label errorLabel, String errorMessage) {
         field.setStyle("-fx-border-color: red;");
@@ -33,16 +42,14 @@ public class LoginPage {
 
         usernameField.setStyle("");
         passwordField.setStyle("");
+
+        errorMessage.setText("");
     }
 
-    Connection connection = SqliteConnection.getInstance();
-    //SqliteUserDAO sqliteUserDAO = new SqliteUserDAO();
-    SqliteUserDAO userDAO = new SqliteUserDAO();
 
     @FXML
     private void login() throws IOException {
         resetErrorLabelsAndStyles();
-        errorMessage.setText("");
 
         String username = usernameField.getText();
         String password = passwordField.getText();
@@ -55,7 +62,7 @@ public class LoginPage {
                 setErrorMessageAndStyle(passwordField, passwordErrorLabel, "Please enter your password");
             }
         } else {
-            User user = userDAO.getUserByUsernameAndPassword(username, password);
+            User user = userManager.getUserByUsernameAndPassword(username, password);
             if (user != null) {
                 goToMainPage();
             } else {
@@ -98,5 +105,7 @@ public class LoginPage {
                 break;
         }
     }
+
+
 }
 

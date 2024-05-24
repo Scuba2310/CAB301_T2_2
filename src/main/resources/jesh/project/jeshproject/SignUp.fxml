@@ -18,6 +18,7 @@
     <Label fx:id="usernameErrorLabel"/>
     <TextField fx:id="passwordField" promptText="Password" onKeyPressed="#handleFieldInput"/>
     <Label fx:id="passwordErrorLabel"/>
+    <Label fx:id="errorMessage"/>
     <Button fx:id="signUpButton" text="Sign Up" onAction="#signup"/>
     <Button fx:id="goBackButton" onAction="#goBacktoHome" text="Go Back"/>
 </VBox>

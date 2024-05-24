@@ -9,22 +9,40 @@ public class SqliteUserDAO implements IUserDAO {
 
     public SqliteUserDAO() {
         connection = SqliteConnection.getInstance();
-        createTable();
+        createUserTable();
+        createDataTable();
         // Used for testing, to be removed later
-        insertSampleData();
+//        insertSampleData();
     }
 
-    public void createTable() {
+    public void createUserTable() {
         // Create table if not exists
         try {
             String query = "CREATE TABLE IF NOT EXISTS users ("
-                    + "id INTEGER PRIMARY KEY AUTOINCREMENT,"
+                    + "userID INTEGER PRIMARY KEY AUTOINCREMENT,"
                     + "firstName VARCHAR NOT NULL,"
                     + "lastName VARCHAR NOT NULL,"
                     + "birthday VARCHAR NOT NULL,"
                     + "email VARCHAR NOT NULL,"
                     + "username VARCHAR NOT NULL,"
                     + "password VARCHAR NOT NULL"
+                    + ")";
+            Statement statement = connection.createStatement();
+            statement.execute(query);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void createDataTable() {
+        try {
+            String query = "CREATE TABLE IF NOT EXISTS timelines ("
+                    + "id INTEGER PRIMARY KEY AUTOINCREMENT,"
+                    + "name STRING NOT NULL,"
+                    + "startTime INT NOT NULL,"
+                    + "endTime INT NOT NULL,"
+                    + "brightness INT NOT NULL,"
+                    + "userID INTEGER REFERENCES users (userID)"
                     + ")";
             Statement statement = connection.createStatement();
             statement.execute(query);
@@ -51,7 +69,7 @@ public class SqliteUserDAO implements IUserDAO {
     }
 
     @Override
-    public void addUser(User user) {
+    public boolean addUser(User user) {
         try {
             String query = "INSERT INTO users (firstName, lastName, birthday, email, username, password) VALUES (?, ?, ?, ?, ?, ?)";
             PreparedStatement statement = connection.prepareStatement(query, Statement.RETURN_GENERATED_KEYS);
@@ -72,7 +90,9 @@ public class SqliteUserDAO implements IUserDAO {
             }
         } catch (SQLException ex) {
             System.err.println("Error adding user: " + ex.getMessage());
+            return false;
         }
+        return true;
     }
 
 
@@ -80,14 +100,14 @@ public class SqliteUserDAO implements IUserDAO {
     public User getUser(int id) {
         User user = null;
         try {
-            String query = "SELECT * FROM users WHERE id = ?";
+            String query = "SELECT * FROM users WHERE userID = ?";
             PreparedStatement statement = connection.prepareStatement(query);
             statement.setInt(1, id);
             ResultSet resultSet = statement.executeQuery();
 
             if (resultSet.next()) {
                 user = new User(
-                        resultSet.getInt("id"),
+                        resultSet.getInt("userID"),
                         resultSet.getString("firstName"),
                         resultSet.getString("lastName"),
                         resultSet.getString("birthday"),
@@ -118,7 +138,7 @@ public class SqliteUserDAO implements IUserDAO {
 
             if (resultSet.next()) {
                 user = new User(
-                        resultSet.getInt("id"),
+                        resultSet.getInt("userID"),
                         resultSet.getString("firstName"),
                         resultSet.getString("lastName"),
                         resultSet.getString("birthday"),
@@ -146,7 +166,7 @@ public class SqliteUserDAO implements IUserDAO {
             if (resultSet.next()) {
                 // User exists, create User object
                 user = new User(
-                        resultSet.getInt("id"),
+                        resultSet.getInt("userID"),
                         resultSet.getString("firstName"),
                         resultSet.getString("lastName"),
                         resultSet.getString("birthday"),
@@ -162,6 +182,16 @@ public class SqliteUserDAO implements IUserDAO {
     }
 
     @Override
+    public void updateUser(User user) {
+
+    }
+
+    @Override
+    public void deleteUser(User user) {
+
+    }
+
+    @Override
     public List<User> getAllUsers() {
         List<User> userList = new ArrayList<>();
         try {
@@ -171,7 +201,7 @@ public class SqliteUserDAO implements IUserDAO {
 
             while (resultSet.next()) {
                 User user = new User(
-                        resultSet.getInt("id"),
+                        resultSet.getInt("userID"),
                         resultSet.getString("firstName"),
                         resultSet.getString("lastName"),
                         resultSet.getString("birthday"),
@@ -186,6 +216,77 @@ public class SqliteUserDAO implements IUserDAO {
         }
         return userList;
     }
+
+    public boolean addTimeline(Timeline timeline) {
+        try {
+            String query = "INSERT INTO timelines (name, startTime, endTime, brightness, userID) VALUES (?, ?, ?, ?, ?)";
+            PreparedStatement statement = connection.prepareStatement(query, Statement.RETURN_GENERATED_KEYS);
+            statement.setString(1, timeline.getName());
+            statement.setInt(2, timeline.getStartTime());
+            statement.setInt(3, timeline.getEndTime());
+            statement.setInt(4, timeline.getBrightness());
+            statement.setInt(5, timeline.getUserID());
+
+            int rowsInserted = statement.executeUpdate();
+            if (rowsInserted > 0) {
+                ResultSet generatedKeys = statement.getGeneratedKeys();
+                if (generatedKeys.next()) {
+                    timeline.setId(generatedKeys.getInt(1));
+                    System.out.println("A new timeline was added successfully with ID: " + timeline.getId());
+                }
+            }
+        } catch (SQLException e) {
+            System.err.println("Error adding timeline: " + e.getMessage());
+            return false;
+        }
+        return true;
+    }
+
+    public Timeline getTimeline(String name, int userID) {
+        Timeline timeline = null;
+
+        try {
+            String query = "SELECT * FROM timelines WHERE userID = ? AND name = ?";
+            PreparedStatement statement = connection.prepareStatement(query);
+            statement.setInt(1, userID);
+            statement.setString(2, name);
+            ResultSet resultSet = statement.executeQuery();
+
+            if (resultSet.next()) {
+                timeline = new Timeline(
+                        resultSet.getInt("id"),
+                        resultSet.getString("name"),
+                        resultSet.getInt("startTime"),
+                        resultSet.getInt("endTime"),
+                        resultSet.getInt("brightness"),
+                        resultSet.getInt("userID")
+                );
+            }
+        } catch (SQLException e) {
+            System.err.println("Error fetching timeline: " + e.getMessage());
+        }
+
+        return timeline;
+    }
+
+    public boolean updateTimeline(String name, int userID, int startTime, int endTime, int brightness) {
+        try {
+            String query = "UPDATE timelines "
+                    + "SET startTime = ?, endTime = ?, brightness = ? "
+                    + "WHERE userID = ? AND name = ?";
+            PreparedStatement statement = connection.prepareStatement(query);
+            statement.setInt(1, startTime);
+            statement.setInt(2, endTime);
+            statement.setInt(3, brightness);
+            statement.setInt(4, userID);
+            statement.setString(5, name);
+        } catch (SQLException e) {
+            System.err.println("Error updating timeline: " + e.getMessage());
+            return false;
+        }
+        return true;
+    }
+
 
     public void close() {
         try {
