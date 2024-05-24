@@ -4,7 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6ce89ea9-bfcd-46dc-9a9a-000b80f106a4" name="Changes" comment="css mostly done">
+    <list default="true" id="6ce89ea9-bfcd-46dc-9a9a-000b80f106a4" name="Changes" comment="working on database.">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/jesh/project/jeshproject/controller/HomePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/jesh/project/jeshproject/controller/HomePage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/jesh/project/jeshproject/HomePage.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/jesh/project/jeshproject/HomePage.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/users.db" beforeDir="false" afterPath="$PROJECT_DIR$/users.db" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -15,14 +18,41 @@
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
-    "git-widget-placeholder": "#12 on master"
+    "Application.Application.executor": "Run",
+    "JUnit.SignUpTests.goodSignUp.executor": "Run",
+    "JUnit.Unnamed.executor": "Run",
+    "git-widget-placeholder": "master"
   }
 }]]></component>
+  <component name="RunManager" selected="Application.Application">
+    <configuration name="Application" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="jesh.project.jeshproject.HelloApplication" />
+      <module name="jesh-project" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SignUpTests" type="JUnit" factoryName="JUnit" nameIsGenerated="true">
+      <module name="jesh-project" />
+      <option name="PACKAGE_NAME" value="tests" />
+      <option name="MAIN_CLASS_NAME" value="tests.SignUpTests" />
+      <option name="METHOD_NAME" value="goodSignUp" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="Application.Application" />
+      <item itemvalue="JUnit.SignUpTests" />
+    </list>
+  </component>
   <component name="TaskManager">
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="css mostly done" />
-    <option name="LAST_COMMIT_MESSAGE" value="css mostly done" />
+    <MESSAGE value="working on database." />
+    <option name="LAST_COMMIT_MESSAGE" value="working on database." />
   </component>
 </project>
