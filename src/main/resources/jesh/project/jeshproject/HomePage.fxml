@@ -18,5 +18,4 @@
     </Text>
     <Button fx:id="loginButton" text="Login" onAction="#goToLoginPage"/>
     <Button fx:id="signupButton" text="Sign Up" onAction="#goToSignupPage"/>
-    <Button fx:id="bypassButton" text="Bypass Login" onAction="#goToMainPage"/>
 </VBox>

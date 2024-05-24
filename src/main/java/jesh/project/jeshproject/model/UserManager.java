@@ -31,16 +31,21 @@ public class UserManager {
             if (userDAO.getUser(user.getId()) == null) { return "error"; }
             else { return "added"; }
         }
-
-
     }
 
-    public void deleteUser(User user) {
+    public void deleteUser() {
+        User user = userDAO.getLoggedInUser();
         userDAO.deleteUser(user);
     }
 
-    public void updateUser(User user) {
-        userDAO.updateUser((user));
+    public boolean updateUser(User user) {
+        return userDAO.updateUser((user));
+    }
+
+    public void logIn(User user) { userDAO.logIn(user); }
+    public void logOut() { userDAO.logOut(); }
+    public User getLoggedInUser() {
+        return userDAO.getLoggedInUser();
     }
 
     public List<User> getAllUsers() {

@@ -51,13 +51,43 @@ public class MockUserDAO implements IUserDAO{
     }
 
     @Override
-    public void updateUser(User user) {
-
+    public boolean updateUser(User user) {
+        return true;
     }
 
     @Override
     public void deleteUser(User user) {
 
+    }
+
+    @Override
+    public void logIn(User user) {
+
+    }
+
+    @Override
+    public void logOut() {
+
+    }
+
+    @Override
+    public User getLoggedInUser() {
+        return null;
+    }
+
+    @Override
+    public Timeline getTimeline(String name, int userID) {
+        return null;
+    }
+
+    @Override
+    public boolean updateTimeline(Timeline timeline) {
+        return false;
+    }
+
+    @Override
+    public boolean addTimeline(Timeline timeline) {
+        return false;
     }
 
 }

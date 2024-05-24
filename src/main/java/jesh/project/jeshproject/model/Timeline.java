@@ -8,7 +8,7 @@ public class Timeline {
     private int brightness;
     private int userID;
 
-    public Timeline(int id, String name, int startTime, int endTime, int brightness, int userID) {
+    public Timeline(String name, int startTime, int endTime, int brightness, int userID) {
         this.id = id;
         this.name = name;
         this.startTime = startTime;

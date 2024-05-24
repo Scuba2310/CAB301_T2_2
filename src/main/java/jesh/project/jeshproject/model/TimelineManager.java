@@ -15,8 +15,8 @@ public class TimelineManager {
     public Timeline getTimeline(String name, int userID) {
         return userDAO.getTimeline(name, userID);
     }
-    public boolean updateTimeline(String name, int userID, int startTime, int endTime, int brightness) {
-        return userDAO.updateTimeline(name, userID, startTime, endTime, brightness);
+    public boolean updateTimeline(Timeline timeline) {
+        return userDAO.updateTimeline(timeline);
     }
 
 }

@@ -26,9 +26,8 @@
             <padding>
                 <Insets top="-90.0" right="450.0" left="-155.0"/>
             </padding>
-            <TextField fx:id="timeline_name"/> <!-- timeline name can be changed by the user -->
+            <TextField fx:id="timeline_name" promptText="Name"/> <!-- timeline name can be changed by the user -->
         </HBox>
-
 
         <!-- "SleepWell" HBox -->
         <HBox spacing="10.0">
@@ -43,10 +42,12 @@
         <!-- Save button HBox -->
         <HBox spacing="10.0" AnchorPane.rightAnchor="0.0">
             <padding>
-                <Insets top="-85.0" left="408.0"/>
+                <Insets top="-85.0" left="357.0"/>
             </padding>
             <Button fx:id="save_button"
+                    onAction="#saveTimeline"
                     text="Save"/> <!-- save button not sure what its for just copyiing the mfd -->
+            <ChoiceBox fx:id="load_box" onAction="#loadTimeline"/>
         </HBox>
 
 
@@ -141,6 +142,7 @@
 
     <HBox>
         <Button fx:id="testButton" text="Test Brightness" onAction="#testBrightness"/>
+        <Button fx:id="profileButton" onAction="#goToProfile" text="Profile"/>
     </HBox>
 
 </AnchorPane>

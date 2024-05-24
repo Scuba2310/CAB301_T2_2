@@ -25,7 +25,8 @@ public class SqliteUserDAO implements IUserDAO {
                     + "birthday VARCHAR NOT NULL,"
                     + "email VARCHAR NOT NULL,"
                     + "username VARCHAR NOT NULL,"
-                    + "password VARCHAR NOT NULL"
+                    + "password VARCHAR NOT NULL,"
+                    + "loggedIn BIT DEFAULT 0"
                     + ")";
             Statement statement = connection.createStatement();
             statement.execute(query);
@@ -182,13 +183,92 @@ public class SqliteUserDAO implements IUserDAO {
     }
 
     @Override
-    public void updateUser(User user) {
+    public boolean updateUser(User user) {
+        try {
+            String query = "UPDATE users "
+            + "SET firstName = ?, lastName = ?, birthday = ?, email = ?, username = ?, password = ? "
+            + "WHERE userID = ?";
+            PreparedStatement statement = connection.prepareStatement(query);
+            statement.setString(1, user.getFirstName());
+            statement.setString(2, user.getLastName());
+            statement.setString(3, user.getBirthday());
+            statement.setString(4, user.getEmail());
+            statement.setString(5, user.getUsername());
+            statement.setString(6, user.getPassword());
+            statement.setInt(7, user.getId());
+            statement.executeUpdate();
 
+        } catch (SQLException ex) {
+            System.err.println("Error updating user: " + ex.getMessage());
+            return false;
+        }
+        return true;
     }
 
     @Override
     public void deleteUser(User user) {
+        try {
+            String query = "DELETE FROM users "
+                    + "WHERE userID = ?";
+            PreparedStatement statement = connection.prepareStatement(query);
+            statement.setInt(1, user.getId());
+            statement.executeUpdate();
 
+        } catch (SQLException ex) {
+            System.err.println("Error deleting user: " + ex.getMessage());
+        }
+    }
+
+    @Override
+    public void logIn(User user) {
+        try {
+            String query = "UPDATE users "
+                    + "SET loggedIn = 1 "
+                    + "WHERE userID = ?";
+            PreparedStatement statement = connection.prepareStatement(query);
+            statement.setInt(1, user.getId());
+            statement.executeUpdate();
+        } catch (SQLException e) {
+            System.err.println("Error updating logged in status: " + e.getMessage());
+        }
+    }
+
+    @Override
+    public User getLoggedInUser() {
+        User user = null;
+        try {
+            String query = "SELECT * FROM users WHERE loggedIn = 1";
+            PreparedStatement statement = connection.prepareStatement(query);
+            ResultSet resultSet = statement.executeQuery();
+
+            if (resultSet.next()) {
+                // User exists, create User object
+                user = new User(
+                        resultSet.getInt("userID"),
+                        resultSet.getString("firstName"),
+                        resultSet.getString("lastName"),
+                        resultSet.getString("birthday"),
+                        resultSet.getString("email"),
+                        resultSet.getString("username"),
+                        resultSet.getString("password")
+                );
+            }
+        } catch (SQLException e) {
+            System.err.println("Error could not find logged in user: " + e.getMessage());
+        }
+        return user;
+    }
+
+    @Override
+    public void logOut() {
+        try {
+            String query = "UPDATE users "
+                    + "SET loggedIn = 0";
+            PreparedStatement statement = connection.prepareStatement(query);
+            statement.executeUpdate();
+        } catch (SQLException e) {
+            System.err.println("Error updating logged in status: " + e.getMessage());
+        }
     }
 
     @Override
@@ -254,7 +334,6 @@ public class SqliteUserDAO implements IUserDAO {
 
             if (resultSet.next()) {
                 timeline = new Timeline(
-                        resultSet.getInt("id"),
                         resultSet.getString("name"),
                         resultSet.getInt("startTime"),
                         resultSet.getInt("endTime"),
@@ -269,17 +348,18 @@ public class SqliteUserDAO implements IUserDAO {
         return timeline;
     }
 
-    public boolean updateTimeline(String name, int userID, int startTime, int endTime, int brightness) {
+    public boolean updateTimeline(Timeline timeline) {
         try {
             String query = "UPDATE timelines "
                     + "SET startTime = ?, endTime = ?, brightness = ? "
                     + "WHERE userID = ? AND name = ?";
             PreparedStatement statement = connection.prepareStatement(query);
-            statement.setInt(1, startTime);
-            statement.setInt(2, endTime);
-            statement.setInt(3, brightness);
-            statement.setInt(4, userID);
-            statement.setString(5, name);
+            statement.setInt(1, timeline.getStartTime());
+            statement.setInt(2, timeline.getEndTime());
+            statement.setInt(3, timeline.getBrightness());
+            statement.setInt(4, timeline.getUserID());
+            statement.setString(5, timeline.getName());
+            statement.executeUpdate();
         } catch (SQLException e) {
             System.err.println("Error updating timeline: " + e.getMessage());
             return false;

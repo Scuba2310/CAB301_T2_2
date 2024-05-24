@@ -1,5 +1,6 @@
 package jesh.project.jeshproject.controller;
 
+import javafx.scene.Parent;
 import javafx.scene.input.KeyEvent;
 import jesh.project.jeshproject.HelloApplication;
 import jesh.project.jeshproject.model.SqliteConnection;
@@ -64,6 +65,7 @@ public class LoginPage {
         } else {
             User user = userManager.getUserByUsernameAndPassword(username, password);
             if (user != null) {
+                userManager.logIn(user);
                 goToMainPage();
             } else {
                 errorMessage.setText("Username or password is incorrect.");

@@ -14,12 +14,15 @@ public interface IUserDAO {
 
     User getUserByUsernameAndPassword(String username, String password);
 
-    void updateUser(User user);
+    boolean updateUser(User user);
     void deleteUser(User user);
+    void logIn(User user);
+    void logOut();
+    User getLoggedInUser();
 
     Timeline getTimeline(String name, int userID);
 
-    boolean updateTimeline(String name, int userID, int startTime, int endTime, int brightness);
+    boolean updateTimeline(Timeline timeline);
 
     boolean addTimeline(Timeline timeline);
 }
