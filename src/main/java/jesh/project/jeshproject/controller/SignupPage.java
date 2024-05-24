@@ -20,6 +20,7 @@ import java.sql.Connection;
 public class SignupPage {
     @FXML private Text title;
     @FXML private Button goBackButton;
+    @FXML private Button signUpButton;
     @FXML private TextField birthdayField;
     @FXML private TextField usernameField;
     @FXML private TextField passwordField;
