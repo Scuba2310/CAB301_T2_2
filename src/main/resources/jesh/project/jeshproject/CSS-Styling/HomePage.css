@@ -10,7 +10,7 @@ HBox {
     -fx-background-color: #588157;
     -fx-padding: 15px;
     -fx-font-size: 15.0;
-    -fx-text-fill #FDFBF6;
+    -fx-text-fill: #FDFBF6;
     -fx-margin: 10px;
 }
 #signupButton {

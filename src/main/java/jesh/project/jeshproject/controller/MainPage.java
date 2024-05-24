@@ -1,29 +1,33 @@
 package jesh.project.jeshproject.controller;
 
-import javafx.scene.control.Button;
-import javafx.scene.control.Slider;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Text;
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
-import javafx.fxml.FXML;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.stage.Stage;
+import javafx.event.ActionEvent;
+import java.io.*;
+import javafx.fxml.*;
+import jesh.project.jeshproject.HelloApplication;
 
 public class MainPage {
     @FXML private Button nightModeButton;
+    @FXML private Button profileButton;
+    @FXML private Button signoutButton;
+    @FXML private Button settingsButton;
+    @FXML private Button saveButton;
+    @FXML private Button testButton;
+
     @FXML private Slider brightnessSlider;
+
     @FXML private Text brightnessLevelTitle;
     @FXML private Text endTimeText;
     @FXML private Text startTimeText;
     @FXML private Text timelineName;
-    @FXML private Button saveButton;
-    @FXML private VBox infoBox;
-    @FXML private Button signoutButton;
-    @FXML private Button profileButton;
-    @FXML private Button settingsButton;
 
-    @FXML private Button testButton;
+    @FXML private VBox infoBox;
+
 
     @FXML
     private TextField timeline_name;
@@ -32,17 +36,7 @@ public class MainPage {
     private TextField sleepwell_logo;
 
     @FXML
-    private Button save_button;
-
-    @FXML
-    private Button add_time_button;
-
-    @FXML
-    private Slider start_time_slider;
-
-
-    @FXML
-    private Slider end_time_slider;
+    private TextField BL_title;
 
     @FXML
     private TextField NM_start_title;
@@ -57,16 +51,30 @@ public class MainPage {
     private TextField NM_end;
 
     @FXML
+    private Button save_button;
+
+    @FXML
+    private Button add_time_button;
+
+    @FXML
     private Button NM_button;
 
     @FXML
-    private TextField BL_title;
+    private Slider start_time_slider;
+
+    @FXML
+    private Slider end_time_slider;
 
     @FXML
     private Slider brightness_slider;
 
 
-
-
+    @FXML
+    private void goToProfilePage() throws IOException {
+        Stage stage = (Stage) profileButton.getScene().getWindow();
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("ProfilePage.fxml"));
+        Scene scene = new Scene(fxmlLoader.load(), HelloApplication.WIDTH, HelloApplication.HEIGHT);
+        stage.setScene(scene);
+    }
 
 }
