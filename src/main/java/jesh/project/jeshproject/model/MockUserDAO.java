@@ -90,4 +90,9 @@ public class MockUserDAO implements IUserDAO{
         return false;
     }
 
+    @Override
+    public ArrayList<String> getTimelineNames() {
+        return null;
+    }
+
 }

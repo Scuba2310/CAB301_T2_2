@@ -23,12 +23,12 @@ public class ProfilePage {
     @FXML private Button goBackButton;
     @FXML private Button logOutButton;
 
-    @FXML private TextField firstNameField;// = new TextField();
-    @FXML private TextField lastNameField = new TextField();
-    @FXML private TextField birthdayField = new TextField();
-    @FXML private TextField emailField = new TextField();
-    @FXML private TextField userNameField = new TextField();
-    @FXML private TextField passwordField = new TextField();
+    @FXML private TextField firstNameField;
+    @FXML private TextField lastNameField;
+    @FXML private TextField birthdayField;
+    @FXML private TextField emailField;
+    @FXML private TextField userNameField;
+    @FXML private TextField passwordField;
 
     @FXML private Button saveButton;
     @FXML private Button deleteButton;

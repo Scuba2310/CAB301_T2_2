@@ -1,6 +1,7 @@
 package jesh.project.jeshproject.model;
 
 import java.sql.Time;
+import java.util.ArrayList;
 
 public class TimelineManager {
     private IUserDAO userDAO;
@@ -17,6 +18,9 @@ public class TimelineManager {
     }
     public boolean updateTimeline(Timeline timeline) {
         return userDAO.updateTimeline(timeline);
+    }
+    public ArrayList<String> getUserTimelines() {
+        return userDAO.getTimelineNames();
     }
 
 }

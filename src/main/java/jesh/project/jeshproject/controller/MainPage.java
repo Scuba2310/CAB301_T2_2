@@ -1,9 +1,11 @@
 package jesh.project.jeshproject.controller;
 
+import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.Slider;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.VBox;
@@ -11,6 +13,8 @@ import javafx.scene.text.Text;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.util.ArrayList;
+
 import javafx.fxml.FXML;
 import javafx.stage.Stage;
 import jesh.project.jeshproject.HelloApplication;
@@ -58,6 +62,7 @@ public class MainPage {
     @FXML
     private Slider brightness_slider;
 
+    @FXML private ChoiceBox timelineChoiceBox;
 
 
     private TimelineManager timelineManager;
@@ -79,6 +84,7 @@ public class MainPage {
         }
     }
 
+    @FXML
     public void saveTimeline(ActionEvent actionEvent) {
         String name = timeline_name.getText();
         int startTime = (int) start_time_slider.getValue();
@@ -93,10 +99,26 @@ public class MainPage {
         else {
             timelineManager.addTimeline(newTimeline);
         }
+        updateTimelineChoiceBox();
+    }
+    @FXML
+    public void updateTimelineChoiceBox() {
+        // get all rows matching userID
+        // make array with row names
+        // set choices
+        ArrayList<String> arr = timelineManager.getUserTimelines();
+        timelineChoiceBox.setItems(FXCollections.observableArrayList(arr));
     }
     @FXML
     private void loadTimeline() {
-
+        String selectedValue = (String) timelineChoiceBox.getValue();
+        if (selectedValue != null) {
+            Timeline timeline = timelineManager.getTimeline(selectedValue, userManager.getLoggedInUser().getId());
+            start_time_slider.setValue(timeline.getStartTime());
+            end_time_slider.setValue(timeline.getEndTime());
+            timeline_name.setText(timeline.getName());
+            brightness_slider.setValue(timeline.getBrightness());
+        }
     }
 
     @FXML

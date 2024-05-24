@@ -24,7 +24,7 @@
         <HBox spacing="10.0">
             <padding>
             </padding>
-            <Button onAction="#viewDetails">View Details</Button>
+            <Button onAction="#viewDetails" >View Details</Button>
             <Button onAction="#hideDetails">Hide Details</Button>
         </HBox>
 

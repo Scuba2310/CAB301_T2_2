@@ -1,5 +1,6 @@
 package jesh.project.jeshproject.model;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public interface IUserDAO {
@@ -25,4 +26,6 @@ public interface IUserDAO {
     boolean updateTimeline(Timeline timeline);
 
     boolean addTimeline(Timeline timeline);
+
+    ArrayList<String> getTimelineNames();
 }

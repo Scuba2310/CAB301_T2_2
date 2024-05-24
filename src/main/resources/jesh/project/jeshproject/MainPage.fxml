@@ -47,7 +47,7 @@
             <Button fx:id="save_button"
                     onAction="#saveTimeline"
                     text="Save"/> <!-- save button not sure what its for just copyiing the mfd -->
-            <ChoiceBox fx:id="load_box" onAction="#loadTimeline"/>
+            <ChoiceBox fx:id="timelineChoiceBox" onAction="#loadTimeline" onShowing="#updateTimelineChoiceBox"/>
         </HBox>
 
 

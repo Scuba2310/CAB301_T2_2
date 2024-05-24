@@ -217,6 +217,16 @@ public class SqliteUserDAO implements IUserDAO {
         } catch (SQLException ex) {
             System.err.println("Error deleting user: " + ex.getMessage());
         }
+        try {
+            String query = "DELETE FROM timelines "
+                    + "WHERE userID = ?";
+            PreparedStatement statement = connection.prepareStatement(query);
+            statement.setInt(1, user.getId());
+            statement.executeUpdate();
+
+        } catch (SQLException ex) {
+            System.err.println("Error deleting user timelines: " + ex.getMessage());
+        }
     }
 
     @Override
@@ -346,6 +356,26 @@ public class SqliteUserDAO implements IUserDAO {
         }
 
         return timeline;
+    }
+
+    public ArrayList<String> getTimelineNames() {
+        ArrayList<String> names = new ArrayList<>();
+
+        try {
+            String query = "SELECT name FROM timelines WHERE userID = ?";
+            PreparedStatement statement = connection.prepareStatement(query);
+            statement.setInt(1, getLoggedInUser().getId());
+            ResultSet resultSet = statement.executeQuery();
+
+            while (resultSet.next()) {
+                String name = resultSet.getString("name");
+                names.add(name);
+            }
+        } catch (SQLException e) {
+            System.err.println("Error fetching timelines: " + e.getMessage());
+        }
+
+        return names;
     }
 
     public boolean updateTimeline(Timeline timeline) {
