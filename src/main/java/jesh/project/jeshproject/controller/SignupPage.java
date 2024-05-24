@@ -2,8 +2,7 @@ package jesh.project.jeshproject.controller;
 
 import jesh.project.jeshproject.HelloApplication;
 import jesh.project.jeshproject.exceptions.*;
-import jesh.project.jeshproject.model.User;
-import jesh.project.jeshproject.model.mockDB;
+import jesh.project.jeshproject.model.*;
 
 import javafx.fxml.FXMLLoader;
 import javafx.scene.*;
@@ -14,12 +13,14 @@ import javafx.fxml.FXML;
 import javafx.scene.text.*;
 
 import java.io.IOException;
+import java.sql.Connection;
 
 //import jdk.internal.vm.annotation.Stable;
 
 public class SignupPage {
     @FXML private Text title;
     @FXML private Button goBackButton;
+    @FXML private Button signUpButton;
     @FXML private TextField birthdayField;
     @FXML private TextField usernameField;
     @FXML private TextField passwordField;
@@ -27,22 +28,26 @@ public class SignupPage {
     @FXML private TextField lastNameField;
     @FXML private TextField emailField;
     @FXML private Button loginLink;
-
     @FXML private Label firstNameErrorLabel;
     @FXML private Label lastNameErrorLabel;
     @FXML private Label birthdayErrorLabel;
     @FXML private Label emailErrorLabel;
     @FXML private Label usernameErrorLabel;
     @FXML private Label passwordErrorLabel;
+    @FXML private IUserDAO userDAO;
 
-    mockDB userDAO = new mockDB();
+    Connection connection = SqliteConnection.getInstance();
+    //SqliteUserDAO sqliteUserDAO = new SqliteUserDAO();
+    public SignupPage() {
+        userDAO = new SqliteUserDAO();
+    }
 
     @FXML
     public void initialize() {
         title.setText("Sign Up");
     }
     @FXML
-    private void signup() {
+    private void signup() throws IOException {
         // Reset error labels and field styles
         resetErrorLabelsAndStyles();
 
@@ -63,23 +68,19 @@ public class SignupPage {
         TextField[] attributeFields = {firstNameField, lastNameField, birthdayField, emailField, usernameField, passwordField};
         Label[] attributeLabels = {firstNameErrorLabel, lastNameErrorLabel, birthdayErrorLabel, emailErrorLabel, usernameErrorLabel, passwordErrorLabel};
 
-        for (int i = 0 ; i < attributes.length ; i++) {
+        for (int i = 0; i < attributes.length; i++) {
             try {
                 if (enteredAttributes[i].isEmpty()) {
                     throw new EmptyFieldException("Please enter your " + attributes[i]);
-                }
-                else if (attributes[i].equals("birthday") & !isValidBirthday(birthday)) {
+                } else if (attributes[i].equals("birthday") & !isValidBirthday(birthday)) {
                     throw new InvalidFieldException("Please enter a valid birthday in the format DD/MM/YYYY.");
-                }
-                else if (attributes[i].equals("email")) {
+                } else if (attributes[i].equals("email")) {
                     if (!isValidEmail(email)) {
                         throw new InvalidFieldException("Please enter a valid email address.");
-                    }
-                    else if (emailExists(email)) {
+                    } else if (emailExists(email)) {
                         throw new InvalidFieldException("An account with this email already exists.");
                     }
-                }
-                else if (usernameExists(username)) {
+                } else if (usernameExists(username)) {
                     throw new InvalidFieldException("Username is already taken.");
                 }
             } catch (Exception exception) {
@@ -87,8 +88,8 @@ public class SignupPage {
                 setErrorMessageAndStyle(attributeFields[i], attributeLabels[i], exception.getMessage());
             }
         }
-
-        // end experiment
+//
+//        // end experiment
 
 //        if (firstName.isEmpty()) {
 //            setErrorMessageAndStyle(firstNameField, firstNameErrorLabel, "Please enter your first name");
@@ -119,20 +120,17 @@ public class SignupPage {
 //            setErrorMessageAndStyle(emailField, emailErrorLabel, "Please enter a valid email address.");
 //            hasError = true;
 //        }
-//
-        if (hasError) {
-            // keep user on sign up page
-        }
-        else { // means all fields are valid
-            userDAO.addUser(new User(firstName, lastName, birthday, email, username, password));
+////
+        if (!hasError) {
+            // all fields are valid
+            userDAO.addUser(new User(0, firstName, lastName, birthday, email, username, password));
             successMessage();
-            try {
-                goBacktoHome();
-            } catch (IOException exception) {
-                // ?????
-            }
-        }
 
+            Stage stage = (Stage) signUpButton.getScene().getWindow();
+            FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("HomePage.fxml"));
+            Scene scene = new Scene(fxmlLoader.load(), HelloApplication.WIDTH, HelloApplication.HEIGHT);
+            stage.setScene(scene);
+        }
     }
 
     private void resetErrorLabelsAndStyles() {
@@ -161,6 +159,7 @@ public class SignupPage {
         // Reset style and error message when the user starts typing
         TextField field = (TextField) event.getSource();
         field.setStyle("");
+        // possibly change switch statement to field.setText(""); ??
         switch (field.getId()) {
             case "firstNameField":
                 firstNameErrorLabel.setText("");
@@ -194,19 +193,15 @@ public class SignupPage {
     }
 
     private boolean emailExists(String email) {
-        for (User user : userDAO.users) // update for real db
-            if (email.equals(user.getEmail())) {
-                return true;
-        }
-        return false;
+        // Check if a user with the provided email exists
+        User user = userDAO.getUser(email, UserIdentifierType.EMAIL);
+        return user != null;
     }
 
     private boolean usernameExists(String username) {
-        for (User user : userDAO.users)
-            if (username.equals(user.getUsername())) { // update for real db
-                return true;
-            }
-        return false;
+        // Check if a user with the provided username exists
+        User user = userDAO.getUser(username, UserIdentifierType.USERNAME);
+        return user != null;
     }
 
     private void successMessage() {
@@ -216,7 +211,6 @@ public class SignupPage {
         alert.setContentText("New user successfully created");
         alert.getDialogPane().getButtonTypes().add(ButtonType.OK);
         alert.show();
-        //alert.showAndWait();
     }
 
     @FXML
@@ -242,5 +236,5 @@ public class SignupPage {
 
         stage.setScene(scene);
     }
-
 }
+

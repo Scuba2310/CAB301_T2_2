@@ -7,7 +7,11 @@ import javafx.scene.*;
 import javafx.scene.control.*;
 import javafx.scene.text.*;
 import javafx.stage.*;
+import jesh.project.jeshproject.model.SqliteConnection;
+import jesh.project.jeshproject.model.SqliteUserDAO;
+
 import java.io.IOException;
+import java.sql.Connection;
 
 public class HomePage {
     @FXML
@@ -17,13 +21,17 @@ public class HomePage {
     @FXML
     private Button signupButton;
 
+    public HomePage(){
+//        Connection connection = SqliteConnection.getInstance();
+//        SqliteUserDAO userDAO = new SqliteUserDAO();
+    }
+
     @FXML
     public void initialize() {
         title.setText("SleepWell");
     }
 
-    //public mockDB userDAO = new mockDB();
-
+    //SqliteUserDAO userDAO = new SqliteUserDAO();
     // Code to switch to login page
     // Load LoginPage.fxml and switch scene
     @FXML
@@ -49,6 +57,16 @@ public class HomePage {
         String stylesheet = HelloApplication.class.getResource("CSS-Styling/SignUp.css").toExternalForm();
         scene.getStylesheets().add(stylesheet);
 
+        stage.setScene(scene);
+    }
+
+    // DELETE WHEN TESTING IS DONE ** as well as fxml button
+    @FXML Button bypassButton;
+    @FXML
+    private void goToMainPage() throws IOException {
+        Stage stage = (Stage) bypassButton.getScene().getWindow();
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("MainPage.fxml"));
+        Scene scene = new Scene(fxmlLoader.load(), HelloApplication.WIDTH, HelloApplication.HEIGHT);
         stage.setScene(scene);
     }
 }

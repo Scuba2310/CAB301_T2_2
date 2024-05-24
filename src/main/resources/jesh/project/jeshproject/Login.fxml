@@ -15,10 +15,12 @@
     </Text>
         <VBox fx:id="LoginFields">
             <VBox fx:id="Field1">
-                <TextField fx:id="usernameField" promptText="Username"/>
+                <TextField fx:id="usernameField" promptText="Username" onKeyPressed="#handleFieldInput"/>
+                <Label fx:id="usernameErrorLabel"/>
             </VBox>
             <VBox fx:id="Field2">
-                <TextField fx:id="passwordField" promptText="Password"/>
+                <TextField fx:id="passwordField" promptText="Password" onKeyPressed="#handleFieldInput"/>
+                <Label fx:id="passwordErrorLabel"/>
             </VBox>
         </VBox>
     <Label fx:id="errorMessage"/>

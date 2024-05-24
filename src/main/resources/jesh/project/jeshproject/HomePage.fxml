@@ -19,6 +19,7 @@
             <Font name="Arial Black" size="36.0" />
         </font>
     </Text>
+
     <VBox fx:id="BoxDesc">
         <Text fx:id="description">
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
@@ -34,6 +35,9 @@
         </VBox>
         <VBox fx:id="button2">
         <Button fx:id="signupButton" text="Sign Up" onAction="#goToSignupPage"/>
+        </VBox>
+        <VBox fx:id="button3">
+        <Button fx:id="bypassButton" text="Bypass Login" onAction="#goToMainPage"/>
         </VBox>
     </HBox>
 </VBox>
