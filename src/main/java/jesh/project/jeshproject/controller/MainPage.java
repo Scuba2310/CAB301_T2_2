@@ -38,11 +38,11 @@ public class MainPage {
     private Button add_time_button;
 
     @FXML
-    private Slider start_time_slider;
+    private Button start_time_slider;
 
 
     @FXML
-    private Slider end_time_slider;
+    private Button end_time_slider;
 
     @FXML
     private TextField NM_start_title;

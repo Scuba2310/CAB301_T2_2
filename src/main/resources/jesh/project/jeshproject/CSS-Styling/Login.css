@@ -41,9 +41,11 @@ Text {
 #loginButton {
     -fx-background-color: #588157;
     -fx-padding: 12px;
+    -fx-text-fill: #FDFBF6;
 }
 #goBackButton {
     -fx-background-color: #588157;
     -fx-padding: 12px;
     -fx-color: #FDFBF6;
+    -fx-text-fill: #FDFBF6;
 }

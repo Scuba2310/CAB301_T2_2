@@ -5,6 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6ce89ea9-bfcd-46dc-9a9a-000b80f106a4" name="Changes" comment="css mostly done">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/jesh/project/jeshproject/controller/MainPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/jesh/project/jeshproject/controller/MainPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/jesh/project/jeshproject/CSS-Styling/HomePage.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/jesh/project/jeshproject/CSS-Styling/HomePage.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/jesh/project/jeshproject/CSS-Styling/Login.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/jesh/project/jeshproject/CSS-Styling/Login.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/jesh/project/jeshproject/CSS-Styling/SignUp.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/jesh/project/jeshproject/CSS-Styling/SignUp.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/jesh/project/jeshproject/HomePage.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/jesh/project/jeshproject/HomePage.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/jesh/project/jeshproject/MainPage.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/jesh/project/jeshproject/MainPage.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/users.db" beforeDir="false" afterPath="$PROJECT_DIR$/users.db" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -12,10 +19,19 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="GithubPullRequestsUISettings">
+    <option name="recentNewPullRequestHead">
+      <RepoCoordinatesHolder>
+        <option name="owner" value="Scuba2310" />
+        <option name="repository" value="CAB302_A1" />
+      </RepoCoordinatesHolder>
+    </option>
+  </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
-    "git-widget-placeholder": "#12 on master"
+    "Application.HelloApplication.executor": "Run",
+    "git-widget-placeholder": "CSS-JS"
   }
 }]]></component>
   <component name="TaskManager">
