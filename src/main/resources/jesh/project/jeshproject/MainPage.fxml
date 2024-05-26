@@ -66,23 +66,23 @@
                 <Insets top="-28.0" left="-95"/>
             </padding>
             <HBox spacing="10.0" AnchorPane.rightAnchor="0.0" maxWidth="90">
-                <TextField fx:id="timeslot_1" text="Timeslot 1"/>
+                <Button fx:id="timeslot_1" text="Timeslot 1"/>
             </HBox>
 
             <HBox spacing="10.0" AnchorPane.rightAnchor="0.0" maxWidth="90">
-                <TextField fx:id="timeslot_2" text=" Timeslot 2"/>
+                <Button fx:id="timeslot_2" text=" Timeslot 2"/>
             </HBox>
 
             <HBox spacing="10.0" AnchorPane.rightAnchor="0.0" maxWidth="90">
-                <TextField fx:id="timeslot_3" text=" Timeslot 3"/>
+                <Button fx:id="timeslot_3" text=" Timeslot 3"/>
             </HBox>
 
             <HBox spacing="10.0" AnchorPane.rightAnchor="0.0" maxWidth="90">
-                <TextField fx:id="timeslot_4" text=" Timeslot 4"/>
+                <Button fx:id="timeslot_4" text=" Timeslot 4"/>
             </HBox>
 
             <HBox spacing="10.0" AnchorPane.rightAnchor="0.0" maxWidth="90">
-                <TextField fx:id="timeslot_5" text=" Timeslot 5"/>
+                <Button fx:id="timeslot_5" text=" Timeslot 5"/>
             </HBox>
 
         </HBox>
