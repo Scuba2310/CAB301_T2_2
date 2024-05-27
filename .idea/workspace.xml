@@ -4,52 +4,227 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6ce89ea9-bfcd-46dc-9a9a-000b80f106a4" name="Changes" comment="main page commit">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="f6207e56-6f06-45c5-8a54-f7bb59653c78" name="Changes" comment="css mostly done" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="GithubPullRequestsUISettings">
-    <option name="recentNewPullRequestHead">
-      <RepoCoordinatesHolder>
-        <option name="owner" value="Scuba2310" />
-        <option name="repository" value="CAB302_A1" />
-      </RepoCoordinatesHolder>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JavaFXApplication" />
+        <option value="Interface" />
+        <option value="FxmlFile" />
+        <option value="Class" />
+        <option value="Enum" />
+      </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;Sanda223&quot;
+  }
+  }</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/Scuba2310/CAB302_A1.git&quot;,
+    &quot;accountId&quot;: &quot;9d98e094-86dc-4277-8dcc-7547a85b8295&quot;
+  }
+}</component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 4
+}</component>
+  <component name="ProjectId" id="2dOLJXh3il3isiHMJdT1hHJFvrE" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
     &quot;Application.HelloApplication.executor&quot;: &quot;Run&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;CSS-JS&quot;
+    &quot;Downloaded.Files.Path.Enabled&quot;: &quot;false&quot;,
+    &quot;JUnit.AuthenticateTests.goodSignUp.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.tests in jesh-project.executor&quot;: &quot;Run&quot;,
+    &quot;Repository.Attach.Annotations&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.JavaDocs&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.Sources&quot;: &quot;false&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Libraries&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.53333336&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
   }
 }</component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\LizaJ\IdeaProjects\jesh-project\src\main\resources\jesh\project\jeshproject" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Application.HelloApplication">
+    <configuration name="HelloApplication" type="Application" factoryName="Application" nameIsGenerated="true">
+      <option name="ALTERNATIVE_JRE_PATH" value="corretto-17" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
+      <option name="MAIN_CLASS_NAME" value="jesh.project.jeshproject.HelloApplication" />
+      <module name="jesh-project" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="jesh.project.jeshproject.exceptions.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="All in jesh-project" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="jesh-project" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="TEST_OBJECT" value="package" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="AuthenticateTests.goodSignUp" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="jesh-project" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="jesh.project.jeshproject.tests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="jesh.project.jeshproject.tests" />
+      <option name="MAIN_CLASS_NAME" value="jesh.project.jeshproject.tests.AuthenticateTests" />
+      <option name="METHOD_NAME" value="goodSignUp" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="tests in jesh-project" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="jesh-project" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="tests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="tests" />
+      <option name="TEST_OBJECT" value="package" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.tests in jesh-project" />
+        <item itemvalue="JUnit.AuthenticateTests.goodSignUp" />
+        <item itemvalue="JUnit.All in jesh-project" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
-    <task id="LOCAL-00001" summary="main page commit">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="f6207e56-6f06-45c5-8a54-f7bb59653c78" name="Changes" comment="working on database." />
+      <created>1709874108984</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1709874108984</updated>
+    </task>
+    <task id="LOCAL-00001" summary="correcting errors">
       <option name="closed" value="true" />
-      <created>1716790465243</created>
+      <created>1714445724919</created>
       <option name="number" value="00001" />
       <option name="presentableId" value="LOCAL-00001" />
       <option name="project" value="LOCAL" />
-      <updated>1716790465243</updated>
+      <updated>1714445724919</updated>
     </task>
-    <task id="LOCAL-00002" summary="main page commit">
+    <task id="LOCAL-00002" summary="creating the javaFX controls for MainPage">
       <option name="closed" value="true" />
-      <created>1716790487853</created>
+      <created>1714450892899</created>
       <option name="number" value="00002" />
       <option name="presentableId" value="LOCAL-00002" />
       <option name="project" value="LOCAL" />
-      <updated>1716790487853</updated>
+      <updated>1714450892899</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="working on authentication">
+      <option name="closed" value="true" />
+      <created>1714704839481</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1714704839481</updated>
+    </task>
+    <task id="LOCAL-00004" summary="working on tests">
+      <option name="closed" value="true" />
+      <created>1714710643423</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1714710643423</updated>
+    </task>
+    <task id="LOCAL-00005" summary="working on database">
+      <option name="closed" value="true" />
+      <created>1714714032694</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1714714032694</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="origin/authentication" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="VcsManagerConfiguration">
+    <MESSAGE value="error messages for input fields on signup page" />
+    <MESSAGE value="correcting errors" />
+    <MESSAGE value="working on authentication" />
+    <MESSAGE value="working on tests" />
+    <MESSAGE value="working on database" />
+    <MESSAGE value="creating the javaFX controls for MainPage" />
+    <MESSAGE value="working on database." />
+    <MESSAGE value="css push" />
     <MESSAGE value="css mostly done" />
-    <MESSAGE value="main page commit" />
-    <option name="LAST_COMMIT_MESSAGE" value="main page commit" />
+    <option name="LAST_COMMIT_MESSAGE" value="css mostly done" />
   </component>
 </project>

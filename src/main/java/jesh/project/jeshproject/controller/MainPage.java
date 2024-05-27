@@ -14,8 +14,11 @@ public class MainPage {
     @FXML private Button nightModeButton;
     @FXML private Slider brightnessSlider;
     @FXML private Text brightnessLevelTitle;
-    @FXML private Slider endTimeSlider;
-    @FXML private Slider startTimeSlider;
+    @FXML private Button timeslot_1;
+    @FXML private Button timeslot_2;
+    @FXML private Button timeslot_3;
+    @FXML private Button timeslot_4;
+    @FXML private Button timeslot_5;
     @FXML private Text timelineName;
     @FXML private Button saveButton;
     @FXML private VBox infoBox;
@@ -38,11 +41,11 @@ public class MainPage {
     private Button add_time_button;
 
     @FXML
-    private Button start_time_slider;
+    private Text start_time_slider;
 
 
     @FXML
-    private Button end_time_slider;
+    private Text end_time_slider;
 
     @FXML
     private TextField NM_start_title;
@@ -67,6 +70,41 @@ public class MainPage {
 
 
 
+    public class BrightnessManager {
+        public static void setBrightness(int brightness)
+                throws IOException {
+            //Creates a powerShell command that will set the brightness to the requested value (0-100), after the requested delay (in milliseconds) has passed.
+            String s = String.format("$brightness = %d;", brightness)
+                    + "$delay = 0;"
+                    + "$myMonitor = Get-WmiObject -Namespace root\\wmi -Class WmiMonitorBrightnessMethods;"
+                    + "$myMonitor.wmisetbrightness($delay, $brightness)";
+            String command = "powershell.exe  " + s;
+            // Executing the command
+            Process powerShellProcess = Runtime.getRuntime().exec(command);
+
+            powerShellProcess.getOutputStream().close();
+
+            //Report any error messages
+            String line;
+
+            BufferedReader stderr = new BufferedReader(new InputStreamReader(
+                    powerShellProcess.getErrorStream()));
+            line = stderr.readLine();
+            if (line != null) {
+                System.err.println("Standard Error:");
+                do {
+                    System.err.println(line);
+                } while ((line = stderr.readLine()) != null);
+
+            }
+            stderr.close();
+
+        }
+    }
+
+
 
 
 }
+
+
