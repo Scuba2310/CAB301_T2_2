@@ -7,6 +7,8 @@ import jesh.project.jeshproject.model.SqliteUserDAO;
 import jesh.project.jeshproject.model.User;
 
 import javafx.scene.Scene;
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
 import javafx.scene.control.*;
 import javafx.stage.Stage;
 import javafx.fxml.*;
@@ -18,19 +20,37 @@ public class LoginPage {
     @FXML private Text title;
     @FXML private Button loginButton;
     @FXML private Button goBackButton;
-    @FXML private TextField passwordField;
+    @FXML private PasswordField passwordField;
+    @FXML private TextField passwordTextField;
     @FXML private TextField usernameField;
     @FXML private Label errorMessage;
     @FXML private Button SignupLink;
-
     @FXML private Label usernameErrorLabel;
     @FXML private Label passwordErrorLabel;
+    @FXML private CheckBox showPasswordCheckbox;
 
     @FXML
     public void initialize() {
         title.setText("Login");
-    }
 
+        // Initially, set both controls visible, but hide the TextField
+        passwordField.setVisible(true);
+        passwordTextField.setVisible(false);
+
+        // Add a listener to the checkbox's selected property
+        showPasswordCheckbox.selectedProperty().addListener((observable, oldValue, newValue) -> {
+            if (newValue) { // Checkbox is selected
+                // Hide password field and show text field, copy password text
+                passwordField.setVisible(false);
+                passwordTextField.setVisible(true);
+                passwordTextField.setText(passwordField.getText());
+            } else { // Checkbox is deselected
+                // Hide text field and show password field
+                passwordTextField.setVisible(false);
+                passwordField.setVisible(true);
+            }
+        });
+    }
     private void setErrorMessageAndStyle(TextField field, Label errorLabel, String errorMessage) {
         field.setStyle("-fx-border-color: red;");
         errorLabel.setText(errorMessage);

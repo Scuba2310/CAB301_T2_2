@@ -19,9 +19,11 @@
                 <Label fx:id="usernameErrorLabel"/>
             </VBox>
             <VBox fx:id="Field2">
-                <TextField fx:id="passwordField" promptText="Password" onKeyPressed="#handleFieldInput"/>
+                <PasswordField fx:id="passwordField" promptText="Password" onKeyPressed="#handleFieldInput"/>
+                <TextField fx:id="passwordTextField" visible="false" />
                 <Label fx:id="passwordErrorLabel"/>
             </VBox>
+            <CheckBox fx:id="showPasswordCheckbox" text="Show Password" />
         </VBox>
     <Label fx:id="errorMessage"/>
         <HBox fx:id="ButtonBox">
