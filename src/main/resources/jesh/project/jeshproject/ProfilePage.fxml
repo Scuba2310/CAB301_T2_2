@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
+            xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml"
+            fx:controller="jesh.project.jeshproject.controller.ProfilePage"
+            prefHeight="400.0" prefWidth="600.0">
+    <VBox alignment="CENTER" spacing="10.0">
+        <Label text="Your Account" style="-fx-font-size: 20px;"/>
+        <TextField fx:id="firstNameField" promptText="First Name" editable="false"/>
+        <TextField fx:id="lastNameField" promptText="Last Name" editable="false"/>
+        <TextField fx:id="birthdayField" promptText="Birthday" editable="false"/>
+        <TextField fx:id="emailField" promptText="Email" editable="false"/>
+        <TextField fx:id="usernameField" promptText="Username" editable="false"/>
+        <TextField fx:id="passwordField" promptText="Password" editable="false"/>
+        <Button text="Edit Profile"/>
+    </VBox>
+</AnchorPane>

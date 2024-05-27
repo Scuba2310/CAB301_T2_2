@@ -12,16 +12,24 @@ import javafx.stage.Stage;
 import javafx.fxml.*;
 import java.io.IOException;
 import java.sql.Connection;
+import javafx.scene.text.*;
 
 public class LoginPage {
+    @FXML private Text title;
     @FXML private Button loginButton;
     @FXML private Button goBackButton;
     @FXML private TextField passwordField;
     @FXML private TextField usernameField;
     @FXML private Label errorMessage;
+    @FXML private Button SignupLink;
 
     @FXML private Label usernameErrorLabel;
     @FXML private Label passwordErrorLabel;
+
+    @FXML
+    public void initialize() {
+        title.setText("Login");
+    }
 
     private void setErrorMessageAndStyle(TextField field, Label errorLabel, String errorMessage) {
         field.setStyle("-fx-border-color: red;");
@@ -69,6 +77,10 @@ public class LoginPage {
         Stage stage = (Stage) loginButton.getScene().getWindow();
         FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("MainPage.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), HelloApplication.WIDTH, HelloApplication.HEIGHT);
+
+        String stylesheet = HelloApplication.class.getResource("CSS-Styling/MainPage.css").toExternalForm();
+        scene.getStylesheets().add(stylesheet);
+
         stage.setScene(scene);
     }
 
@@ -78,6 +90,21 @@ public class LoginPage {
         Stage stage = (Stage) goBackButton.getScene().getWindow();
         FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("HomePage.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), HelloApplication.WIDTH, HelloApplication.HEIGHT);
+
+        String stylesheet = HelloApplication.class.getResource("CSS-Styling/HomePage.css").toExternalForm();
+        scene.getStylesheets().add(stylesheet);
+
+        stage.setScene(scene);
+    }
+    @FXML
+    private void goToSignupPage() throws IOException {
+        Stage stage = (Stage) SignupLink.getScene().getWindow();
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("SignUp.fxml"));
+        Scene scene = new Scene(fxmlLoader.load(), HelloApplication.WIDTH, HelloApplication.HEIGHT);
+
+        String stylesheet = HelloApplication.class.getResource("CSS-Styling/SignUp.css").toExternalForm();
+        scene.getStylesheets().add(stylesheet);
+
         stage.setScene(scene);
     }
 

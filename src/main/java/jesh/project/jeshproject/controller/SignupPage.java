@@ -10,6 +10,7 @@ import javafx.scene.control.*;
 import javafx.scene.input.KeyEvent;
 import javafx.stage.*;
 import javafx.fxml.FXML;
+import javafx.scene.text.*;
 
 import java.io.IOException;
 import java.sql.Connection;
@@ -17,36 +18,23 @@ import java.sql.Connection;
 //import jdk.internal.vm.annotation.Stable;
 
 public class SignupPage {
-    @FXML
-    private Button goBackButton;
-    @FXML
-    private Button signUpButton;
-    @FXML
-    private TextField birthdayField;
-    @FXML
-    private TextField usernameField;
-    @FXML
-    private TextField passwordField;
-    @FXML
-    private TextField firstNameField;
-    @FXML
-    private TextField lastNameField;
-    @FXML
-    private TextField emailField;
-    @FXML
-    private Label firstNameErrorLabel;
-    @FXML
-    private Label lastNameErrorLabel;
-    @FXML
-    private Label birthdayErrorLabel;
-    @FXML
-    private Label emailErrorLabel;
-    @FXML
-    private Label usernameErrorLabel;
-    @FXML
-    private Label passwordErrorLabel;
-    @FXML
-    private IUserDAO userDAO;
+    @FXML private Text title;
+    @FXML private Button goBackButton;
+    @FXML private Button signUpButton;
+    @FXML private TextField birthdayField;
+    @FXML private TextField usernameField;
+    @FXML private TextField passwordField;
+    @FXML private TextField firstNameField;
+    @FXML private TextField lastNameField;
+    @FXML private TextField emailField;
+    @FXML private Button loginLink;
+    @FXML private Label firstNameErrorLabel;
+    @FXML private Label lastNameErrorLabel;
+    @FXML private Label birthdayErrorLabel;
+    @FXML private Label emailErrorLabel;
+    @FXML private Label usernameErrorLabel;
+    @FXML private Label passwordErrorLabel;
+    @FXML private IUserDAO userDAO;
 
     Connection connection = SqliteConnection.getInstance();
     //SqliteUserDAO sqliteUserDAO = new SqliteUserDAO();
@@ -54,6 +42,10 @@ public class SignupPage {
         userDAO = new SqliteUserDAO();
     }
 
+    @FXML
+    public void initialize() {
+        title.setText("Sign Up");
+    }
     @FXML
     private void signup() throws IOException {
         // Reset error labels and field styles
@@ -227,6 +219,21 @@ public class SignupPage {
         Stage stage = (Stage) goBackButton.getScene().getWindow();
         FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("HomePage.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), HelloApplication.WIDTH, HelloApplication.HEIGHT);
+
+        String stylesheet = HelloApplication.class.getResource("CSS-Styling/HomePage.css").toExternalForm();
+        scene.getStylesheets().add(stylesheet);
+
+        stage.setScene(scene);
+    }
+    @FXML
+    private void goToLoginPage() throws IOException {
+        Stage stage = (Stage) loginLink.getScene().getWindow();
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("Login.fxml"));
+        Scene scene = new Scene(fxmlLoader.load(), HelloApplication.WIDTH, HelloApplication.HEIGHT);
+
+        String stylesheet = HelloApplication.class.getResource("CSS-Styling/Login.css").toExternalForm();
+        scene.getStylesheets().add(stylesheet);
+
         stage.setScene(scene);
     }
 }

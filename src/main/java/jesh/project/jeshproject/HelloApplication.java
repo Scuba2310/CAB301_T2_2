@@ -12,14 +12,18 @@ import java.io.IOException;
 
 
 public class HelloApplication extends Application {
-    public static final String TITLE = "JESH Project Name";
+    public static final String TITLE = "SleepWell";
     public static final int WIDTH = 640;
-    public static final int HEIGHT = 360;
+    public static final int HEIGHT = 470;
 
     @Override
     public void start(Stage stage) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("HomePage.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), WIDTH, HEIGHT);
+
+        String stylesheet = HelloApplication.class.getResource("CSS-Styling/HomePage.css").toExternalForm();
+        scene.getStylesheets().add(stylesheet);
+
         stage.setTitle(TITLE);
         stage.setScene(scene);
         stage.show();
