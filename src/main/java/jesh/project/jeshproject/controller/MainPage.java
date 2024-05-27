@@ -14,8 +14,8 @@ public class MainPage {
     @FXML private Button nightModeButton;
     @FXML private Slider brightnessSlider;
     @FXML private Text brightnessLevelTitle;
-    @FXML private Text endTimeText;
-    @FXML private Text startTimeText;
+    @FXML private Slider endTimeSlider;
+    @FXML private Slider startTimeSlider;
     @FXML private Text timelineName;
     @FXML private Button saveButton;
     @FXML private VBox infoBox;

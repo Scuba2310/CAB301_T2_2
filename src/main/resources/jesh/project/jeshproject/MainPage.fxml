@@ -66,13 +66,13 @@
                 <Insets top="-28.0" left="-95"/>
             </padding>
             <Label text="Start Time:"/>
-            <Button fx:id="start_time_slider" prefWidth="430"/>
+            <Slider fx:id="start_time_slider" prefWidth="430"/>
         </HBox>
 
         <!-- End Time Slider -->
         <HBox spacing="10.0" AnchorPane.rightAnchor="0.0">
             <Label text=" End Time:"/>
-            <Button fx:id="end_time_" prefWidth="430"/>
+            <Slider fx:id="end_time_slider" prefWidth="430"/>
         </HBox>
 
 
