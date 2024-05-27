@@ -4,10 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6ce89ea9-bfcd-46dc-9a9a-000b80f106a4" name="Changes" comment="css mostly done">
+    <list default="true" id="6ce89ea9-bfcd-46dc-9a9a-000b80f106a4" name="Changes" comment="main page commit">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/jesh/project/jeshproject/controller/MainPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/jesh/project/jeshproject/controller/MainPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/jesh/project/jeshproject/MainPage.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/jesh/project/jeshproject/MainPage.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -30,10 +28,28 @@
   }
 }</component>
   <component name="TaskManager">
+    <task id="LOCAL-00001" summary="main page commit">
+      <option name="closed" value="true" />
+      <created>1716790465243</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1716790465243</updated>
+    </task>
+    <task id="LOCAL-00002" summary="main page commit">
+      <option name="closed" value="true" />
+      <created>1716790487853</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1716790487853</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="css mostly done" />
-    <option name="LAST_COMMIT_MESSAGE" value="css mostly done" />
+    <MESSAGE value="main page commit" />
+    <option name="LAST_COMMIT_MESSAGE" value="main page commit" />
   </component>
 </project>
