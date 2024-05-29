@@ -1,0 +1,92 @@
+#mainbox {
+    -fx-background-color: #FDFBF6;
+}
+#logo {
+    -fx-alignment: TOP-RIGHT;
+}
+#timelineName {
+
+}
+#topPart {
+    -fx-padding: 20px;
+    -fx-spacing: 345px;
+}
+#saveButton {
+    -fx-alignment: TOP-RIGHT;
+}
+#save_button {
+    -fx-background-color: #588157;
+    -fx-alignment: TOP-RIGHT;
+    -fx-padding: 10px;
+}
+#addTime {
+    -fx-alignment: CENTER;
+}
+#add_time_button {
+    -fx-padding: 10px;
+    -fx-background-color: #588157;
+
+}
+#timeline_main {
+    -fx-padding: 10px;
+    -fx-alignment: CENTER;
+    -fx-spacing: 20px;
+}
+#timeslot_1 {
+    -fx-background-color: #A3B18A;
+    -fx-padding: 10px;
+}
+#timeslot_2 {
+    -fx-background-color: #A3B18A;
+    -fx-padding: 10px;
+}
+#timeslot_3 {
+    -fx-background-color: #A3B18A;
+    -fx-padding: 10px;
+}
+#timeslot_4 {
+    -fx-background-color: #A3B18A;
+    -fx-padding: 10px;
+}
+#timeslot_5 {
+    -fx-background-color: #A3B18A;
+    -fx-padding: 10px;
+}
+#start {
+
+}
+#start2 {
+
+}
+#bottomSection {
+    -fx-padding: 28px;
+    -fx-spacing: 50px;
+}
+#bottom1 {
+    -fx-alignment: CENTER;
+}
+#timeTitles {
+    -fx-alignment: CENTER;
+    -fx-spacing: 10px;
+}
+#enterTime {
+    -fx-alignment: CENTER;
+    -fx-padding: 10px;
+    -fx-spacing: 10px;
+}
+#nightButton {
+   -fx-alignment: CENTER;
+}
+#NM_button{
+    -fx-background-color: #588157;
+}
+#bottom2 {
+    -fx-alignment: TOP-RIGHT;
+    -fx-spacing: 15px;
+}
+#brightnessTitle {
+    -fx-alignment: CENTER;
+}
+#brightnessSlider {
+    -fx-alignment: BOTTOM-RIGHT;
+}
