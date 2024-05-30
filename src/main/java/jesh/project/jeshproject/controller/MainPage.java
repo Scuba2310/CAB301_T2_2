@@ -69,6 +69,15 @@ public class MainPage {
     private Slider brightness_slider;
 
 
+    @FXML
+    private void testBrightness() {
+        System.out.println("Test button clicked!");
+        try {
+            BrightnessManager.setBrightness((int) brightness_slider.getValue());
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
 
     public class BrightnessManager {
         public static void setBrightness(int brightness)
