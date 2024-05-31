@@ -1,10 +1,11 @@
 package jesh.project.jeshproject.model;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public interface IUserDAO {
 
-    void addUser(User user);
+    boolean addUser(User user);
 
     User getUser(int id);
 
@@ -13,4 +14,18 @@ public interface IUserDAO {
     List<User> getAllUsers();
 
     User getUserByUsernameAndPassword(String username, String password);
+
+    boolean updateUser(User user);
+    void deleteUser(User user);
+    void logIn(User user);
+    void logOut();
+    User getLoggedInUser();
+
+    Timeline getTimeline(String name, int userID);
+
+    boolean updateTimeline(Timeline timeline);
+
+    boolean addTimeline(Timeline timeline);
+
+    ArrayList<String> getTimelineNames();
 }
