@@ -2,13 +2,37 @@
 
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
-<VBox xmlns:fx="http://javafx.com/fxml" fx:controller="jesh.project.jeshproject.controller.LoginPage">
-    <TextField fx:id="usernameField" promptText="Username" onKeyPressed="#handleFieldInput"/>
-    <Label fx:id="usernameErrorLabel"/>
-    <TextField fx:id="passwordField" promptText="Password" onKeyPressed="#handleFieldInput"/>
-    <Label fx:id="passwordErrorLabel"/>
+<?xml-stylesheet type="text/css" href="Login.css"?>
+
+<VBox fx:id="mainBox" xmlns:fx="http://javafx.com/fxml" fx:controller="jesh.project.jeshproject.controller.LoginPage">
+    <VBox fx:id="LoginBox">
+    <Text fx:id="title">
+        <font>
+            <Font name="Arial Black" size="36.0"/>
+        </font>
+    </Text>
+        <VBox fx:id="LoginFields">
+            <VBox fx:id="Field1">
+                <TextField fx:id="usernameField" promptText="Username" onKeyPressed="#handleFieldInput"/>
+                <Label fx:id="usernameErrorLabel"/>
+            </VBox>
+            <VBox fx:id="Field2">
+                <PasswordField fx:id="passwordField" promptText="Password" onKeyPressed="#handleFieldInput"/>
+                <TextField fx:id="passwordTextField" visible="false" />
+                <Label fx:id="passwordErrorLabel"/>
+            </VBox>
+            <CheckBox fx:id="showPasswordCheckbox" text="Show Password" />
+        </VBox>
     <Label fx:id="errorMessage"/>
-    <Button fx:id="loginButton" text="Login" onAction="#login"/>
-    <Button fx:id="goBackButton" onAction="#goBacktoHome" text="Go Back"/>
+        <HBox fx:id="ButtonBox">
+            <Button fx:id="loginButton" text="Login" onAction="#login"/>
+            <Button fx:id="goBackButton" onAction="#goBacktoHome" text="Go Back"/>
+        </HBox>
+            <HBox fx:id="signup">
+            <Text fx:id="signupLink">Don't have an account?</Text>
+            <Button fx:id="SignupLink" onAction="#goToSignupPage" text="Sign Up"/>
+        </HBox>
+    </VBox>
 </VBox>
