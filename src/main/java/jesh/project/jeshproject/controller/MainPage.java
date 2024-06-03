@@ -1,6 +1,9 @@
 package jesh.project.jeshproject.controller;
 
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.control.Slider;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.VBox;
@@ -9,22 +12,22 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import javafx.fxml.FXML;
+import javafx.stage.Stage;
+import jesh.project.jeshproject.HelloApplication;
+import jesh.project.jeshproject.exceptions.EmptyFieldException;
+import jesh.project.jeshproject.exceptions.InvalidFieldException;
+import jesh.project.jeshproject.model.SqliteTimelinesDAO;
+import jesh.project.jeshproject.model.Timeline;
+import jesh.project.jeshproject.model.User;
 
 public class MainPage {
-    @FXML private Button nightModeButton;
-    @FXML private Slider brightnessSlider;
-    @FXML private Text brightnessLevelTitle;
+    @FXML private Button Save_timeline_button;
     @FXML private Button timeslot_1;
     @FXML private Button timeslot_2;
     @FXML private Button timeslot_3;
     @FXML private Button timeslot_4;
     @FXML private Button timeslot_5;
-    @FXML private Text timelineName;
-    @FXML private Button saveButton;
-    @FXML private VBox infoBox;
-    @FXML private Button signoutButton;
-    @FXML private Button profileButton;
-    @FXML private Button settingsButton;
+
 
     @FXML private Button testButton;
 
@@ -32,38 +35,10 @@ public class MainPage {
     private TextField timeline_name;
 
     @FXML
-    private TextField sleepwell_logo;
-
-    @FXML
-    private Button save_button;
-
-    @FXML
-    private Button add_time_button;
-
-    @FXML
-    private Text start_time_slider;
-
-
-    @FXML
-    private Text end_time_slider;
-
-    @FXML
-    private TextField NM_start_title;
-
-    @FXML
-    private TextField NM_end_title;
-
-    @FXML
     private TextField NM_start;
 
     @FXML
     private TextField NM_end;
-
-    @FXML
-    private Button NM_button;
-
-    @FXML
-    private TextField BL_title;
 
     @FXML
     private Slider brightness_slider;
@@ -111,6 +86,25 @@ public class MainPage {
         }
     }
 
+    @FXML
+    private void saveTimeline() throws IOException {
+
+        // Code to handle signup
+        String Start_Time = NM_start.getText();
+        String End_Time = NM_end.getText();
+
+        int Timeslot = 1;
+        int User_ID = 1;
+
+        SqliteTimelinesDAO TimelinesDAO = new SqliteTimelinesDAO();
+
+        TimelinesDAO.addTimeline(new Timeline(Timeslot, Start_Time, End_Time, User_ID));
+
+        Stage stage = (Stage) Save_timeline_button.getScene().getWindow();
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("MainPage.fxml"));
+        Scene scene = new Scene(fxmlLoader.load(), HelloApplication.WIDTH, HelloApplication.HEIGHT);
+        stage.setScene(scene);
+    }
 
 
 

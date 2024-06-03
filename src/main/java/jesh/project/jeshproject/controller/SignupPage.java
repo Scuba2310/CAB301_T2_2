@@ -50,6 +50,8 @@ public class SignupPage {
     public void initialize() {
         title.setText("Sign Up");
     }
+
+
     @FXML
     private void signup() throws IOException {
         // Reset error labels and field styles
@@ -92,39 +94,8 @@ public class SignupPage {
                 setErrorMessageAndStyle(attributeFields[i], attributeLabels[i], exception.getMessage());
             }
         }
-//
-//        // end experiment
 
-//        if (firstName.isEmpty()) {
-//            setErrorMessageAndStyle(firstNameField, firstNameErrorLabel, "Please enter your first name");
-//            hasError = true;
-//        }
-//
-//        if (lastName.isEmpty()) {
-//            setErrorMessageAndStyle(lastNameField, lastNameErrorLabel, "Please enter your last name");
-//            hasError = true;
-//        }
-//
-//        if (username.isEmpty()) {
-//            setErrorMessageAndStyle(usernameField, usernameErrorLabel, "Please enter your username");
-//            hasError = true;
-//        }
-//
-//        if (password.isEmpty()) {
-//            setErrorMessageAndStyle(passwordField, passwordErrorLabel, "Please enter your password");
-//            hasError = true;
-//        }
-//
-//        if (!isValidBirthday(birthday)) {
-//            setErrorMessageAndStyle(birthdayField, birthdayErrorLabel, "Please enter a valid birthday in the format DD/MM/YYYY.");
-//            hasError = true;
-//        }
-//
-//        if (!isValidEmail(email)) {
-//            setErrorMessageAndStyle(emailField, emailErrorLabel, "Please enter a valid email address.");
-//            hasError = true;
-//        }
-////
+
         if (!hasError) {
             // all fields are valid
             userDAO.addUser(new User(0, firstName, lastName, birthday, email, username, password));
