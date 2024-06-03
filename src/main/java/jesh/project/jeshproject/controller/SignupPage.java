@@ -15,8 +15,6 @@ import javafx.scene.text.*;
 import java.io.IOException;
 import java.sql.Connection;
 
-//import jdk.internal.vm.annotation.Stable;
-
 public class SignupPage {
     @FXML private Text title;
     @FXML private Button goBackButton;
@@ -37,7 +35,6 @@ public class SignupPage {
     @FXML private IUserDAO userDAO;
 
     Connection connection = SqliteConnection.getInstance();
-    //SqliteUserDAO sqliteUserDAO = new SqliteUserDAO();
     public SignupPage() {
         userDAO = new SqliteUserDAO();
     }
@@ -46,12 +43,11 @@ public class SignupPage {
     public void initialize() {
         title.setText("Sign Up");
     }
+
     @FXML
     private void signup() throws IOException {
-        // Reset error labels and field styles
         resetErrorLabelsAndStyles();
 
-        // Code to handle signup
         String firstName = firstNameField.getText();
         String lastName = lastNameField.getText();
         String birthday = birthdayField.getText();
@@ -61,8 +57,6 @@ public class SignupPage {
 
         boolean hasError = false;
 
-
-        // experimental code that should make unit testing easier
         String[] enteredAttributes = {firstName, lastName, birthday, email, username, password};
         String[] attributes = {"first name", "last name", "birthday", "email", "username", "password"};
         TextField[] attributeFields = {firstNameField, lastNameField, birthdayField, emailField, usernameField, passwordField};
@@ -88,48 +82,11 @@ public class SignupPage {
                 setErrorMessageAndStyle(attributeFields[i], attributeLabels[i], exception.getMessage());
             }
         }
-//
-//        // end experiment
 
-//        if (firstName.isEmpty()) {
-//            setErrorMessageAndStyle(firstNameField, firstNameErrorLabel, "Please enter your first name");
-//            hasError = true;
-//        }
-//
-//        if (lastName.isEmpty()) {
-//            setErrorMessageAndStyle(lastNameField, lastNameErrorLabel, "Please enter your last name");
-//            hasError = true;
-//        }
-//
-//        if (username.isEmpty()) {
-//            setErrorMessageAndStyle(usernameField, usernameErrorLabel, "Please enter your username");
-//            hasError = true;
-//        }
-//
-//        if (password.isEmpty()) {
-//            setErrorMessageAndStyle(passwordField, passwordErrorLabel, "Please enter your password");
-//            hasError = true;
-//        }
-//
-//        if (!isValidBirthday(birthday)) {
-//            setErrorMessageAndStyle(birthdayField, birthdayErrorLabel, "Please enter a valid birthday in the format DD/MM/YYYY.");
-//            hasError = true;
-//        }
-//
-//        if (!isValidEmail(email)) {
-//            setErrorMessageAndStyle(emailField, emailErrorLabel, "Please enter a valid email address.");
-//            hasError = true;
-//        }
-////
         if (!hasError) {
-            // all fields are valid
             userDAO.addUser(new User(0, firstName, lastName, birthday, email, username, password));
             successMessage();
-
-            Stage stage = (Stage) signUpButton.getScene().getWindow();
-            FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("HomePage.fxml"));
-            Scene scene = new Scene(fxmlLoader.load(), HelloApplication.WIDTH, HelloApplication.HEIGHT);
-            stage.setScene(scene);
+            goToLoginPage();
         }
     }
 
@@ -156,10 +113,8 @@ public class SignupPage {
 
     @FXML
     private void handleFieldInput(KeyEvent event) {
-        // Reset style and error message when the user starts typing
         TextField field = (TextField) event.getSource();
         field.setStyle("");
-        // possibly change switch statement to field.setText(""); ??
         switch (field.getId()) {
             case "firstNameField":
                 firstNameErrorLabel.setText("");
@@ -193,13 +148,11 @@ public class SignupPage {
     }
 
     private boolean emailExists(String email) {
-        // Check if a user with the provided email exists
         User user = userDAO.getUser(email, UserIdentifierType.EMAIL);
         return user != null;
     }
 
     private boolean usernameExists(String username) {
-        // Check if a user with the provided username exists
         User user = userDAO.getUser(username, UserIdentifierType.USERNAME);
         return user != null;
     }
@@ -215,26 +168,21 @@ public class SignupPage {
 
     @FXML
     private void goBacktoHome() throws IOException {
-        // Get the stage
         Stage stage = (Stage) goBackButton.getScene().getWindow();
         FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("HomePage.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), HelloApplication.WIDTH, HelloApplication.HEIGHT);
-
         String stylesheet = HelloApplication.class.getResource("CSS-Styling/HomePage.css").toExternalForm();
         scene.getStylesheets().add(stylesheet);
-
         stage.setScene(scene);
     }
+
     @FXML
     private void goToLoginPage() throws IOException {
-        Stage stage = (Stage) loginLink.getScene().getWindow();
+        Stage stage = (Stage) signUpButton.getScene().getWindow();
         FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("Login.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), HelloApplication.WIDTH, HelloApplication.HEIGHT);
-
         String stylesheet = HelloApplication.class.getResource("CSS-Styling/Login.css").toExternalForm();
         scene.getStylesheets().add(stylesheet);
-
         stage.setScene(scene);
     }
 }
-
