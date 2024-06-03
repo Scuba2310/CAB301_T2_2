@@ -10,8 +10,6 @@ public class SqliteUserDAO implements IUserDAO {
     public SqliteUserDAO() {
         connection = SqliteConnection.getInstance();
         createTable();
-        // Used for testing, to be removed later
-        insertSampleData();
     }
 
     public void createTable() {
@@ -62,14 +60,7 @@ public class SqliteUserDAO implements IUserDAO {
             statement.setString(5, user.getUsername());
             statement.setString(6, user.getPassword());
 
-            int rowsInserted = statement.executeUpdate();
-            if (rowsInserted > 0) {
-                ResultSet generatedKeys = statement.getGeneratedKeys();
-                if (generatedKeys.next()) {
-                    user.setId(generatedKeys.getInt(1));
-                    System.out.println("A new user was added successfully with ID: " + user.getId());
-                }
-            }
+            statement.execute();
         } catch (SQLException ex) {
             System.err.println("Error adding user: " + ex.getMessage());
         }
