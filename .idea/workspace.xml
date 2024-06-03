@@ -4,10 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f6207e56-6f06-45c5-8a54-f7bb59653c78" name="Changes" comment="some minor fixes to the buttons, and some code in the signup page controller.">
+    <list default="true" id="f6207e56-6f06-45c5-8a54-f7bb59653c78" name="Changes" comment="working on database.">
+      <change afterPath="$PROJECT_DIR$/src/main/java/jesh/project/jeshproject/model/SqliteTimelinesDAO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/jesh/project/jeshproject/controller/SignupPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/jesh/project/jeshproject/controller/SignupPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/jesh/project/jeshproject/model/SqliteUserDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/jesh/project/jeshproject/model/SqliteUserDAO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/users.db" beforeDir="false" afterPath="$PROJECT_DIR$/users.db" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -20,19 +20,16 @@
       <list>
         <option value="JavaFXApplication" />
         <option value="Interface" />
+        <option value="Enum" />
         <option value="FxmlFile" />
         <option value="Class" />
-        <option value="Enum" />
       </list>
     </option>
-  </component>
-  <component name="Git.Merge.Settings">
-    <option name="BRANCH" value="MainPage_touchup" />
   </component>
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="master" />
+        <entry key="$PROJECT_DIR$" value="new-main-page-database-stuff" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -42,7 +39,7 @@
     &quot;state&quot;: &quot;OPEN&quot;,
     &quot;assignee&quot;: &quot;Sanda223&quot;
   }
-}</component>
+  }</component>
   <component name="GithubPullRequestsUISettings">{
   &quot;selectedUrlAndAccountId&quot;: {
     &quot;url&quot;: &quot;https://github.com/Scuba2310/CAB302_A1.git&quot;,
@@ -75,11 +72,10 @@
     "git-widget-placeholder": "new-main-page-database-stuff",
     "ignore.virus.scanning.warn.message": "true",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/AAA/IdeaProjects/CAB302_A1_testing_working",
     "project.structure.last.edited": "Libraries",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.53333336",
-    "settings.editor.selected.configurable": "vcs.Mercurial"
+    "settings.editor.selected.configurable": "preferences.pluginManager"
   }
 }]]></component>
   <component name="RecentsManager">
@@ -206,65 +202,10 @@
       <option name="project" value="LOCAL" />
       <updated>1714714032694</updated>
     </task>
-    <task id="LOCAL-00006" summary="Fixed up the main page fxml and functionality">
-      <option name="closed" value="true" />
-      <created>1717071182729</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1717071182729</updated>
-    </task>
-    <task id="LOCAL-00007" summary="Fixed up the main page fxml and functionality">
-      <option name="closed" value="true" />
-      <created>1717078110745</created>
-      <option name="number" value="00007" />
-      <option name="presentableId" value="LOCAL-00007" />
-      <option name="project" value="LOCAL" />
-      <updated>1717078110745</updated>
-    </task>
-    <task id="LOCAL-00008" summary="Fixed up the main page fxml and functionality">
-      <option name="closed" value="true" />
-      <created>1717078308166</created>
-      <option name="number" value="00008" />
-      <option name="presentableId" value="LOCAL-00008" />
-      <option name="project" value="LOCAL" />
-      <updated>1717078308166</updated>
-    </task>
-    <task id="LOCAL-00009" summary="Main Page new update pt 2">
-      <option name="closed" value="true" />
-      <created>1717408786152</created>
-      <option name="number" value="00009" />
-      <option name="presentableId" value="LOCAL-00009" />
-      <option name="project" value="LOCAL" />
-      <updated>1717408786152</updated>
-    </task>
-    <task id="LOCAL-00010" summary="some minor fixes to the buttons, and some code in the signup page controller.">
-      <option name="closed" value="true" />
-      <created>1717418131376</created>
-      <option name="number" value="00010" />
-      <option name="presentableId" value="LOCAL-00010" />
-      <option name="project" value="LOCAL" />
-      <updated>1717418131376</updated>
-    </task>
-    <option name="localTasksCounter" value="11" />
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
-    <option name="RECENT_FILTERS">
-      <map>
-        <entry key="User">
-          <value>
-            <list>
-              <RecentGroup>
-                <option name="FILTER_VALUES">
-                  <option value="*" />
-                </option>
-              </RecentGroup>
-            </list>
-          </value>
-        </entry>
-      </map>
-    </option>
     <option name="TAB_STATES">
       <map>
         <entry key="MAIN">
@@ -275,7 +216,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="MainPage_touchup" />
+                        <option value="origin/authentication" />
                       </list>
                     </value>
                   </entry>
@@ -295,11 +236,7 @@
     <MESSAGE value="working on database" />
     <MESSAGE value="creating the javaFX controls for MainPage" />
     <MESSAGE value="working on database." />
-    <MESSAGE value="css push" />
     <MESSAGE value="css mostly done" />
-    <MESSAGE value="Fixed up the main page fxml and functionality" />
-    <MESSAGE value="Main Page new update pt 2" />
-    <MESSAGE value="some minor fixes to the buttons, and some code in the signup page controller." />
-    <option name="LAST_COMMIT_MESSAGE" value="some minor fixes to the buttons, and some code in the signup page controller." />
+    <option name="LAST_COMMIT_MESSAGE" value="css mostly done" />
   </component>
 </project>

@@ -39,7 +39,11 @@ public class SignupPage {
     Connection connection = SqliteConnection.getInstance();
     //SqliteUserDAO sqliteUserDAO = new SqliteUserDAO();
     public SignupPage() {
+
         userDAO = new SqliteUserDAO();
+        SqliteTimelinesDAO TimelinesDAO = new SqliteTimelinesDAO();
+
+        TimelinesDAO.createTable();
     }
 
     @FXML

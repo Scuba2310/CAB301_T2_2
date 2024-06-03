@@ -7,7 +7,9 @@ import javafx.scene.*;
 import javafx.scene.control.*;
 import javafx.scene.text.*;
 import javafx.stage.*;
+import jesh.project.jeshproject.model.IUserDAO;
 import jesh.project.jeshproject.model.SqliteConnection;
+import jesh.project.jeshproject.model.SqliteTimelinesDAO;
 import jesh.project.jeshproject.model.SqliteUserDAO;
 
 import java.io.IOException;
@@ -21,8 +23,13 @@ public class HomePage {
     private Button loginButton;
     @FXML
     private Button signupButton;
+    private IUserDAO userDAO;
 
     public HomePage(){
+        userDAO = new SqliteUserDAO();
+        SqliteTimelinesDAO TimelinesDAO = new SqliteTimelinesDAO();
+
+        TimelinesDAO.createTable();
 //        Connection connection = SqliteConnection.getInstance();
 //        SqliteUserDAO userDAO = new SqliteUserDAO();
     }
