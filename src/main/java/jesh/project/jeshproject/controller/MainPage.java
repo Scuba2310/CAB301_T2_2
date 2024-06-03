@@ -1,6 +1,11 @@
 package jesh.project.jeshproject.controller;
 
+import javafx.collections.FXCollections;
+import javafx.event.ActionEvent;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.Slider;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.VBox;
@@ -8,7 +13,13 @@ import javafx.scene.text.Text;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.util.ArrayList;
+
 import javafx.fxml.FXML;
+import javafx.stage.Stage;
+import jesh.project.jeshproject.HelloApplication;
+import jesh.project.jeshproject.brightness.BrightnessManager;
+import jesh.project.jeshproject.model.*;
 
 public class MainPage {
     @FXML private Button nightModeButton;
@@ -25,95 +36,101 @@ public class MainPage {
     @FXML private Button signoutButton;
     @FXML private Button profileButton;
     @FXML private Button settingsButton;
-
     @FXML private Button testButton;
 
     @FXML
     private TextField timeline_name;
-
     @FXML
     private TextField sleepwell_logo;
-
     @FXML
     private Button save_button;
-
     @FXML
     private Button add_time_button;
-
     @FXML
-    private Text start_time_slider;
-
-
+    private Slider start_time_slider;
     @FXML
-    private Text end_time_slider;
-
+    private Slider end_time_slider;
     @FXML
     private TextField NM_start_title;
-
     @FXML
     private TextField NM_end_title;
-
     @FXML
     private TextField NM_start;
-
     @FXML
     private TextField NM_end;
-
     @FXML
     private Button NM_button;
-
     @FXML
     private TextField BL_title;
-
     @FXML
     private Slider brightness_slider;
 
+    @FXML private ChoiceBox timelineChoiceBox;
+
+
+    private TimelineManager timelineManager;
+    private UserManager userManager;
+
+
+    public MainPage() {
+        SqliteUserDAO userDAO = new SqliteUserDAO();
+        userManager = new UserManager(userDAO);
+        timelineManager = new TimelineManager(userDAO);
+    }
+
+
+    public void testBrightness(ActionEvent actionEvent) {
+        try{
+            BrightnessManager.ChangeBrightness((int) brightness_slider.getValue());
+        } catch (Exception exception) {
+
+        }
+    }
 
     @FXML
-    private void testBrightness() {
-        System.out.println("Test button clicked!");
-        try {
-            BrightnessManager.setBrightness((int) brightness_slider.getValue());
-        } catch (IOException e) {
-            e.printStackTrace();
+    public void saveTimeline(ActionEvent actionEvent) {
+        String name = timeline_name.getText();
+        int startTime = (int) start_time_slider.getValue();
+        int endTime = (int) end_time_slider.getValue();
+        int brightness = (int) brightness_slider.getValue();
+        int userID = userManager.getLoggedInUser().getId();
+        Timeline newTimeline = new Timeline(name, startTime, endTime, brightness, userID);
+        Timeline existingTimeline = timelineManager.getTimeline(name, userID);
+        if (existingTimeline != null) {
+            timelineManager.updateTimeline(newTimeline);
+        }
+        else {
+            timelineManager.addTimeline(newTimeline);
+        }
+        updateTimelineChoiceBox();
+    }
+    @FXML
+    public void updateTimelineChoiceBox() {
+        // get all rows matching userID
+        // make array with row names
+        // set choices
+        ArrayList<String> arr = timelineManager.getUserTimelines();
+        timelineChoiceBox.setItems(FXCollections.observableArrayList(arr));
+    }
+    @FXML
+    private void loadTimeline() {
+        String selectedValue = (String) timelineChoiceBox.getValue();
+        if (selectedValue != null) {
+            Timeline timeline = timelineManager.getTimeline(selectedValue, userManager.getLoggedInUser().getId());
+            start_time_slider.setValue(timeline.getStartTime());
+            end_time_slider.setValue(timeline.getEndTime());
+            timeline_name.setText(timeline.getName());
+            brightness_slider.setValue(timeline.getBrightness());
         }
     }
 
-    public class BrightnessManager {
-        public static void setBrightness(int brightness)
-                throws IOException {
-            //Creates a powerShell command that will set the brightness to the requested value (0-100), after the requested delay (in milliseconds) has passed.
-            String s = String.format("$brightness = %d;", brightness)
-                    + "$delay = 0;"
-                    + "$myMonitor = Get-WmiObject -Namespace root\\wmi -Class WmiMonitorBrightnessMethods;"
-                    + "$myMonitor.wmisetbrightness($delay, $brightness)";
-            String command = "powershell.exe  " + s;
-            // Executing the command
-            Process powerShellProcess = Runtime.getRuntime().exec(command);
-
-            powerShellProcess.getOutputStream().close();
-
-            //Report any error messages
-            String line;
-
-            BufferedReader stderr = new BufferedReader(new InputStreamReader(
-                    powerShellProcess.getErrorStream()));
-            line = stderr.readLine();
-            if (line != null) {
-                System.err.println("Standard Error:");
-                do {
-                    System.err.println(line);
-                } while ((line = stderr.readLine()) != null);
-
-            }
-            stderr.close();
-
-        }
+    @FXML
+    private void goToProfile() throws IOException {
+        // Get the stage
+        Stage stage = (Stage) profileButton.getScene().getWindow();
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("ProfilePage.fxml"));
+        Scene scene = new Scene(fxmlLoader.load(), HelloApplication.WIDTH, HelloApplication.HEIGHT);
+        stage.setScene(scene);
     }
-
-
-
 
 }
-
-

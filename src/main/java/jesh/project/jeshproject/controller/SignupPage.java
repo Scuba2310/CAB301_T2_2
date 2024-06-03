@@ -13,11 +13,10 @@ import javafx.fxml.FXML;
 import javafx.scene.text.*;
 
 import java.io.IOException;
-import java.sql.Connection;
-
-//import jdk.internal.vm.annotation.Stable;
+import jesh.project.jeshproject.model.UserManager;
 
 public class SignupPage {
+    private UserManager userManager;
     @FXML private Text title;
     @FXML private Button goBackButton;
     @FXML private Button signUpButton;
@@ -35,11 +34,11 @@ public class SignupPage {
     @FXML private Label usernameErrorLabel;
     @FXML private Label passwordErrorLabel;
     @FXML private IUserDAO userDAO;
+    @FXML private Label errorMessage;
 
-    Connection connection = SqliteConnection.getInstance();
-    //SqliteUserDAO sqliteUserDAO = new SqliteUserDAO();
+
     public SignupPage() {
-        userDAO = new SqliteUserDAO();
+        userManager = new UserManager(new SqliteUserDAO());
     }
 
     @FXML
@@ -123,13 +122,22 @@ public class SignupPage {
 ////
         if (!hasError) {
             // all fields are valid
-            userDAO.addUser(new User(0, firstName, lastName, birthday, email, username, password));
-            successMessage();
+            String addUser = userManager.addUser(new User(0, firstName, lastName, birthday, email, username, password));
+            if (addUser == "added") {
+                successMessage();
 
-            Stage stage = (Stage) signUpButton.getScene().getWindow();
-            FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("HomePage.fxml"));
-            Scene scene = new Scene(fxmlLoader.load(), HelloApplication.WIDTH, HelloApplication.HEIGHT);
-            stage.setScene(scene);
+                Stage stage = (Stage) signUpButton.getScene().getWindow();
+                FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("HomePage.fxml"));
+                Scene scene = new Scene(fxmlLoader.load(), HelloApplication.WIDTH, HelloApplication.HEIGHT);
+                stage.setScene(scene);
+            }
+            else if (addUser.equals("Exists")) {
+                errorMessage.setText("User already exists");
+            }
+            else {
+                errorMessage.setText("User could not be added");
+            }
+
         }
     }
 
@@ -147,6 +155,7 @@ public class SignupPage {
         emailField.setStyle("");
         usernameField.setStyle("");
         passwordField.setStyle("");
+        errorMessage.setText("");
     }
 
     private void setErrorMessageAndStyle(TextField field, Label errorLabel, String errorMessage) {
@@ -194,13 +203,13 @@ public class SignupPage {
 
     private boolean emailExists(String email) {
         // Check if a user with the provided email exists
-        User user = userDAO.getUser(email, UserIdentifierType.EMAIL);
+        User user = userManager.getUser(email, UserIdentifierType.EMAIL);
         return user != null;
     }
 
     private boolean usernameExists(String username) {
         // Check if a user with the provided username exists
-        User user = userDAO.getUser(username, UserIdentifierType.USERNAME);
+        User user = userManager.getUser(username, UserIdentifierType.USERNAME);
         return user != null;
     }
 

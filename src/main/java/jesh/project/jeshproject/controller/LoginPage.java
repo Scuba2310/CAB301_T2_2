@@ -7,17 +7,18 @@ import jesh.project.jeshproject.model.SqliteUserDAO;
 import jesh.project.jeshproject.model.User;
 
 import javafx.scene.Scene;
-import javafx.beans.value.ChangeListener;
-import javafx.beans.value.ObservableValue;
 import javafx.scene.control.*;
 import javafx.stage.Stage;
 import javafx.fxml.*;
+
 import java.io.IOException;
 import java.sql.Connection;
 import javafx.scene.text.*;
+import jesh.project.jeshproject.model.UserManager;
 
 public class LoginPage {
     @FXML private Text title;
+    private UserManager userManager;
     @FXML private Button loginButton;
     @FXML private Button goBackButton;
     @FXML private PasswordField passwordField;
@@ -51,6 +52,11 @@ public class LoginPage {
             }
         });
     }
+
+    public LoginPage() {
+        userManager = new UserManager(new SqliteUserDAO());
+    }
+
     private void setErrorMessageAndStyle(TextField field, Label errorLabel, String errorMessage) {
         field.setStyle("-fx-border-color: red;");
         errorLabel.setText(errorMessage);
@@ -61,6 +67,8 @@ public class LoginPage {
 
         usernameField.setStyle("");
         passwordField.setStyle("");
+
+        errorMessage.setText("");
     }
 
     Connection connection = SqliteConnection.getInstance();
@@ -70,7 +78,6 @@ public class LoginPage {
     @FXML
     private void login() throws IOException {
         resetErrorLabelsAndStyles();
-        errorMessage.setText("");
 
         String username = usernameField.getText();
         String password = passwordField.getText();
@@ -83,8 +90,9 @@ public class LoginPage {
                 setErrorMessageAndStyle(passwordField, passwordErrorLabel, "Please enter your password");
             }
         } else {
-            User user = userDAO.getUserByUsernameAndPassword(username, password);
+            User user = userManager.getUserByUsernameAndPassword(username, password);
             if (user != null) {
+                userManager.logIn(user);
                 goToMainPage();
             } else {
                 errorMessage.setText("Username or password is incorrect.");
