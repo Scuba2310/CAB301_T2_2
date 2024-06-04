@@ -24,12 +24,11 @@ public class UserManager {
         return  searchString.toLowerCase().contains(query);
     }
 
-    public String addUser(User user) {
-        if (userDAO.getUser(user.getId()) != null) { return "exists"; }
-        else {
-            userDAO.addUser(user);
-            if (userDAO.getUser(user.getId()) == null) { return "error"; }
-            else { return "added"; }
+    public boolean addUser(User user) {
+        if (userDAO.getUser(user.getId()) != null) {
+            return false; // User already exists
+        } else {
+            return userDAO.addUser(user); // Return the result of addUser from the DAO
         }
     }
 

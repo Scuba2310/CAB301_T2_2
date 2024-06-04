@@ -37,7 +37,7 @@
         <Label fx:id="passwordErrorLabel"/>
 
         <HBox fx:id="buttonBox">
-            <Button fx:id="signupButton" text="Sign Up" onAction="#signup"/>
+            <Button fx:id="signUpButton" text="Sign Up" onAction="#goToHomePage"/>
             <Button fx:id="goBackButton" onAction="#goBacktoHome" text="Go Back"/>
         </HBox>
 
