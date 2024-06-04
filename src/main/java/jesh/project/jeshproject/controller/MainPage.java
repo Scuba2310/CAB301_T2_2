@@ -9,6 +9,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.Slider;
 import javafx.scene.control.TextField;
+import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
@@ -20,6 +21,8 @@ import java.io.IOException;
 import java.util.ArrayList;
 
 public class MainPage {
+    public HBox timeline_main;
+    public Button Save_timeline_button;
     @FXML private Button nightModeButton;
     @FXML private Slider brightnessSlider;
     @FXML private Text brightnessLevelTitle;
