@@ -13,6 +13,8 @@ import javafx.fxml.FXML;
 import javafx.scene.text.*;
 
 import java.io.IOException;
+import java.sql.Connection;
+
 import jesh.project.jeshproject.model.UserManager;
 
 public class SignupPage {
@@ -36,7 +38,8 @@ public class SignupPage {
     @FXML private IUserDAO userDAO;
     @FXML private Label errorMessage;
 
-
+    Connection connection = SqliteConnection.getInstance();
+    //SqliteUserDAO sqliteUserDAO = new SqliteUserDAO();
     public SignupPage() {
         userManager = new UserManager(new SqliteUserDAO());
     }

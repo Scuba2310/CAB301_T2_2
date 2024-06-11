@@ -76,6 +76,7 @@ public class SqliteUserDAO implements IUserDAO {
         return true;
     }
 
+
     @Override
     public User getUser(int id) {
         User user = null;
@@ -111,7 +112,6 @@ public class SqliteUserDAO implements IUserDAO {
             } else {
                 query = "SELECT * FROM users WHERE username = ?";
             }
-
             PreparedStatement statement = connection.prepareStatement(query);
             statement.setString(1, identifier);
             ResultSet resultSet = statement.executeQuery();
