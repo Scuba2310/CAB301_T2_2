@@ -4,14 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f6207e56-6f06-45c5-8a54-f7bb59653c78" name="Changes" comment="SqliteTimelinesDAO Class created and the timelines table created">
-      <change afterPath="$PROJECT_DIR$/src/main/java/jesh/project/jeshproject/model/Timeline.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/jesh/project/jeshproject/controller/MainPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/jesh/project/jeshproject/controller/MainPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/jesh/project/jeshproject/controller/SignupPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/jesh/project/jeshproject/controller/SignupPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/jesh/project/jeshproject/model/SqliteTimelinesDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/jesh/project/jeshproject/model/SqliteTimelinesDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/jesh/project/jeshproject/MainPage.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/jesh/project/jeshproject/MainPage.fxml" afterDir="false" />
-    </list>
+    <list default="true" id="f6207e56-6f06-45c5-8a54-f7bb59653c78" name="Changes" comment="fixing signup. can now signup and login" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -22,16 +15,19 @@
       <list>
         <option value="JavaFXApplication" />
         <option value="Interface" />
-        <option value="Enum" />
         <option value="FxmlFile" />
         <option value="Class" />
+        <option value="Enum" />
       </list>
     </option>
+  </component>
+  <component name="Git.Merge.Settings">
+    <option name="BRANCH" value="MainPage_touchup" />
   </component>
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="new-main-page-database-stuff" />
+        <entry key="$PROJECT_DIR$" value="master" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -41,7 +37,7 @@
     &quot;state&quot;: &quot;OPEN&quot;,
     &quot;assignee&quot;: &quot;Sanda223&quot;
   }
-  }</component>
+}</component>
   <component name="GithubPullRequestsUISettings">{
   &quot;selectedUrlAndAccountId&quot;: {
     &quot;url&quot;: &quot;https://github.com/Scuba2310/CAB302_A1.git&quot;,
@@ -71,13 +67,14 @@
     "Repository.Attach.Sources": "false",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "new-main-page-database-stuff",
+    "git-widget-placeholder": "master",
     "ignore.virus.scanning.warn.message": "true",
     "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/AAA/IdeaProjects/CAB302_A1_testing_working",
     "project.structure.last.edited": "Libraries",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.53333336",
-    "settings.editor.selected.configurable": "preferences.pluginManager"
+    "settings.editor.selected.configurable": "vcs.Mercurial"
   }
 }]]></component>
   <component name="RecentsManager">
@@ -150,8 +147,6 @@
         <item itemvalue="JUnit.tests in jesh-project" />
         <item itemvalue="JUnit.AuthenticateTests.goodSignUp" />
         <item itemvalue="JUnit.All in jesh-project" />
-        <item itemvalue="JUnit.tests in jesh-project" />
-        <item itemvalue="JUnit.AuthenticateTests.goodSignUp" />
       </list>
     </recent_temporary>
   </component>
@@ -204,15 +199,55 @@
       <option name="project" value="LOCAL" />
       <updated>1714714032694</updated>
     </task>
-    <task id="LOCAL-00006" summary="SqliteTimelinesDAO Class created and the timelines table created">
+    <task id="LOCAL-00006" summary="Fixed up the main page fxml and functionality">
       <option name="closed" value="true" />
-      <created>1717422992972</created>
+      <created>1717071182729</created>
       <option name="number" value="00006" />
       <option name="presentableId" value="LOCAL-00006" />
       <option name="project" value="LOCAL" />
-      <updated>1717422992972</updated>
+      <updated>1717071182729</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Fixed up the main page fxml and functionality">
+      <option name="closed" value="true" />
+      <created>1717078110745</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1717078110745</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Fixed up the main page fxml and functionality">
+      <option name="closed" value="true" />
+      <created>1717078308166</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1717078308166</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Main Page new update pt 2">
+      <option name="closed" value="true" />
+      <created>1717408786152</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1717408786152</updated>
+    </task>
+    <task id="LOCAL-00010" summary="updating main page from database branch version">
+      <option name="closed" value="true" />
+      <created>1717462023695</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1717462023695</updated>
+    </task>
+    <task id="LOCAL-00011" summary="fixing signup. can now signup and login">
+      <option name="closed" value="true" />
+      <created>1717466311748</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1717466311748</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -226,7 +261,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="origin/authentication" />
+                        <option value="MainPage_touchup" />
                       </list>
                     </value>
                   </entry>
@@ -245,9 +280,14 @@
     <MESSAGE value="working on tests" />
     <MESSAGE value="working on database" />
     <MESSAGE value="creating the javaFX controls for MainPage" />
-    <MESSAGE value="working on database." />
+    <MESSAGE value="css push" />
     <MESSAGE value="css mostly done" />
-    <MESSAGE value="SqliteTimelinesDAO Class created and the timelines table created" />
-    <option name="LAST_COMMIT_MESSAGE" value="SqliteTimelinesDAO Class created and the timelines table created" />
+    <MESSAGE value="Fixed up the main page fxml and functionality" />
+    <MESSAGE value="Main Page new update pt 2" />
+    <MESSAGE value="working on database." />
+    <MESSAGE value="updating branch to match master" />
+    <MESSAGE value="updating main page from database branch version" />
+    <MESSAGE value="fixing signup. can now signup and login" />
+    <option name="LAST_COMMIT_MESSAGE" value="fixing signup. can now signup and login" />
   </component>
 </project>
