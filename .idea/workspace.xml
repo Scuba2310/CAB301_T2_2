@@ -4,11 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f6207e56-6f06-45c5-8a54-f7bb59653c78" name="Changes" comment="pull master commits">
+    <list default="true" id="f6207e56-6f06-45c5-8a54-f7bb59653c78" name="Changes" comment="main page basic CSS">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/jesh/project/jeshproject/controller/HomePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/jesh/project/jeshproject/controller/HomePage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/jesh/project/jeshproject/CSS-Styling/MainPage.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/jesh/project/jeshproject/CSS-Styling/MainPage.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/jesh/project/jeshproject/CSS-Styling/SignUp.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/jesh/project/jeshproject/CSS-Styling/SignUp.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/jesh/project/jeshproject/MainPage.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/jesh/project/jeshproject/MainPage.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/jesh/project/jeshproject/SignUp.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/jesh/project/jeshproject/SignUp.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/users.db" beforeDir="false" afterPath="$PROJECT_DIR$/users.db" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -212,7 +213,15 @@
       <option name="project" value="LOCAL" />
       <updated>1716794542306</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="main page basic CSS">
+      <option name="closed" value="true" />
+      <created>1716993441207</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1716993441207</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -249,6 +258,7 @@
     <MESSAGE value="css push" />
     <MESSAGE value="commit to pull" />
     <MESSAGE value="pull master commits" />
-    <option name="LAST_COMMIT_MESSAGE" value="pull master commits" />
+    <MESSAGE value="main page basic CSS" />
+    <option name="LAST_COMMIT_MESSAGE" value="main page basic CSS" />
   </component>
 </project>

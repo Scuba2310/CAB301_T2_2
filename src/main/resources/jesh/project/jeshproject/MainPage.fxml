@@ -29,7 +29,7 @@
 
     <HBox fx:id="topPart">
         <HBox fx:id="timelineName">
-            <TextField fx:id="timeline_name"/> <!-- timeline name can be changed by the user -->
+            <TextField fx:id="timeline_name" text="Name Timeline"/> <!-- timeline name can be changed by the user -->
         </HBox>
 
         <!-- Save button HBox -->
@@ -43,9 +43,9 @@
 
         <!-- MIDDLE PART -->
         <!-- Add a time button -->
-        <HBox fx:id="addTime">
-            <Button fx:id="add_time_button" text="Add a time"/> <!-- save button not sure what its for yet -->
-        </HBox>
+<!--        <HBox fx:id="addTime">-->
+<!--            <Button fx:id="add_time_button" text="Add a time"/> &lt;!&ndash; save button not sure what its for yet &ndash;&gt;-->
+<!--        </HBox>-->
 
 
         <!-- timeslots -->
@@ -112,8 +112,8 @@
         </VBox>
     </HBox>
 
-    <HBox>
-        <Button fx:id="testButton" text="Test Brightness" onAction="#testBrightness"/>
-    </HBox>
+<!--    <HBox>-->
+<!--        <Button fx:id="testButton" text="Test Brightness" onAction="#testBrightness"/>-->
+<!--    </HBox>-->
 </VBox>
 

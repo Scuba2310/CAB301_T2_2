@@ -17,25 +17,25 @@
         </Text>
         </VBox>
         <HBox fx:id="fieldsBox">
-            <VBox fx:id="leftFields">
+            <VBox fx:id="leftFields" prefWidth="200">
                 <TextField fx:id="firstNameField" promptText="First Name" onKeyPressed="#handleFieldInput"/>
                 <Label fx:id="firstNameErrorLabel"/>
                 <TextField fx:id="usernameField" promptText="Username" onKeyPressed="#handleFieldInput"/>
                 <Label fx:id="usernameErrorLabel"/>
             </VBox>
-            <VBox fx:id="rightFields">
+            <VBox fx:id="rightFields" prefWidth="200">
                 <TextField fx:id="lastNameField" promptText="Last Name" onKeyPressed="#handleFieldInput"/>
                 <Label fx:id="lastNameErrorLabel"/>
                 <TextField fx:id="birthdayField" promptText="Birthday" onKeyPressed="#handleFieldInput"/>
                 <Label fx:id="birthdayErrorLabel"/>
             </VBox>
         </HBox>
-
-        <TextField fx:id="emailField" promptText="Email" onKeyPressed="#handleFieldInput"/>
-        <Label fx:id="emailErrorLabel"/>
-        <TextField fx:id="passwordField" promptText="Password" onKeyPressed="#handleFieldInput"/>
-        <Label fx:id="passwordErrorLabel"/>
-
+        <VBox fx:id="bottomField" prefWidth="200">
+            <TextField fx:id="emailField" promptText="Email" onKeyPressed="#handleFieldInput"/>
+            <Label fx:id="emailErrorLabel"/>
+            <TextField fx:id="passwordField" promptText="Password" onKeyPressed="#handleFieldInput"/>
+            <Label fx:id="passwordErrorLabel"/>
+        </VBox>
         <HBox fx:id="buttonBox">
             <Button fx:id="signupButton" text="Sign Up" onAction="#signup"/>
             <Button fx:id="goBackButton" onAction="#goBacktoHome" text="Go Back"/>
@@ -45,6 +45,5 @@
             <Text fx:id="LoginLink">Already have an account?</Text>
             <Button fx:id="loginLink" onAction="#goToLoginPage" text="Login"/>
         </HBox>
-
     </VBox>
 </VBox>

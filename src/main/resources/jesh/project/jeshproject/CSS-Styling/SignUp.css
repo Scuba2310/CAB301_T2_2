@@ -12,7 +12,7 @@
 }
 #fieldsBox {
  -fx-spacing: 40px;
- -fx-alignment: CENTER;
+ -fx-background-color:FFFFFF;
 }
 #buttonBox {
     -fx-spacing: 25px;
@@ -31,4 +31,7 @@
     -fx-background-color: #588157;
     -fx-padding: 12px;
     -fx-text-fill: #FDFBF6;
+}
+#bottomField {
+    -fx-background-color: #588157;
 }
