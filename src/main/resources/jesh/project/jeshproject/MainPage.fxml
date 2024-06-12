@@ -57,12 +57,11 @@
     <!-- ENTER TIME FIELDS -->
     <HBox spacing="20.0" style="-fx-padding: 10 0  0 10;">
         <HBox spacing="10.0">
-            <TextField fx:id="NM_start" promptText="Enter Start Time (24hr)" prefWidth="140" style="-fx-padding: 6 10;"/>
+            <TextField fx:id="start_time_slider" promptText="Enter Start Time (24hr)" prefWidth="140" style="-fx-padding: 6 10;"/>
         </HBox>
         <HBox spacing="10.0">
-            <TextField fx:id="NM_end" promptText="Enter End Time (24hr)" prefWidth="140" style="-fx-padding: 6 10;"/>
+            <TextField fx:id="end_time_slider" promptText="Enter End Time (24hr)" prefWidth="140" style="-fx-padding: 6 10;"/>
         </HBox>
-
 
         <!-- SET BRIGHTNESS BUTTON -->
         <HBox spacing="10.0" style="-fx-padding: 0 0 0 130px;">

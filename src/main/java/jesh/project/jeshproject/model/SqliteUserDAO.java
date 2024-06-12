@@ -76,7 +76,6 @@ public class SqliteUserDAO implements IUserDAO {
         return true;
     }
 
-
     @Override
     public User getUser(int id) {
         User user = null;
@@ -373,6 +372,4 @@ public class SqliteUserDAO implements IUserDAO {
             System.err.println("Error deleting timeline: " + ex.getMessage());
         }
     }
-
 }
-

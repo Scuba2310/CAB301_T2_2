@@ -6,7 +6,6 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
-import javafx.scene.control.Label;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.Slider;
 import javafx.scene.control.TextField;
@@ -43,8 +42,8 @@ public class MainPage {
     @FXML private TextField sleepwell_logo;
     @FXML private Button save_button;
     @FXML private Button add_time_button;
-    @FXML private Slider start_time_slider;
-    @FXML private Slider end_time_slider;
+    @FXML private TextField start_time_slider;
+    @FXML private TextField end_time_slider;
     @FXML private TextField NM_start_title;
     @FXML private TextField NM_end_title;
     @FXML private TextField NM_start;
@@ -54,10 +53,8 @@ public class MainPage {
     @FXML private Slider brightness_slider;
     @FXML private ChoiceBox<String> timelineChoiceBox;
 
-
     private final TimelineManager timelineManager;
     private final UserManager userManager;
-
 
     public MainPage() {
         SqliteUserDAO userDAO = new SqliteUserDAO();
@@ -65,9 +62,8 @@ public class MainPage {
         timelineManager = new TimelineManager(userDAO);
     }
 
-
     public void testBrightness(ActionEvent actionEvent) {
-        try{
+        try {
             BrightnessManager.ChangeBrightness((int) brightness_slider.getValue());
         } catch (Exception exception) {
             exception.printStackTrace();
@@ -77,12 +73,13 @@ public class MainPage {
     @FXML
     public void saveTimeline(ActionEvent actionEvent) {
         String name = timeline_name.getText();
-        int startTime = (int) start_time_slider.getValue();
-        int endTime = (int) end_time_slider.getValue();
+        int startTime = Integer.parseInt(start_time_slider.getText());
+        int endTime =  Integer.parseInt(end_time_slider.getText());
         int brightness = (int) brightness_slider.getValue();
         int userID = userManager.getLoggedInUser().getId();
 
-        Timeline newTimeline = new Timeline(name, startTime, endTime, brightness, userID);
+        // Adjust constructor call to match the Timeline class definition
+        Timeline newTimeline = new Timeline(0, name, startTime, endTime, brightness, userID);
         Timeline existingTimeline = timelineManager.getTimeline(name, userID);
 
         if (existingTimeline != null) {
@@ -96,7 +93,6 @@ public class MainPage {
 
     @FXML
     public void updateTimelineChoiceBox() {
-        // get all rows matching userID, make array with row names, set choices
         int userID = userManager.getLoggedInUser().getId();
         ArrayList<String> timelines = timelineManager.getUserTimelines(userID);
         timelineChoiceBox.setItems(FXCollections.observableArrayList(timelines));
@@ -108,21 +104,20 @@ public class MainPage {
         int userID = userManager.getLoggedInUser().getId();
 
         if (selectedValue != null) {
-            Timeline timeline = timelineManager.getTimeline(selectedValue, userManager.getLoggedInUser().getId());
-            start_time_slider.setValue(timeline.getStartTime());
-            end_time_slider.setValue(timeline.getEndTime());
+            Timeline timeline = timelineManager.getTimeline(selectedValue, userID);
             timeline_name.setText(timeline.getName());
+            // Convert int to String before setting the text
+            start_time_slider.setText(Integer.toString(timeline.getStartTime()));
+            end_time_slider.setText(Integer.toString(timeline.getEndTime()));
             brightness_slider.setValue(timeline.getBrightness());
         }
     }
 
     @FXML
     private void goToProfilePage() throws IOException {
-        // Get the stage
         Stage stage = (Stage) profileButton.getScene().getWindow();
         FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("ProfilePage.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), HelloApplication.WIDTH, HelloApplication.HEIGHT);
         stage.setScene(scene);
     }
-
 }

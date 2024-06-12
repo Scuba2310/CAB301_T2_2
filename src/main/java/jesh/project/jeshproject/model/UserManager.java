@@ -1,5 +1,6 @@
 package jesh.project.jeshproject.model;
 
+import java.sql.SQLException;
 import java.util.List;
 
 public class UserManager {
@@ -24,7 +25,7 @@ public class UserManager {
         return  searchString.toLowerCase().contains(query);
     }
 
-    public boolean addUser(User user) {
+    public boolean addUser(User user) throws SQLException {
         if (userDAO.getUser(user.getId()) != null) {
             return false; // User already exists
         } else {

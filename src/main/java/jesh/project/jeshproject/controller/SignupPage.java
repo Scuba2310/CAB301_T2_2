@@ -14,6 +14,7 @@ import javafx.scene.text.*;
 
 import java.io.IOException;
 import java.sql.Connection;
+import java.sql.SQLException;
 
 import jesh.project.jeshproject.model.UserManager;
 
@@ -49,7 +50,7 @@ public class SignupPage {
         title.setText("Sign Up");
     }
     @FXML
-    private void signup() throws IOException {
+    private void signup() throws IOException, SQLException {
         // Reset error labels and field styles
         resetErrorLabelsAndStyles();
 

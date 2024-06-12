@@ -1,10 +1,11 @@
 package jesh.project.jeshproject.model;
 
+import java.sql.SQLException;
 import java.util.List;
 import java.util.ArrayList;
 
 public interface IUserDAO {
-    boolean addUser(User user);
+    boolean addUser(User user) throws SQLException;
     User getUser(int id);
     User getUser(String identifier, UserIdentifierType identifierType);
     User getUserByUsernameAndPassword(String username, String password);
