@@ -17,20 +17,20 @@
         </Text>
         </VBox>
         <HBox fx:id="fieldsBox">
-            <VBox fx:id="leftFields" prefWidth="200">
+            <VBox fx:id="leftFields" prefWidth="250">
                 <TextField fx:id="firstNameField" promptText="First Name" onKeyPressed="#handleFieldInput"/>
                 <Label fx:id="firstNameErrorLabel"/>
                 <TextField fx:id="usernameField" promptText="Username" onKeyPressed="#handleFieldInput"/>
                 <Label fx:id="usernameErrorLabel"/>
             </VBox>
-            <VBox fx:id="rightFields" prefWidth="200">
+            <VBox fx:id="rightFields" prefWidth="250">
                 <TextField fx:id="lastNameField" promptText="Last Name" onKeyPressed="#handleFieldInput"/>
                 <Label fx:id="lastNameErrorLabel"/>
                 <TextField fx:id="birthdayField" promptText="Birthday" onKeyPressed="#handleFieldInput"/>
                 <Label fx:id="birthdayErrorLabel"/>
             </VBox>
         </HBox>
-        <VBox fx:id="bottomField" prefWidth="200">
+        <VBox fx:id="bottomField" prefWidth="100">
             <TextField fx:id="emailField" promptText="Email" onKeyPressed="#handleFieldInput"/>
             <Label fx:id="emailErrorLabel"/>
             <TextField fx:id="passwordField" promptText="Password" onKeyPressed="#handleFieldInput"/>

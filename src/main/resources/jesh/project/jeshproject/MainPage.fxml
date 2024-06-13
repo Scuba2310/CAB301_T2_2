@@ -22,23 +22,17 @@
         <!-- TOP PART -->
         <!-- TimeLine Name HBox -->
     <!-- "SleepWell" HBox -->
-    <HBox fx:id="logo">
-        <TextField fx:id="sleepwell_logo" text="SleepWell" editable="false"
-                   style="-fx-alignment: center;"/> <!-- cannot be changed by the usr -->
+    <HBox fx:id="Top">
+        <HBox fx:id="logo">
+            <TextField fx:id="sleepwell_logo" text="SleepWell" editable="false"
+                       style="-fx-alignment: center;"/> <!-- cannot be changed by the usr -->
+        </HBox>
+        <HBox fx:id="profile">
+            <Button fx:id="Profile" text="Profile"/>
+        </HBox>
     </HBox>
 
-    <HBox fx:id="topPart">
-        <HBox fx:id="timelineName">
-            <TextField fx:id="timeline_name" text="Name Timeline"/> <!-- timeline name can be changed by the user -->
-        </HBox>
 
-        <!-- Save button HBox -->
-        <HBox fx:id="saveButton">
-            <Button fx:id="save_button"
-                    text="Save"/> <!-- save button not sure what its for just copyiing the mfd -->
-        </HBox>
-
-    </HBox>
 
 
         <!-- MIDDLE PART -->
@@ -49,8 +43,8 @@
 
 
         <!-- timeslots -->
-        <HBox fx:id="timeline_main" spacing="10.0" AnchorPane.rightAnchor="0.0">
-            <HBox spacing="10.0" AnchorPane.rightAnchor="0.0" maxWidth="90">
+        <HBox fx:id="timeline_main" spacing="10.0">
+            <HBox spacing="10.0" maxWidth="90">
                 <Button fx:id="timeslot_1" text="Timeslot 1"/>
             </HBox>
 
@@ -77,29 +71,31 @@
         <!-- Night Mode start and end time titles -->
     <HBox fx:id="bottomSection">
         <VBox fx:id="bottom1">
-            <HBox fx:id="timeTitles">
-                <TextField fx:id="NM_start_title" text="Start Time (24hr)" editable="false"/>
-                <TextField fx:id="NM_end_title" text="End Time (24hr)" editable="false"/>
+
+            <HBox fx:id="timelineName">
+                <TextField fx:id="timeline_name" text="Name Timeline"/> <!-- timeline name can be changed by the user -->
             </HBox>
 
             <!-- Night mode start time -->
             <HBox fx:id="enterTime">
-                <TextField fx:id="NM_start" text="Enter Time" style="-fx-alignment: center;"
+                <TextField fx:id="NM_start" text="Enter Start Time (24hr)" style="-fx-alignment: center;"
                            prefWidth="120"/>
-                <TextField fx:id="NM_end" text="Enter Time" style="-fx-alignment: center;"
+                <TextField fx:id="NM_end" text="Enter End Time (24hr)" style="-fx-alignment: center;"
                            prefWidth="120"/>
             </HBox>
 
-            <!-- Night Mode button -->
-            <HBox fx:id="nightButton">
-                <Button fx:id="NM_button" text="Night Mode"/> <!-- -->
+            <!-- Save button -->
+            <HBox fx:id="saveButton">
+                <Button fx:id="save_button"
+                        text="Save Timeline"/>
             </HBox>
+
+
         </VBox>
         <VBox fx:id="bottom2">
             <!-- Brightness Level title -->
-            <HBox fx:id="brightnessTitle">
-                <TextField fx:id="BL_title" text="Brightness Level" editable="false"
-                           style="-fx-alignment: center;"/>
+            <HBox>
+                <Button fx:id="testButton" text="Test Brightness" onAction="#testBrightness"/>
             </HBox>
 
             <!-- Brightness Level slider -->
@@ -111,9 +107,5 @@
 
         </VBox>
     </HBox>
-
-<!--    <HBox>-->
-<!--        <Button fx:id="testButton" text="Test Brightness" onAction="#testBrightness"/>-->
-<!--    </HBox>-->
 </VBox>
 

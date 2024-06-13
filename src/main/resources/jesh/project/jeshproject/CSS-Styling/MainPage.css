@@ -1,7 +1,15 @@
 #mainbox {
     -fx-background-color: #FDFBF6;
+    -fx-spacing: 40px;
+}
+#Top {
+    -fx-alignment: CENTER;
 }
 #logo {
+    -fx-alignment: CENTER;
+    -fx-font-size: 16px;
+}
+#Profile {
     -fx-alignment: TOP-RIGHT;
 }
 #timelineName {
@@ -31,7 +39,7 @@
 #timeline_main {
     -fx-padding: 10px;
     -fx-alignment: CENTER;
-    -fx-spacing: 20px;
+    -fx-spacing: 30px;
 }
 #timeslot_1 {
     -fx-background-color: #A3B18A;
