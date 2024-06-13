@@ -3,26 +3,9 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.*?>
 
 <?import javafx.scene.control.Label?>
-<<<<<<< HEAD
-<VBox xmlns:fx="http://javafx.com/fxml/1" fx:controller="jesh.project.jeshproject.controller.SignupPage">
-    <TextField fx:id="firstNameField" promptText="First Name" onKeyPressed="#handleFieldInput"/>
-    <Label fx:id="firstNameErrorLabel"/>
-    <TextField fx:id="lastNameField" promptText="Last Name" onKeyPressed="#handleFieldInput"/>
-    <Label fx:id="lastNameErrorLabel"/>
-    <TextField fx:id="birthdayField" promptText="Birthday" onKeyPressed="#handleFieldInput"/>
-    <Label fx:id="birthdayErrorLabel"/>
-    <TextField fx:id="emailField" promptText="Email" onKeyPressed="#handleFieldInput"/>
-    <Label fx:id="emailErrorLabel"/>
-    <TextField fx:id="usernameField" promptText="Username" onKeyPressed="#handleFieldInput"/>
-    <Label fx:id="usernameErrorLabel"/>
-    <TextField fx:id="passwordField" promptText="Password" onKeyPressed="#handleFieldInput"/>
-    <Label fx:id="passwordErrorLabel"/>
-    <Label fx:id="errorMessage"/>
-    <Button fx:id="signUpButton" text="Sign Up" onAction="#signup"/>
-    <Button fx:id="goBackButton" onAction="#goBacktoHome" text="Go Back"/>
-=======
 <?import javafx.scene.layout.HBox?>
 <VBox fx:id="mainBox" xmlns:fx="http://javafx.com/fxml/1" fx:controller="jesh.project.jeshproject.controller.SignupPage">
     <VBox fx:id="SignupBox">
@@ -65,5 +48,4 @@
         </HBox>
 
     </VBox>
->>>>>>> 86499e57984c72902f940300cf51c57558cf467d
 </VBox>

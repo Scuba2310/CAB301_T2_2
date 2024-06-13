@@ -2,10 +2,6 @@
 
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
-<<<<<<< HEAD
-<?import javafx.geometry.Insets?>
-=======
->>>>>>> 86499e57984c72902f940300cf51c57558cf467d
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
             xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml"

@@ -17,8 +17,7 @@ import java.sql.Connection;
 import jesh.project.jeshproject.model.UserManager;
 
 public class HomePage {
-    @FXML
-    public Text description = new Text();
+    public Text description;
     @FXML
     private Text title;
     @FXML
