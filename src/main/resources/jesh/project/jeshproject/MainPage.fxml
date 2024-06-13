@@ -4,6 +4,147 @@
 <?import javafx.scene.control.Slider?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.VBox?>
+<<<<<<< HEAD
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.text.*?>
+
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0"
+            prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="jesh.project.jeshproject.controller.MainPage">
+    <VBox alignment="TOP_CENTER" layoutX="162.0" layoutY="100.0" spacing="10.0"
+          style="-fx-padding: 10;">
+
+
+        <!-- TOP PART -->
+        <!-- TimeLine Name HBox -->
+        <HBox spacing="10.0">
+            <padding>
+                <Insets top="-90.0" right="450.0" left="-155.0"/>
+            </padding>
+            <TextField fx:id="timeline_name" promptText="Name"/> <!-- timeline name can be changed by the user -->
+        </HBox>
+
+        <!-- "SleepWell" HBox -->
+        <HBox spacing="10.0">
+            <padding>
+                <Insets top="-105.0" left="300.0"/>
+            </padding>
+            <TextField fx:id="sleepwell_logo" text="SleepWell" editable="false"
+                       style="-fx-alignment: center;"/> <!-- cannot be changed by the usr -->
+        </HBox>
+
+
+        <!-- Save button HBox -->
+        <HBox spacing="10.0" AnchorPane.rightAnchor="0.0">
+            <padding>
+                <Insets top="-85.0" left="357.0"/>
+            </padding>
+            <Button fx:id="save_button"
+                    onAction="#saveTimeline"
+                    text="Save"/> <!-- save button not sure what its for just copyiing the mfd -->
+            <ChoiceBox fx:id="timelineChoiceBox" onAction="#loadTimeline" onShowing="#updateTimelineChoiceBox"/>
+        </HBox>
+
+
+        <!-- MIDDLE PART -->
+        <!-- Add a time button -->
+        <HBox spacing="10.0" AnchorPane.rightAnchor="0.0">
+            <padding>
+                <Insets top="-68.0" left="109.0"/>
+            </padding>
+            <Button fx:id="add_time_button" text="Add a time"/> <!-- save button not sure what its for yet -->
+        </HBox>
+
+
+        <!-- Start Time Slider -->
+        <HBox spacing="10.0" AnchorPane.rightAnchor="0.0">
+            <padding>
+                <Insets top="-28.0" left="-95"/>
+            </padding>
+            <Label text="Start Time:"/>
+            <Slider fx:id="start_time_slider" prefWidth="430" max="24" majorTickUnit="1"
+                    showTickMarks="true" showTickLabels="true"/>
+        </HBox>
+
+        <!-- End Time Slider -->
+        <HBox spacing="10.0" AnchorPane.rightAnchor="0.0">
+            <padding>
+                <Insets left="-95"/>
+            </padding>
+            <Label text=" End Time:"/>
+            <Slider fx:id="end_time_slider" prefWidth="430" max="24" majorTickUnit="1"
+                    showTickMarks="true" showTickLabels="true"/>
+        </HBox>
+
+
+        <!-- BOTTOM PART -->
+        <!-- Night Mode start and end time titles -->
+        <HBox spacing="10.0">
+            <padding>
+                <Insets top="20.0" left="-150"/>
+            </padding>
+            <TextField fx:id="NM_start_title" text="Start Time (24hr)" editable="false"
+                       style="-fx-alignment: center;"/>
+            <TextField fx:id="NM_end_title" text="End Time (24hr)" editable="false"
+                       style="-fx-alignment: center;"/>
+        </HBox>
+
+        <!-- Night mode start time -->
+        <HBox spacing="10.0">
+            <padding>
+                <Insets top="-5.0" left="-140"/>
+            </padding>
+            <TextField fx:id="NM_start" text="Enter Time" style="-fx-alignment: center;"
+                       prefWidth="120"/>
+        </HBox>
+
+        <!-- Night mode end time -->
+        <HBox spacing="10.0">
+            <padding>
+                <Insets top="-37" left="25"/>
+            </padding>
+            <TextField fx:id="NM_end" text="Enter Time" style="-fx-alignment: center;"
+                       prefWidth="120"/>
+        </HBox>
+
+        <!-- Night Mode button -->
+        <HBox spacing="10.0" AnchorPane.rightAnchor="0.0">
+            <padding>
+                <Insets top="-10.0" left="-40"/>
+            </padding>
+            <Button fx:id="NM_button" text="Night Mode"/> <!-- -->
+        </HBox>
+
+        <!-- Brightness Level title -->
+        <HBox spacing="10.0">
+            <padding>
+                <Insets top="-98.0" left="276"/>
+            </padding>
+            <TextField fx:id="BL_title" text="Brightness Level" editable="false"
+                       style="-fx-alignment: center;"/>
+        </HBox>
+
+        <!-- Brightness Level slider -->
+        <HBox spacing="10.0" AnchorPane.rightAnchor="0.0">
+            <padding>
+                <Insets top="-60" left="243"/>
+            </padding>
+            <Slider fx:id="brightness_slider" prefWidth="200" majorTickUnit="10"
+                    showTickMarks="true" showTickLabels="true"/>
+        </HBox>
+
+    </VBox>
+
+    <HBox>
+        <Button fx:id="testButton" text="Test Brightness" onAction="#testBrightness"/>
+        <Button fx:id="profileButton" onAction="#goToProfile" text="Profile"/>
+    </HBox>
+
+</AnchorPane>
+=======
 <?import javafx.scene.layout.HBox?>
 
 <?import javafx.scene.control.Label?>
@@ -88,3 +229,4 @@
     </HBox>
 </VBox>
 
+>>>>>>> 86499e57984c72902f940300cf51c57558cf467d

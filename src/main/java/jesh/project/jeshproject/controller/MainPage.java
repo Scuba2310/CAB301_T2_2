@@ -26,11 +26,8 @@ public class MainPage {
     @FXML private Button nightModeButton;
     @FXML private Slider brightnessSlider;
     @FXML private Text brightnessLevelTitle;
-    @FXML private Button timeslot_1;
-    @FXML private Button timeslot_2;
-    @FXML private Button timeslot_3;
-    @FXML private Button timeslot_4;
-    @FXML private Button timeslot_5;
+    @FXML private Text endTimeText;
+    @FXML private Text startTimeText;
     @FXML private Text timelineName;
     @FXML private Label start_message;
     @FXML private Button saveButton;
@@ -53,8 +50,44 @@ public class MainPage {
     @FXML private TextField BL_title;
     @FXML private Slider brightness_slider;
 
+<<<<<<< HEAD
+    @FXML
+    private TextField timeline_name;
+    @FXML
+    private TextField sleepwell_logo;
+    @FXML
+    private Button save_button;
+    @FXML
+    private Button add_time_button;
+    @FXML
+    private Slider start_time_slider;
+    @FXML
+    private Slider end_time_slider;
+    @FXML
+    private TextField NM_start_title;
+    @FXML
+    private TextField NM_end_title;
+    @FXML
+    private TextField NM_start;
+    @FXML
+    private TextField NM_end;
+    @FXML
+    private Button NM_button;
+    @FXML
+    private TextField BL_title;
+    @FXML
+    private Slider brightness_slider;
+
+    @FXML private ChoiceBox timelineChoiceBox;
+
+
+    private TimelineManager timelineManager;
+    private UserManager userManager;
+
+=======
     private final TimelineManager timelineManager;
     private final UserManager userManager;
+>>>>>>> 86499e57984c72902f940300cf51c57558cf467d
 
     private int currentTimeline;
 

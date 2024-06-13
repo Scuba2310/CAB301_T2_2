@@ -10,7 +10,6 @@ import javafx.scene.control.*;
 import javafx.scene.input.KeyEvent;
 import javafx.stage.*;
 import javafx.fxml.FXML;
-import javafx.scene.text.*;
 
 import java.io.IOException;
 import java.sql.Connection;
@@ -19,6 +18,40 @@ import java.sql.SQLException;
 import jesh.project.jeshproject.model.UserManager;
 
 public class SignupPage {
+<<<<<<< HEAD
+    private UserManager userManager;
+    @FXML
+    private Button goBackButton;
+    @FXML
+    private Button signUpButton;
+    @FXML
+    private TextField birthdayField;
+    @FXML
+    private TextField usernameField;
+    @FXML
+    private TextField passwordField;
+    @FXML
+    private TextField firstNameField;
+    @FXML
+    private TextField lastNameField;
+    @FXML
+    private TextField emailField;
+    @FXML
+    private Label firstNameErrorLabel;
+    @FXML
+    private Label lastNameErrorLabel;
+    @FXML
+    private Label birthdayErrorLabel;
+    @FXML
+    private Label emailErrorLabel;
+    @FXML
+    private Label usernameErrorLabel;
+    @FXML
+    private Label passwordErrorLabel;
+    @FXML
+    private Label errorMessage;
+
+=======
     @FXML private Button signUpButton;
     private UserManager userManager;
     @FXML private Text title;
@@ -38,6 +71,7 @@ public class SignupPage {
     @FXML private Label passwordErrorLabel;
     @FXML private IUserDAO userDAO;
     @FXML private Label errorMessage;
+>>>>>>> 86499e57984c72902f940300cf51c57558cf467d
 
     Connection connection = SqliteConnection.getInstance();
     //SqliteUserDAO sqliteUserDAO = new SqliteUserDAO();
@@ -46,11 +80,15 @@ public class SignupPage {
     }
 
     @FXML
+<<<<<<< HEAD
+    private void signup() throws IOException {
+=======
     public void initialize() {
         title.setText("Sign Up");
     }
     @FXML
     private void signup() throws IOException, SQLException {
+>>>>>>> 86499e57984c72902f940300cf51c57558cf467d
         // Reset error labels and field styles
         resetErrorLabelsAndStyles();
 
@@ -205,6 +243,8 @@ public class SignupPage {
         Stage stage = (Stage) goBackButton.getScene().getWindow();
         FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("HomePage.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), HelloApplication.WIDTH, HelloApplication.HEIGHT);
+<<<<<<< HEAD
+=======
 
         String stylesheet = HelloApplication.class.getResource("CSS-Styling/HomePage.css").toExternalForm();
         scene.getStylesheets().add(stylesheet);
@@ -232,6 +272,7 @@ public class SignupPage {
         String stylesheet = HelloApplication.class.getResource("CSS-Styling/Login.css").toExternalForm();
         scene.getStylesheets().add(stylesheet);
 
+>>>>>>> 86499e57984c72902f940300cf51c57558cf467d
         stage.setScene(scene);
     }
 }
