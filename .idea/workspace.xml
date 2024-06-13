@@ -6,11 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="f6207e56-6f06-45c5-8a54-f7bb59653c78" name="Changes" comment="fixing signup. can now signup and login">
       <changelist_data name="elizaaajane" email="n11303816@qut.edu.au" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/jesh/project/jeshproject/controller/ProfilePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/jesh/project/jeshproject/controller/ProfilePage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/jesh/project/jeshproject/controller/SignupPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/jesh/project/jeshproject/controller/SignupPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/jesh/project/jeshproject/SignUp.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/jesh/project/jeshproject/SignUp.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/users.db" beforeDir="false" afterPath="$PROJECT_DIR$/users.db" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -74,7 +70,7 @@
     "Repository.Attach.Sources": "false",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "db-fixes",
+    "git-widget-placeholder": "CSS-SN",
     "ignore.virus.scanning.warn.message": "true",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "C:/Users/AAA/IdeaProjects/CAB302_A1_testing_working",
