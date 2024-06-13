@@ -332,6 +332,7 @@ public class SqliteUserDAO implements IUserDAO {
         return true;
     }
 
+
     public Timeline getTimeline(String name, int userID) {
         Timeline timeline = null;
 
