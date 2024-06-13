@@ -27,7 +27,7 @@
         </VBox>
     <Label fx:id="errorMessage"/>
         <HBox fx:id="ButtonBox">
-            <Button fx:id="loginButton" text="Login" onAction="#goToMainPage"/>
+            <Button fx:id="loginButton" text="Login" onAction="#login"/>
             <Button fx:id="goBackButton" onAction="#goBacktoHome" text="Go Back"/>
         </HBox>
             <HBox fx:id="signup">

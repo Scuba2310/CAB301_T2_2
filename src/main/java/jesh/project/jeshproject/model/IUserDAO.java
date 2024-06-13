@@ -21,4 +21,6 @@ public interface IUserDAO {
     ArrayList<String> getTimelineNames(int userID);
     boolean updateTimeline(Timeline timeline);
     void deleteTimeline(int timelineId);
+
+    Timeline getTimelineByID(int id);
 }

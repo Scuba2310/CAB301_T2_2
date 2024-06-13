@@ -6,6 +6,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.layout.HBox?>
 
+<?import javafx.scene.control.Label?>
 <VBox maxHeight="300" maxWidth="600" prefHeight="300.0" prefWidth="600.0"
       xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1"
       fx:controller="jesh.project.jeshproject.controller.MainPage" alignment="TOP_CENTER" spacing="10.0" style="-fx-padding: 10;">
@@ -29,27 +30,30 @@
     <!-- TIMELINE BUTTONS -->
     <HBox fx:id="timeline_main" spacing="30.0" style="-fx-padding: 20 0 40 38;">
         <HBox spacing="10.0">
-            <Button fx:id="timeslot_1" text="Timeslot 1" style="-fx-padding: 10 15;"/>
+            <Button fx:id="timeslot_1" text="Timeslot 1" style="-fx-padding: 10 15;" onAction="#load_T1"/>
         </HBox>
         <HBox spacing="10.0">
-            <Button fx:id="timeslot_2" text="Timeslot 2" style="-fx-padding: 10 15;"/>
+            <Button fx:id="timeslot_2" text="Timeslot 2" style="-fx-padding: 10 15;" onAction="#load_T2"/>
         </HBox>
         <HBox spacing="10.0">
-            <Button fx:id="timeslot_3" text="Timeslot 3" style="-fx-padding: 10 15;"/>
+            <Button fx:id="timeslot_3" text="Timeslot 3" style="-fx-padding: 10 15;" onAction="#load_T3"/>
         </HBox>
         <HBox spacing="10.0">
-            <Button fx:id="timeslot_4" text="Timeslot 4" style="-fx-padding: 10 15;"/>
+            <Button fx:id="timeslot_4" text="Timeslot 4" style="-fx-padding: 10 15;" onAction="#load_T4"/>
         </HBox>
         <HBox spacing="10.0">
-            <Button fx:id="timeslot_5" text="Timeslot 5" style="-fx-padding: 10 15;"/>
+            <Button fx:id="timeslot_5" text="Timeslot 5" style="-fx-padding: 10 15;" onAction="#load_T5"/>
         </HBox>
     </HBox>
 
 
     <!-- MIDDLE PART -->
+    <HBox spacing="10.0" style="-fx-padding: 0 0 0 10;">
+        <Label fx:id="start_message" text="Select a timeslot to start!"/>
+    </HBox>
     <!-- TIMELINE NAME -->
     <HBox spacing="10.0" style="-fx-padding: 0 0 0 10;">
-        <TextField fx:id="timeline_name" promptText="Timeline Name Here......" style="-fx-font-size: 16px;"/>
+        <TextField fx:id="timeline_name" promptText="Timeline Name Here......" style="-fx-font-size: 16px;" editable="false"/>
     </HBox>
 
 
@@ -57,10 +61,10 @@
     <!-- ENTER TIME FIELDS -->
     <HBox spacing="20.0" style="-fx-padding: 10 0  0 10;">
         <HBox spacing="10.0">
-            <TextField fx:id="start_time_slider" promptText="Enter Start Time (24hr)" prefWidth="140" style="-fx-padding: 6 10;"/>
+            <TextField fx:id="start_time_slider" promptText="Enter Start Time (24hr)" prefWidth="140" style="-fx-padding: 6 10;" editable="false"/>
         </HBox>
         <HBox spacing="10.0">
-            <TextField fx:id="end_time_slider" promptText="Enter End Time (24hr)" prefWidth="140" style="-fx-padding: 6 10;"/>
+            <TextField fx:id="end_time_slider" promptText="Enter End Time (24hr)" prefWidth="140" style="-fx-padding: 6 10;" editable="false"/>
         </HBox>
 
         <!-- SET BRIGHTNESS BUTTON -->

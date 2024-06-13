@@ -52,7 +52,12 @@ public class ProfilePage {
         emailField.setText(user.getEmail());
         userNameField.setText(user.getUsername());
         passwordField.setText(user.getPassword());
-
+        firstNameField.setEditable(true);
+        lastNameField.setEditable(true);
+        birthdayField.setEditable(true);
+        emailField.setEditable(true);
+        userNameField.setEditable(true);
+        passwordField.setEditable(true);
     }
     @FXML
     private void hideDetails() {
@@ -62,6 +67,12 @@ public class ProfilePage {
         emailField.setText("");
         userNameField.setText("");
         passwordField.setText("");
+        firstNameField.setEditable(false);
+        lastNameField.setEditable(false);
+        birthdayField.setEditable(false);
+        emailField.setEditable(false);
+        userNameField.setEditable(false);
+        passwordField.setEditable(false);
     }
 
     @FXML

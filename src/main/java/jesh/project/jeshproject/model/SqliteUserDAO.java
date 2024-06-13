@@ -35,12 +35,13 @@ public class SqliteUserDAO implements IUserDAO {
     private void createDataTable() {
         try {
             String query = "CREATE TABLE IF NOT EXISTS timelines ("
-                    + "id INTEGER PRIMARY KEY AUTOINCREMENT,"
+                    + "id INTEGER,"
                     + "name STRING NOT NULL,"
                     + "startTime INT NOT NULL,"
                     + "endTime INT NOT NULL,"
                     + "brightness INT NOT NULL,"
-                    + "userID INTEGER REFERENCES users (userID)"
+                    + "userID INTEGER REFERENCES users (userID),"
+                    + "PRIMARY KEY (id, userID)"
                     + ")";
             Statement statement = connection.createStatement();
             statement.execute(query);
@@ -67,6 +68,8 @@ public class SqliteUserDAO implements IUserDAO {
                 if (generatedKeys.next()) {
                     user.setId(generatedKeys.getInt(1));
                     System.out.println("A new user was added successfully with ID: " + user.getId());
+
+                    setDefaultTimelines(user.getId());
                 }
             }
         } catch (SQLException ex) {
@@ -195,6 +198,16 @@ public class SqliteUserDAO implements IUserDAO {
         } catch (SQLException ex) {
             System.err.println("Error deleting user: " + ex.getMessage());
         }
+        try {
+            String query = "DELETE FROM timelines "
+                    + "WHERE userID = ?";
+            PreparedStatement statement = connection.prepareStatement(query);
+            statement.setInt(1, user.getId());
+            statement.executeUpdate();
+        } catch (SQLException ex) {
+            System.err.println("Error deleting user timelines: " + ex.getMessage());
+        }
+
     }
 
     @Override
@@ -274,13 +287,14 @@ public class SqliteUserDAO implements IUserDAO {
     @Override
     public boolean addTimeline(Timeline timeline) {
         try {
-            String query = "INSERT INTO timelines (name, startTime, endTime, brightness, userID) VALUES (?, ?, ?, ?, ?)";
+            String query = "INSERT INTO Timelines (id, name, startTime, endTime, brightness, userID) VALUES (?, ?, ?, ?, ?, ?)";
             PreparedStatement statement = connection.prepareStatement(query, Statement.RETURN_GENERATED_KEYS);
-            statement.setString(1, timeline.getName());
-            statement.setInt(2, timeline.getStartTime());
-            statement.setInt(3, timeline.getEndTime());
-            statement.setInt(4, timeline.getBrightness());
-            statement.setInt(5, timeline.getUserID());
+            statement.setInt(1, timeline.getId());
+            statement.setString(2, timeline.getName());
+            statement.setInt(3, timeline.getStartTime());
+            statement.setInt(4, timeline.getEndTime());
+            statement.setInt(5, timeline.getBrightness());
+            statement.setInt(6, timeline.getUserID());
 
             int rowsInserted = statement.executeUpdate();
             if (rowsInserted > 0) {
@@ -295,6 +309,14 @@ public class SqliteUserDAO implements IUserDAO {
             return false;
         }
         return true;
+    }
+
+    public void setDefaultTimelines(int userId) {
+        Timeline timeline = new Timeline("Default", 0, 0, 0, userId);
+        for (int i=0; i < 5 ; i++) {
+            timeline.setId(i);
+            addTimeline(timeline);
+        }
     }
 
     @Override
@@ -342,13 +364,14 @@ public class SqliteUserDAO implements IUserDAO {
     @Override
     public boolean updateTimeline(Timeline timeline) {
         try {
-            String query = "UPDATE timelines SET startTime = ?, endTime = ?, brightness = ? WHERE name = ? AND userID = ?";
+            String query = "UPDATE timelines SET name = ?, startTime = ?, endTime = ?, brightness = ? WHERE id = ? AND userID = ?";
             PreparedStatement statement = connection.prepareStatement(query);
-            statement.setInt(1, timeline.getStartTime());
-            statement.setInt(2, timeline.getEndTime());
-            statement.setInt(3, timeline.getBrightness());
-            statement.setString(4, timeline.getName());
-            statement.setInt(5, timeline.getUserID());
+            statement.setString(1, timeline.getName());
+            statement.setInt(2, timeline.getStartTime());
+            statement.setInt(3, timeline.getEndTime());
+            statement.setInt(4, timeline.getBrightness());
+            statement.setInt(5, timeline.getId());
+            statement.setInt(6, timeline.getUserID());
 
             int rowsUpdated = statement.executeUpdate();
             if (rowsUpdated > 0) {
@@ -371,5 +394,29 @@ public class SqliteUserDAO implements IUserDAO {
         } catch (SQLException ex) {
             System.err.println("Error deleting timeline: " + ex.getMessage());
         }
+    }
+
+    @Override
+    public Timeline getTimelineByID(int id) {
+        User user = getLoggedInUser();
+        Timeline timeline = null;
+        try {
+            String query = "SELECT * FROM timelines WHERE id = ? AND userID = ?";
+            PreparedStatement statement = connection.prepareStatement(query);
+            statement.setInt(1, id);
+            statement.setInt(2, user.getId());
+            ResultSet resultSet = statement.executeQuery();
+
+            if (resultSet.next()) {
+                String name = resultSet.getString("name");
+                int startTime = resultSet.getInt("startTime");
+                int endTime = resultSet.getInt("endTime");
+                int brightness = resultSet.getInt("brightness");
+                timeline = new Timeline(id, name, startTime, endTime, brightness, user.getId());
+            }
+        } catch (SQLException ex) {
+            System.err.println("Error getting timeline: " + ex.getMessage());
+        }
+        return timeline;
     }
 }
