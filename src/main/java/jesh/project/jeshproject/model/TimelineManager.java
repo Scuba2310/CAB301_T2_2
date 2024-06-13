@@ -25,4 +25,6 @@ public class TimelineManager {
     public ArrayList<String> getUserTimelines(int userID) {
         return userDAO.getTimelineNames(userID);
     }
+
+    public Timeline getTimelineByID(int id) { return userDAO.getTimelineByID(id); }
 }

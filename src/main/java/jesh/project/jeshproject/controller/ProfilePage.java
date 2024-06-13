@@ -52,7 +52,12 @@ public class ProfilePage {
         emailField.setText(user.getEmail());
         userNameField.setText(user.getUsername());
         passwordField.setText(user.getPassword());
-
+        firstNameField.setEditable(true);
+        lastNameField.setEditable(true);
+        birthdayField.setEditable(true);
+        emailField.setEditable(true);
+        userNameField.setEditable(true);
+        passwordField.setEditable(true);
     }
     @FXML
     private void hideDetails() {
@@ -62,6 +67,12 @@ public class ProfilePage {
         emailField.setText("");
         userNameField.setText("");
         passwordField.setText("");
+        firstNameField.setEditable(false);
+        lastNameField.setEditable(false);
+        birthdayField.setEditable(false);
+        emailField.setEditable(false);
+        userNameField.setEditable(false);
+        passwordField.setEditable(false);
     }
 
     @FXML
@@ -93,6 +104,7 @@ public class ProfilePage {
         logOut();
     }
 
+
     @FXML
     private void goBackToMain() throws IOException {
         Stage stage = (Stage) goBackButton.getScene().getWindow();
@@ -106,6 +118,10 @@ public class ProfilePage {
         Stage stage = (Stage) logOutButton.getScene().getWindow();
         FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("HomePage.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), HelloApplication.WIDTH, HelloApplication.HEIGHT);
+
+        String stylesheet = HelloApplication.class.getResource("CSS-Styling/HomePage.css").toExternalForm();
+        scene.getStylesheets().add(stylesheet);
+
         stage.setScene(scene);
     }
 

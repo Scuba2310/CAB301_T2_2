@@ -28,42 +28,42 @@
             <padding>
             </padding>
             <Label>First Name</Label>
-            <TextField fx:id="firstNameField" text=""/>
+            <TextField fx:id="firstNameField" text="" editable="false"/>
         </HBox>
 
         <HBox spacing="10.0">
             <padding>
             </padding>
             <Label>Last Name</Label>
-            <TextField fx:id="lastNameField"/>
+            <TextField fx:id="lastNameField" editable="false"/>
         </HBox>
 
         <HBox spacing="10.0">
             <padding>
             </padding>
             <Label>Birthday</Label>
-            <TextField fx:id="birthdayField"/>
+            <TextField fx:id="birthdayField" editable="false"/>
         </HBox>
 
         <HBox spacing="10.0">
             <padding>
             </padding>
             <Label>Email</Label>
-            <TextField fx:id="emailField"/>
+            <TextField fx:id="emailField" editable="false"/>
         </HBox>
 
         <HBox spacing="10.0">
             <padding>
             </padding>
             <Label>Username</Label>
-            <TextField fx:id="userNameField"/>
+            <TextField fx:id="userNameField" editable="false"/>
         </HBox>
 
         <HBox spacing="10.0">
             <padding>
             </padding>
             <Label>Password</Label>
-            <TextField fx:id="passwordField"/>
+            <TextField fx:id="passwordField" editable="false"/>
         </HBox>
 
         <HBox spacing="10.0">

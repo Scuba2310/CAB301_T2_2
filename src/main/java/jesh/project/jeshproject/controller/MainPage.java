@@ -6,7 +6,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
-import javafx.scene.control.ChoiceBox;
+import javafx.scene.control.Label;
 import javafx.scene.control.Slider;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.HBox;
@@ -32,6 +32,7 @@ public class MainPage {
     @FXML private Button timeslot_4;
     @FXML private Button timeslot_5;
     @FXML private Text timelineName;
+    @FXML private Label start_message;
     @FXML private Button saveButton;
     @FXML private VBox infoBox;
     @FXML private Button signoutButton;
@@ -51,10 +52,11 @@ public class MainPage {
     @FXML private Button NM_button;
     @FXML private TextField BL_title;
     @FXML private Slider brightness_slider;
-    @FXML private ChoiceBox<String> timelineChoiceBox;
 
     private final TimelineManager timelineManager;
     private final UserManager userManager;
+
+    private int currentTimeline;
 
     public MainPage() {
         SqliteUserDAO userDAO = new SqliteUserDAO();
@@ -72,6 +74,7 @@ public class MainPage {
 
     @FXML
     public void saveTimeline(ActionEvent actionEvent) {
+        int id = currentTimeline;
         String name = timeline_name.getText();
         int startTime = Integer.parseInt(start_time_slider.getText());
         int endTime =  Integer.parseInt(end_time_slider.getText());
@@ -79,38 +82,61 @@ public class MainPage {
         int userID = userManager.getLoggedInUser().getId();
 
         // Adjust constructor call to match the Timeline class definition
-        Timeline newTimeline = new Timeline(0, name, startTime, endTime, brightness, userID);
-        Timeline existingTimeline = timelineManager.getTimeline(name, userID);
+        Timeline newTimeline = new Timeline(id, name, startTime, endTime, brightness, userID);
 
-        if (existingTimeline != null) {
-            timelineManager.updateTimeline(newTimeline);
-        } else {
-            timelineManager.addTimeline(newTimeline);
-        }
-
-        updateTimelineChoiceBox();
+        timelineManager.updateTimeline(newTimeline);
     }
 
     @FXML
-    public void updateTimelineChoiceBox() {
+    public void getTimeline() {
         int userID = userManager.getLoggedInUser().getId();
         ArrayList<String> timelines = timelineManager.getUserTimelines(userID);
-        timelineChoiceBox.setItems(FXCollections.observableArrayList(timelines));
     }
 
     @FXML
-    private void loadTimeline() {
-        String selectedValue = timelineChoiceBox.getValue();
-        int userID = userManager.getLoggedInUser().getId();
+    private void loadTimeline(int value) {
+        timeline_name.setEditable(true);
+        start_time_slider.setEditable(true);
+        end_time_slider.setEditable(true);
+        start_message.setVisible(false);
 
-        if (selectedValue != null) {
-            Timeline timeline = timelineManager.getTimeline(selectedValue, userID);
-            timeline_name.setText(timeline.getName());
-            // Convert int to String before setting the text
-            start_time_slider.setText(Integer.toString(timeline.getStartTime()));
-            end_time_slider.setText(Integer.toString(timeline.getEndTime()));
-            brightness_slider.setValue(timeline.getBrightness());
-        }
+        Timeline timeline = timelineManager.getTimelineByID(currentTimeline);
+        timeline_name.setText(timeline.getName());
+        // Convert int to String before setting the text
+        start_time_slider.setText(Integer.toString(timeline.getStartTime()));
+        end_time_slider.setText(Integer.toString(timeline.getEndTime()));
+        brightness_slider.setValue(timeline.getBrightness());
+    }
+
+    @FXML
+    private void load_T1() {
+        int value = 0;
+        currentTimeline = value;
+        loadTimeline(value);
+    }
+    @FXML
+    private void load_T2() {
+        int value = 1;
+        currentTimeline = value;
+        loadTimeline(value);
+    }
+    @FXML
+    private void load_T3() {
+        int value = 2;
+        currentTimeline = value;
+        loadTimeline(value);
+    }
+    @FXML
+    private void load_T4() {
+        int value = 3;
+        currentTimeline = value;
+        loadTimeline(value);
+    }
+    @FXML
+    private void load_T5() {
+        int value = 4;
+        currentTimeline = value;
+        loadTimeline(value);
     }
 
     @FXML
