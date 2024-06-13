@@ -1,113 +1,90 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.control.Label?>
 <?import javafx.scene.control.Slider?>
 <?import javafx.scene.control.TextField?>
-<?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
-<?import javafx.geometry.Insets?>
-<?import javafx.scene.text.*?>
+<?import javafx.scene.layout.HBox?>
 
-<?xml-stylesheet type="text/css" href="MainPage.css"?>
-
-    <VBox spacing="10.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1"
-    fx:controller= "jesh.project.jeshproject.brightness.BrightnessManager"
-          style="-fx-padding: 10;" fx:id="mainbox">
+<?import javafx.scene.control.Label?>
+<VBox maxHeight="300" maxWidth="600" prefHeight="300.0" prefWidth="600.0"
+      xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="jesh.project.jeshproject.controller.MainPage" alignment="TOP_CENTER" spacing="10.0" style="-fx-padding: 10;">
 
 
-        <!-- TOP PART -->
-        <!-- TimeLine Name HBox -->
-    <!-- "SleepWell" HBox -->
-    <HBox fx:id="Top">
-        <HBox fx:id="Empty">
+    <!-- TOP PART -->
+    <!-- SLEEP WELL LOGO -->
+    <HBox spacing="20.0" style="-fx-padding: 0 0 0 200">
+        <HBox spacing="10.0" alignment="CENTER" >
+            <TextField text="SleepWell" editable="false" style="-fx-alignment: center; -fx-font-size: 18px;"/>
         </HBox>
-        <HBox fx:id="logo">
-            <TextField fx:id="sleepwell_logo" text="SleepWell" editable="false"
-                       style="-fx-alignment: center;"/> <!-- cannot be changed by the usr -->
-        </HBox>
-        <HBox fx:id="profile" alignment="TOP_RIGHT">
-            <Button fx:id="Profile" text="Profile"/>
+
+
+    <!-- PROFILE PAGE BUTTON -->
+        <HBox spacing="10.0" alignment="CENTER" style="-fx-padding: 0 0 0 80">
+            <Button fx:id="profileButton" text="Profile" onAction="#goToProfilePage" style="-fx-padding: 10 15;"/>
         </HBox>
     </HBox>
 
 
-
-
-        <!-- MIDDLE PART -->
-        <!-- Add a time button -->
-<!--        <HBox fx:id="addTime">-->
-<!--            <Button fx:id="add_time_button" text="Add a time"/> &lt;!&ndash; save button not sure what its for yet &ndash;&gt;-->
-<!--        </HBox>-->
-
-
-        <!-- timeslots -->
-        <HBox fx:id="timeline_main" spacing="10.0">
-            <HBox spacing="10.0" maxWidth="90">
-                <Button fx:id="timeslot_1" text="Timeslot 1"/>
-            </HBox>
-
-            <HBox spacing="10.0" maxWidth="90">
-                <Button fx:id="timeslot_2" text=" Timeslot 2"/>
-            </HBox>
-
-            <HBox spacing="10.0" maxWidth="90">
-                <Button fx:id="timeslot_3" text=" Timeslot 3"/>
-            </HBox>
-
-            <HBox spacing="10.0" maxWidth="90">
-                <Button fx:id="timeslot_4" text=" Timeslot 4"/>
-            </HBox>
-
-            <HBox spacing="10.0" maxWidth="90">
-                <Button fx:id="timeslot_5" text=" Timeslot 5"/>
-            </HBox>
-
+    <!-- TIMELINE BUTTONS -->
+    <HBox fx:id="timeline_main" spacing="30.0" style="-fx-padding: 20 0 40 38;">
+        <HBox spacing="10.0">
+            <Button fx:id="timeslot_1" text="Timeslot 1" style="-fx-padding: 10 15;" onAction="#load_T1"/>
         </HBox>
-        <!-- End timeslots -->
-
-        <!-- BOTTOM PART -->
-        <!-- Night Mode start and end time titles -->
-    <HBox fx:id="bottomSection">
-        <VBox fx:id="bottom1">
-
-            <HBox fx:id="timelineName">
-                <TextField fx:id="timeline_name" text="Name Timeline"/> <!-- timeline name can be changed by the user -->
-            </HBox>
-
-            <!-- Night mode start time -->
-            <HBox fx:id="enterTime">
-                <TextField fx:id="NM_start" text="Enter Start Time (24hr)" style="-fx-alignment: center;"
-                           prefWidth="120"/>
-                <TextField fx:id="NM_end" text="Enter End Time (24hr)" style="-fx-alignment: center;"
-                           prefWidth="120"/>
-            </HBox>
-
-            <!-- Save button -->
-            <HBox fx:id="saveButton">
-                <Button fx:id="save_button"
-                        text="Save Timeline"/>
-            </HBox>
+        <HBox spacing="10.0">
+            <Button fx:id="timeslot_2" text="Timeslot 2" style="-fx-padding: 10 15;" onAction="#load_T2"/>
+        </HBox>
+        <HBox spacing="10.0">
+            <Button fx:id="timeslot_3" text="Timeslot 3" style="-fx-padding: 10 15;" onAction="#load_T3"/>
+        </HBox>
+        <HBox spacing="10.0">
+            <Button fx:id="timeslot_4" text="Timeslot 4" style="-fx-padding: 10 15;" onAction="#load_T4"/>
+        </HBox>
+        <HBox spacing="10.0">
+            <Button fx:id="timeslot_5" text="Timeslot 5" style="-fx-padding: 10 15;" onAction="#load_T5"/>
+        </HBox>
+    </HBox>
 
 
-        </VBox>
-        <VBox fx:id="bottom2">
-            <!-- Brightness Level title -->
-            <HBox fx:id="brightnessTester">
-                <Button fx:id="testButton" text="Test Brightness" onAction="#testBrightness"/>
-            </HBox>
-
-            <!-- Brightness Level slider -->
-            <HBox fx:id="brightnessSlider">
-                <Slider fx:id="brightness_slider" prefWidth="200" majorTickUnit="10"
-                        showTickMarks="true" showTickLabels="true"/>
-            </HBox>
+    <!-- MIDDLE PART -->
+    <HBox spacing="10.0" style="-fx-padding: 0 0 0 10;">
+        <Label fx:id="start_message" text="Select a timeslot to start!"/>
+    </HBox>
+    <!-- TIMELINE NAME -->
+    <HBox spacing="10.0" style="-fx-padding: 0 0 0 10;">
+        <TextField fx:id="timeline_name" promptText="Timeline Name Here......" style="-fx-font-size: 16px;" editable="false"/>
+    </HBox>
 
 
-        </VBox>
+    <!-- BOTTOM PART -->
+    <!-- ENTER TIME FIELDS -->
+    <HBox spacing="20.0" style="-fx-padding: 10 0  0 10;">
+        <HBox spacing="10.0">
+            <TextField fx:id="start_time_slider" promptText="Enter Start Time (24hr)" prefWidth="140" style="-fx-padding: 6 10;" editable="false"/>
+        </HBox>
+        <HBox spacing="10.0">
+            <TextField fx:id="end_time_slider" promptText="Enter End Time (24hr)" prefWidth="140" style="-fx-padding: 6 10;" editable="false"/>
+        </HBox>
+
+        <!-- SET BRIGHTNESS BUTTON -->
+        <HBox spacing="10.0" style="-fx-padding: 0 0 0 130px;">
+            <Button fx:id="testButton" text="Set Brightness" onAction="#testBrightness" style="-fx-padding: 5 10;"/>
+        </HBox>
+    </HBox>
+
+
+    <!-- SAVE BUTTON -->
+    <HBox spacing="10.0" style="-fx-padding: 0 0 0 112px;">
+        <HBox spacing="10.0">
+            <Button fx:id="Save_timeline_button" text="Save Timeline" style="-fx-padding: 6 10;" onAction="#saveTimeline"/>
+        </HBox>
+
+
+        <!-- BRIGHTNESS SLIDER -->
+        <HBox spacing="10.0" style="-fx-padding: 0 0 0 185px;">
+            <Slider fx:id="brightness_slider" prefWidth="200" majorTickUnit="10" showTickMarks="true" showTickLabels="true"/>
+        </HBox>
     </HBox>
 </VBox>
 

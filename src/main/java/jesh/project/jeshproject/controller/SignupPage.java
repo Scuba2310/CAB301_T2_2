@@ -14,13 +14,15 @@ import javafx.scene.text.*;
 
 import java.io.IOException;
 import java.sql.Connection;
+import java.sql.SQLException;
 
-//import jdk.internal.vm.annotation.Stable;
+import jesh.project.jeshproject.model.UserManager;
 
 public class SignupPage {
+    @FXML private Button signUpButton;
+    private UserManager userManager;
     @FXML private Text title;
     @FXML private Button goBackButton;
-    @FXML private Button signUpButton;
     @FXML private TextField birthdayField;
     @FXML private TextField usernameField;
     @FXML private TextField passwordField;
@@ -35,11 +37,12 @@ public class SignupPage {
     @FXML private Label usernameErrorLabel;
     @FXML private Label passwordErrorLabel;
     @FXML private IUserDAO userDAO;
+    @FXML private Label errorMessage;
 
     Connection connection = SqliteConnection.getInstance();
     //SqliteUserDAO sqliteUserDAO = new SqliteUserDAO();
     public SignupPage() {
-        userDAO = new SqliteUserDAO();
+        userManager = new UserManager(new SqliteUserDAO());
     }
 
     @FXML
@@ -47,7 +50,7 @@ public class SignupPage {
         title.setText("Sign Up");
     }
     @FXML
-    private void signup() throws IOException {
+    private void signup() throws IOException, SQLException {
         // Reset error labels and field styles
         resetErrorLabelsAndStyles();
 
@@ -88,48 +91,31 @@ public class SignupPage {
                 setErrorMessageAndStyle(attributeFields[i], attributeLabels[i], exception.getMessage());
             }
         }
-//
-//        // end experiment
 
-//        if (firstName.isEmpty()) {
-//            setErrorMessageAndStyle(firstNameField, firstNameErrorLabel, "Please enter your first name");
-//            hasError = true;
-//        }
-//
-//        if (lastName.isEmpty()) {
-//            setErrorMessageAndStyle(lastNameField, lastNameErrorLabel, "Please enter your last name");
-//            hasError = true;
-//        }
-//
-//        if (username.isEmpty()) {
-//            setErrorMessageAndStyle(usernameField, usernameErrorLabel, "Please enter your username");
-//            hasError = true;
-//        }
-//
-//        if (password.isEmpty()) {
-//            setErrorMessageAndStyle(passwordField, passwordErrorLabel, "Please enter your password");
-//            hasError = true;
-//        }
-//
-//        if (!isValidBirthday(birthday)) {
-//            setErrorMessageAndStyle(birthdayField, birthdayErrorLabel, "Please enter a valid birthday in the format DD/MM/YYYY.");
-//            hasError = true;
-//        }
-//
-//        if (!isValidEmail(email)) {
-//            setErrorMessageAndStyle(emailField, emailErrorLabel, "Please enter a valid email address.");
-//            hasError = true;
-//        }
-////
         if (!hasError) {
-            // all fields are valid
-            userDAO.addUser(new User(0, firstName, lastName, birthday, email, username, password));
-            successMessage();
+            // All fields are valid
+            User newUser = new User(0, firstName, lastName, birthday, email, username, password);
+            boolean isUserAdded = userManager.addUser(newUser);
 
-            Stage stage = (Stage) signUpButton.getScene().getWindow();
-            FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("HomePage.fxml"));
-            Scene scene = new Scene(fxmlLoader.load(), HelloApplication.WIDTH, HelloApplication.HEIGHT);
-            stage.setScene(scene);
+            if (isUserAdded) {
+                goToHomePage();
+                successMessage();
+
+                // Proceed to the home page or any other action
+                Stage stage = (Stage) signUpButton.getScene().getWindow();
+                FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("HomePage.fxml"));
+                Scene scene = new Scene(fxmlLoader.load(), HelloApplication.WIDTH, HelloApplication.HEIGHT);
+                stage.setScene(scene);
+            } else {
+                // Check if the user already exists
+                if (userManager.getUser(email, UserIdentifierType.EMAIL) != null) {
+                    errorMessage.setText("User already exists");
+                } else {
+                    errorMessage.setText("Error adding user to the database");
+                }
+            }
+        } else {
+            errorMessage.setText("User could not be added");
         }
     }
 
@@ -147,6 +133,7 @@ public class SignupPage {
         emailField.setStyle("");
         usernameField.setStyle("");
         passwordField.setStyle("");
+        errorMessage.setText("");
     }
 
     private void setErrorMessageAndStyle(TextField field, Label errorLabel, String errorMessage) {
@@ -194,13 +181,13 @@ public class SignupPage {
 
     private boolean emailExists(String email) {
         // Check if a user with the provided email exists
-        User user = userDAO.getUser(email, UserIdentifierType.EMAIL);
+        User user = userManager.getUser(email, UserIdentifierType.EMAIL);
         return user != null;
     }
 
     private boolean usernameExists(String username) {
         // Check if a user with the provided username exists
-        User user = userDAO.getUser(username, UserIdentifierType.USERNAME);
+        User user = userManager.getUser(username, UserIdentifierType.USERNAME);
         return user != null;
     }
 
@@ -225,6 +212,20 @@ public class SignupPage {
 
         stage.setScene(scene);
     }
+
+
+    @FXML
+    private void goToHomePage() throws IOException {
+        Stage stage = (Stage) signUpButton.getScene().getWindow();
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("HomePage.fxml"));
+        Scene scene = new Scene(fxmlLoader.load(), HelloApplication.WIDTH, HelloApplication.HEIGHT);
+
+        String stylesheet = HelloApplication.class.getResource("CSS-Styling/HomePage.css").toExternalForm();
+        scene.getStylesheets().add(stylesheet);
+
+        stage.setScene(scene);
+    }
+
     @FXML
     private void goToLoginPage() throws IOException {
         Stage stage = (Stage) loginLink.getScene().getWindow();

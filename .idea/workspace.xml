@@ -4,10 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f6207e56-6f06-45c5-8a54-f7bb59653c78" name="Changes" comment="main page CSS and fxml updates">
+    <list default="true" id="f6207e56-6f06-45c5-8a54-f7bb59653c78" name="Changes" comment="fixing signup. can now signup and login">
+      <changelist_data name="elizaaajane" email="n11303816@qut.edu.au" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/jesh/project/jeshproject/CSS-Styling/MainPage.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/jesh/project/jeshproject/CSS-Styling/MainPage.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/jesh/project/jeshproject/MainPage.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/jesh/project/jeshproject/MainPage.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/jesh/project/jeshproject/controller/ProfilePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/jesh/project/jeshproject/controller/ProfilePage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/jesh/project/jeshproject/controller/SignupPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/jesh/project/jeshproject/controller/SignupPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/jesh/project/jeshproject/SignUp.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/jesh/project/jeshproject/SignUp.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/users.db" beforeDir="false" afterPath="$PROJECT_DIR$/users.db" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -26,10 +28,13 @@
       </list>
     </option>
   </component>
+  <component name="Git.Merge.Settings">
+    <option name="BRANCH" value="MainPage_touchup" />
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="master" />
+        <entry key="$PROJECT_DIR$" value="CSS-JS" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -39,7 +44,7 @@
     &quot;state&quot;: &quot;OPEN&quot;,
     &quot;assignee&quot;: &quot;Sanda223&quot;
   }
-  }</component>
+}</component>
   <component name="GithubPullRequestsUISettings">{
   &quot;selectedUrlAndAccountId&quot;: {
     &quot;url&quot;: &quot;https://github.com/Scuba2310/CAB302_A1.git&quot;,
@@ -58,26 +63,27 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Application.HelloApplication.executor&quot;: &quot;Run&quot;,
-    &quot;Downloaded.Files.Path.Enabled&quot;: &quot;false&quot;,
-    &quot;JUnit.AuthenticateTests.goodSignUp.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.tests in jesh-project.executor&quot;: &quot;Run&quot;,
-    &quot;Repository.Attach.Annotations&quot;: &quot;false&quot;,
-    &quot;Repository.Attach.JavaDocs&quot;: &quot;false&quot;,
-    &quot;Repository.Attach.Sources&quot;: &quot;false&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;CSS-JS&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Libraries&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.53333336&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.HelloApplication.executor": "Run",
+    "Downloaded.Files.Path.Enabled": "false",
+    "JUnit.AuthenticateTests.goodSignUp.executor": "Run",
+    "JUnit.tests in jesh-project.executor": "Run",
+    "Repository.Attach.Annotations": "false",
+    "Repository.Attach.JavaDocs": "false",
+    "Repository.Attach.Sources": "false",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "db-fixes",
+    "ignore.virus.scanning.warn.message": "true",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/AAA/IdeaProjects/CAB302_A1_testing_working",
+    "project.structure.last.edited": "Libraries",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.53333336",
+    "settings.editor.selected.configurable": "vcs.Mercurial"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\LizaJ\IdeaProjects\jesh-project\src\main\resources\jesh\project\jeshproject" />
@@ -148,17 +154,8 @@
         <item itemvalue="JUnit.tests in jesh-project" />
         <item itemvalue="JUnit.AuthenticateTests.goodSignUp" />
         <item itemvalue="JUnit.All in jesh-project" />
-        <item itemvalue="JUnit.tests in jesh-project" />
-        <item itemvalue="JUnit.AuthenticateTests.goodSignUp" />
       </list>
     </recent_temporary>
-  </component>
-  <component name="SharedIndexes">
-    <attachedChunks>
-      <set>
-        <option value="jdk-17.0.10-corretto-17.0.10-4caba194b151-5cd809f4" />
-      </set>
-    </attachedChunks>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -209,39 +206,63 @@
       <option name="project" value="LOCAL" />
       <updated>1714714032694</updated>
     </task>
-    <task id="LOCAL-00006" summary="css mostly done">
+    <task id="LOCAL-00006" summary="Fixed up the main page fxml and functionality">
       <option name="closed" value="true" />
-      <created>1716794542306</created>
+      <created>1717071182729</created>
       <option name="number" value="00006" />
       <option name="presentableId" value="LOCAL-00006" />
       <option name="project" value="LOCAL" />
-      <updated>1716794542306</updated>
+      <updated>1717071182729</updated>
     </task>
-    <task id="LOCAL-00007" summary="main page basic CSS">
+    <task id="LOCAL-00007" summary="Fixed up the main page fxml and functionality">
       <option name="closed" value="true" />
-      <created>1716993441207</created>
+      <created>1717078110745</created>
       <option name="number" value="00007" />
       <option name="presentableId" value="LOCAL-00007" />
       <option name="project" value="LOCAL" />
-      <updated>1716993441207</updated>
+      <updated>1717078110745</updated>
     </task>
-    <task id="LOCAL-00008" summary="main page CSS and fxml unpates">
+    <task id="LOCAL-00008" summary="Fixed up the main page fxml and functionality">
       <option name="closed" value="true" />
-      <created>1718067985128</created>
+      <created>1717078308166</created>
       <option name="number" value="00008" />
       <option name="presentableId" value="LOCAL-00008" />
       <option name="project" value="LOCAL" />
-      <updated>1718067985128</updated>
+      <updated>1717078308166</updated>
     </task>
-    <task id="LOCAL-00009" summary="main page CSS and fxml unpates">
+    <task id="LOCAL-00009" summary="Main Page new update pt 2">
       <option name="closed" value="true" />
-      <created>1718281154057</created>
+      <created>1717408786152</created>
       <option name="number" value="00009" />
       <option name="presentableId" value="LOCAL-00009" />
       <option name="project" value="LOCAL" />
-      <updated>1718281154057</updated>
+      <updated>1717408786152</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="updating main page from database branch version">
+      <option name="closed" value="true" />
+      <created>1717462023695</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1717462023695</updated>
+    </task>
+    <task id="LOCAL-00011" summary="fixing signup. can now signup and login">
+      <option name="closed" value="true" />
+      <created>1717466311748</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1717466311748</updated>
+    </task>
+    <task id="LOCAL-00012" summary="fixing signup. can now signup and login">
+      <option name="closed" value="true" />
+      <created>1718104270114</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1718104270114</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -255,7 +276,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="CSS-JS" />
+                        <option value="origin/database" />
                       </list>
                     </value>
                   </entry>
@@ -274,12 +295,16 @@
     <MESSAGE value="working on tests" />
     <MESSAGE value="working on database" />
     <MESSAGE value="creating the javaFX controls for MainPage" />
-    <MESSAGE value="working on database." />
     <MESSAGE value="css push" />
-    <MESSAGE value="commit to pull" />
-    <MESSAGE value="pull master commits" />
-    <MESSAGE value="main page basic CSS" />
-    <MESSAGE value="main page CSS and fxml unpates" />
-    <option name="LAST_COMMIT_MESSAGE" value="main page CSS and fxml unpates" />
+    <MESSAGE value="css mostly done" />
+    <MESSAGE value="Fixed up the main page fxml and functionality" />
+    <MESSAGE value="Main Page new update pt 2" />
+    <MESSAGE value="working on database." />
+    <MESSAGE value="updating branch to match master" />
+    <MESSAGE value="updating main page from database branch version" />
+    <MESSAGE value="fixing signup. can now signup and login" />
+    <MESSAGE value="database fixes" />
+    <MESSAGE value="saving timeline fixes - not working yet" />
+    <option name="LAST_COMMIT_MESSAGE" value="saving timeline fixes - not working yet" />
   </component>
 </project>

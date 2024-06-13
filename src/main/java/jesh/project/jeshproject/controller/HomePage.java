@@ -7,11 +7,14 @@ import javafx.scene.*;
 import javafx.scene.control.*;
 import javafx.scene.text.*;
 import javafx.stage.*;
+import jesh.project.jeshproject.model.IUserDAO;
 import jesh.project.jeshproject.model.SqliteConnection;
+import jesh.project.jeshproject.model.SqliteTimelinesDAO;
 import jesh.project.jeshproject.model.SqliteUserDAO;
 
 import java.io.IOException;
 import java.sql.Connection;
+import jesh.project.jeshproject.model.UserManager;
 
 public class HomePage {
     public Text description;
@@ -21,10 +24,15 @@ public class HomePage {
     private Button loginButton;
     @FXML
     private Button signupButton;
+    @FXML
+    private Button bypassButton;
+
+    private UserManager userManager;
+    private IUserDAO userDAO;
 
     public HomePage(){
-//        Connection connection = SqliteConnection.getInstance();
-//        SqliteUserDAO userDAO = new SqliteUserDAO();
+        userManager = new UserManager(new SqliteUserDAO());
+        userManager.logOut(); // make sure all users are signed out
     }
 
     @FXML
@@ -64,8 +72,6 @@ public class HomePage {
         stage.setScene(scene);
     }
 
-    // DELETE WHEN TESTING IS DONE ** as well as fxml button
-    @FXML Button bypassButton;
     @FXML
     private void goToMainPage() throws IOException {
         Stage stage = (Stage) bypassButton.getScene().getWindow();
