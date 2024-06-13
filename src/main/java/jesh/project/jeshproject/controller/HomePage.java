@@ -7,7 +7,9 @@ import javafx.scene.*;
 import javafx.scene.control.*;
 import javafx.scene.text.*;
 import javafx.stage.*;
+import jesh.project.jeshproject.model.IUserDAO;
 import jesh.project.jeshproject.model.SqliteConnection;
+import jesh.project.jeshproject.model.SqliteTimelinesDAO;
 import jesh.project.jeshproject.model.SqliteUserDAO;
 
 import java.io.IOException;
@@ -23,8 +25,11 @@ public class HomePage {
     private Button loginButton;
     @FXML
     private Button signupButton;
+    @FXML
+    private Button bypassButton;
 
     private UserManager userManager;
+    private IUserDAO userDAO;
 
     public HomePage(){
         userManager = new UserManager(new SqliteUserDAO());
@@ -62,6 +67,18 @@ public class HomePage {
         Scene scene = new Scene(fxmlLoader.load(), HelloApplication.WIDTH, HelloApplication.HEIGHT);
 
         String stylesheet = HelloApplication.class.getResource("CSS-Styling/SignUp.css").toExternalForm();
+        scene.getStylesheets().add(stylesheet);
+
+        stage.setScene(scene);
+    }
+
+    @FXML
+    private void goToMainPage() throws IOException {
+        Stage stage = (Stage) bypassButton.getScene().getWindow();
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("MainPage.fxml"));
+        Scene scene = new Scene(fxmlLoader.load(), HelloApplication.WIDTH, HelloApplication.HEIGHT);
+
+        String stylesheet = HelloApplication.class.getResource("CSS-Styling/MainPage.css").toExternalForm();
         scene.getStylesheets().add(stylesheet);
 
         stage.setScene(scene);

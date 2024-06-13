@@ -16,6 +16,24 @@
             <Font name="Arial Black" size="36.0" />
         </font>
     </Text>
+<<<<<<< HEAD
     <Button fx:id="loginButton" text="Login" onAction="#goToLoginPage"/>
     <Button fx:id="signupButton" text="Sign Up" onAction="#goToSignupPage"/>
+=======
+
+    <VBox fx:id="BoxDesc">
+        <Text fx:id="description" />
+    </VBox>
+    <HBox>
+        <VBox fx:id="button1">
+        <Button fx:id="loginButton" text="Login" onAction="#goToLoginPage" styleClass="loginButton" style="margin-right: 20px"/>
+        </VBox>
+        <VBox fx:id="button2">
+        <Button fx:id="signupButton" text="Sign Up" onAction="#goToSignupPage"/>
+        </VBox>
+        <VBox fx:id="button3">
+        <Button fx:id="bypassButton" text="Bypass Login" onAction="#goToMainPage"/>
+        </VBox>
+    </HBox>
+>>>>>>> 86499e57984c72902f940300cf51c57558cf467d
 </VBox>
