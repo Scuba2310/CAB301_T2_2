@@ -98,6 +98,7 @@ public class SignupPage {
             boolean isUserAdded = userManager.addUser(newUser);
 
             if (isUserAdded) {
+                goToHomePage();
                 successMessage();
 
                 // Proceed to the home page or any other action
@@ -211,13 +212,15 @@ public class SignupPage {
 
         stage.setScene(scene);
     }
+
+
     @FXML
     private void goToHomePage() throws IOException {
         Stage stage = (Stage) signUpButton.getScene().getWindow();
         FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("HomePage.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), HelloApplication.WIDTH, HelloApplication.HEIGHT);
 
-        String stylesheet = HelloApplication.class.getResource("CSS-Styling/MainPage.css").toExternalForm();
+        String stylesheet = HelloApplication.class.getResource("CSS-Styling/HomePage.css").toExternalForm();
         scene.getStylesheets().add(stylesheet);
 
         stage.setScene(scene);
