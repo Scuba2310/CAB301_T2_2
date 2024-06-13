@@ -23,11 +23,13 @@
         <!-- TimeLine Name HBox -->
     <!-- "SleepWell" HBox -->
     <HBox fx:id="Top">
+        <HBox fx:id="Empty">
+        </HBox>
         <HBox fx:id="logo">
             <TextField fx:id="sleepwell_logo" text="SleepWell" editable="false"
                        style="-fx-alignment: center;"/> <!-- cannot be changed by the usr -->
         </HBox>
-        <HBox fx:id="profile">
+        <HBox fx:id="profile" alignment="TOP_RIGHT">
             <Button fx:id="Profile" text="Profile"/>
         </HBox>
     </HBox>
@@ -94,7 +96,7 @@
         </VBox>
         <VBox fx:id="bottom2">
             <!-- Brightness Level title -->
-            <HBox>
+            <HBox fx:id="brightnessTester">
                 <Button fx:id="testButton" text="Test Brightness" onAction="#testBrightness"/>
             </HBox>
 
