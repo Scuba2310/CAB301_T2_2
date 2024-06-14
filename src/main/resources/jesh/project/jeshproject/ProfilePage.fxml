@@ -5,7 +5,7 @@
 
 
 
-<VBox alignment="TOP_CENTER" spacing="10.0" style="-fx-padding: 10;"
+<VBox fx:id="main" alignment="TOP_CENTER" spacing="10.0" style="-fx-padding: 10;"
       xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml"
       fx:controller="jesh.project.jeshproject.controller.ProfilePage"
       prefHeight="400.0" prefWidth="600.0">
@@ -47,14 +47,14 @@
     <!-- Details View/Hide Buttons -->
     <HBox spacing="430.0" style="-fx-padding: 45 0 0 0;" alignment="CENTER">
         <Button fx:id="logOutButton" style="-fx-padding: 10 15;" onAction="#logOut">Log Out</Button>
-        <Button style="-fx-padding: 10 15;" onAction="#viewDetails">View Details</Button>
+        <Button fx:id="viewDetailsButton" style="-fx-padding: 10 15;" onAction="#viewDetails">View Details</Button>
     </HBox>
 
 
     <!-- Details View/Hide Buttons -->
     <HBox spacing="410.0" style="-fx-padding: -5 0 0 0;" alignment="CENTER">
         <Button fx:id="deleteButton" style="-fx-padding: 10 15;" onAction="#deleteUser">Delete User</Button>
-        <Button style="-fx-padding: 10 15;" onAction="#hideDetails">Hide Details</Button>
+        <Button fx:id="hideDetailsButton" style="-fx-padding: 10 15;" onAction="#hideDetails">Hide Details</Button>
 
     </HBox>
 
