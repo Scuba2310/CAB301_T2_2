@@ -1,6 +1,6 @@
 #mainbox {
     -fx-background-color: #FDFBF6;
-    -fx-spacing: 40px;
+    -fx-spacing: 30px;
 }
 #Top {
     -fx-background-color: #FFFFFF;
@@ -12,14 +12,24 @@
     -fx-alignment: TOP-RIGHT;
     -fx-font-size: 16px;
 }
-#profile {
-    -fx-background-color: #A3B18A;
+#profileButton {
+    -fx-background-color: #588157;
+    -fx-padding: 12px;
+    -fx-text-fill: #FDFBF6;
+}
+#message {
 }
 #Profile {
     -fx-alignment: TOP-RIGHT;
 }
-#timelineName {
+#timelineN {
+}
+#timelinename {
     -fx-alignment: CENTER;
+}
+#timeline_name {
+    -fx-alignment: CENTER;
+    -fx-font-size: 20px;
 }
 #topPart {
     -fx-padding: 15px;
@@ -28,7 +38,7 @@
 #saveButton {
     -fx-alignment: TOP-RIGHT;
 }
-#save_button {
+#Save_timeline_button {
     -fx-background-color: #588157;
     -fx-alignment: TOP-RIGHT;
     -fx-padding: 10px;
@@ -95,12 +105,15 @@
     -fx-alignment: TOP-RIGHT;
     -fx-spacing: 15px;
 }
-#brightnessTester {
-    -fx-alignment: CENTER;
+#setBrightnessButton {
+    -fx-background-color: #588157;
+    -fx-padding: 12px;
+    -fx-text-fill: #FDFBF6;
 }
 #brightnessSlider {
     -fx-alignment: BOTTOM-RIGHT;
 }
-#saveButton{
-    -fx-alignment: CENTER;
+
+#middle {
+    -fx-spacing: 20px;
 }
