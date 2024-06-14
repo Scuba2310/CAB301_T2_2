@@ -3,81 +3,66 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
-            xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml"
-            fx:controller="jesh.project.jeshproject.controller.ProfilePage"
-            prefHeight="400.0" prefWidth="600.0">
 
-    <VBox alignment="TOP_CENTER" layoutX="162.0" spacing="10.0"
-          style="-fx-padding: 10;">
-        <HBox spacing="10.0">
-            <padding>
-            </padding>
-            <Button fx:id="goBackButton" onAction="#goBackToMain">Go Back</Button>
-            <Button fx:id="saveButton" onAction="#saveChanges">Save Changes</Button>
-        </HBox>
 
-        <HBox spacing="10.0">
-            <padding>
-            </padding>
-            <Button onAction="#viewDetails" >View Details</Button>
-            <Button onAction="#hideDetails">Hide Details</Button>
-        </HBox>
+<VBox alignment="TOP_CENTER" spacing="10.0" style="-fx-padding: 10;"
+      xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml"
+      fx:controller="jesh.project.jeshproject.controller.ProfilePage"
+      prefHeight="400.0" prefWidth="600.0">
 
-        <HBox spacing="10.0">
-            <padding>
-            </padding>
-            <Label>First Name</Label>
-            <TextField fx:id="firstNameField" text="" editable="false"/>
-        </HBox>
 
-        <HBox spacing="10.0">
-            <padding>
-            </padding>
-            <Label>Last Name</Label>
-            <TextField fx:id="lastNameField" editable="false"/>
-        </HBox>
+    <!-- Navigation Buttons -->
+    <HBox spacing="110" style="-fx-padding: 9 0 0 0;" alignment="CENTER">
+        <Button fx:id="goBackButton" style="-fx-padding: 10 15;" onAction="#goBackToMain">Go Back</Button>
+        <TextField text="Profile Page" style="-fx-font-size: 16px;" editable="false" alignment="CENTER"/>
+        <Button fx:id="saveButton" style="-fx-padding: 10 15;" onAction="#saveChanges">Save Changes</Button>
+    </HBox>
 
-        <HBox spacing="10.0">
-            <padding>
-            </padding>
-            <Label>Birthday</Label>
-            <TextField fx:id="birthdayField" editable="false"/>
-        </HBox>
+    <!-- First/Last Name Field -->
+    <HBox spacing="30.0" style="-fx-padding: 40 0 0 10;" alignment="CENTER">
+        <TextField fx:id="firstNameField" promptText="First Name (Hidden)" style="-fx-font-size: 16px;" editable="false" alignment="CENTER"/>
+        <TextField fx:id="lastNameField" promptText="Last Name (Hidden)" style="-fx-font-size: 16px;" editable="false" alignment="CENTER"/>
+    </HBox>
 
-        <HBox spacing="10.0">
-            <padding>
-            </padding>
-            <Label>Email</Label>
-            <TextField fx:id="emailField" editable="false"/>
-        </HBox>
 
-        <HBox spacing="10.0">
-            <padding>
-            </padding>
-            <Label>Username</Label>
-            <TextField fx:id="userNameField" editable="false"/>
-        </HBox>
+    <!-- Birthday/Username Field -->
+    <HBox spacing="30.0" style="-fx-padding: 10 0 0 10;" alignment="CENTER">
+        <TextField fx:id="userNameField" promptText="Username (Hidden)" style="-fx-font-size: 16px;" editable="false" alignment="CENTER"/>
+        <TextField fx:id="birthdayField" promptText="Birthday (Hidden)" style="-fx-font-size: 16px;" editable="false" alignment="CENTER"/>
+    </HBox>
 
-        <HBox spacing="10.0">
-            <padding>
-            </padding>
-            <Label>Password</Label>
-            <TextField fx:id="passwordField" editable="false"/>
-        </HBox>
 
-        <HBox spacing="10.0">
-            <padding>
-            </padding>
-            <Button fx:id="logOutButton" onAction="#logOut">Log Out</Button>
-            <Button fx:id="deleteButton" onAction="#deleteUser">Delete User</Button>
-        </HBox>
+    <!-- Email Field -->
+    <HBox spacing="30.0" style="-fx-padding: 10 0 0 10;" alignment="CENTER">
+        <TextField fx:id="emailField" prefWidth="425" promptText="Email (Hidden)" style="-fx-font-size: 16px;" editable="false" alignment="CENTER"/>
+    </HBox>
 
-        <HBox spacing="10.0">
-            <padding>
-            </padding>
-            <Label fx:id="messageLabel"/>
-        </HBox>
 
-    </VBox>
-</AnchorPane>
+    <!-- Password Field -->
+    <HBox spacing="30.0" style="-fx-padding: 10 0 0 10;" alignment="CENTER">
+        <TextField fx:id="passwordField" prefWidth="425" promptText="Password (Hidden)" style="-fx-font-size: 16px;" editable="false" alignment="CENTER"/>
+    </HBox>
+
+
+    <!-- Details View/Hide Buttons -->
+    <HBox spacing="430.0" style="-fx-padding: 45 0 0 0;" alignment="CENTER">
+        <Button fx:id="logOutButton" style="-fx-padding: 10 15;" onAction="#logOut">Log Out</Button>
+        <Button style="-fx-padding: 10 15;" onAction="#viewDetails">View Details</Button>
+    </HBox>
+
+
+    <!-- Details View/Hide Buttons -->
+    <HBox spacing="410.0" style="-fx-padding: -5 0 0 0;" alignment="CENTER">
+        <Button fx:id="deleteButton" style="-fx-padding: 10 15;" onAction="#deleteUser">Delete User</Button>
+        <Button style="-fx-padding: 10 15;" onAction="#hideDetails">Hide Details</Button>
+
+    </HBox>
+
+
+
+    <!-- Message Label -->
+    <HBox spacing="10.0" style="-fx-padding: 0 0 0 10;">
+        <Label fx:id="messageLabel"/>
+    </HBox>
+
+</VBox>
