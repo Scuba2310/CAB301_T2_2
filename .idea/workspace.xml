@@ -4,7 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f6207e56-6f06-45c5-8a54-f7bb59653c78" name="Changes" comment="CSS branch merged with master" />
+    <list default="true" id="f6207e56-6f06-45c5-8a54-f7bb59653c78" name="Changes" comment="CSS branch merged with master">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/jesh/project/jeshproject/ProfilePage.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/jesh/project/jeshproject/ProfilePage.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/users.db" beforeDir="false" afterPath="$PROJECT_DIR$/users.db" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -15,9 +19,9 @@
       <list>
         <option value="JavaFXApplication" />
         <option value="Interface" />
-        <option value="FxmlFile" />
         <option value="Class" />
         <option value="Enum" />
+        <option value="FxmlFile" />
       </list>
     </option>
   </component>
@@ -84,6 +88,7 @@
 }</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\AAA\IdeaProjects\CAB302_A1_lastlast\src\main\resources\jesh\project\jeshproject" />
       <recent name="C:\Users\LizaJ\IdeaProjects\jesh-project\src\main\resources\jesh\project\jeshproject" />
     </key>
   </component>
