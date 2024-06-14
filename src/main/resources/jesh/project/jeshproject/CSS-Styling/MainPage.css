@@ -1,0 +1,106 @@
+#mainbox {
+    -fx-background-color: #FDFBF6;
+    -fx-spacing: 40px;
+}
+#Top {
+    -fx-background-color: #FFFFFF;
+    -fx-alignment: CENTER;
+    -fx-spacing: 185px;
+}
+
+#logo {
+    -fx-alignment: TOP-RIGHT;
+    -fx-font-size: 16px;
+}
+#profile {
+    -fx-background-color: #A3B18A;
+}
+#Profile {
+    -fx-alignment: TOP-RIGHT;
+}
+#timelineName {
+    -fx-alignment: CENTER;
+}
+#topPart {
+    -fx-padding: 15px;
+    -fx-spacing: 365px;
+}
+#saveButton {
+    -fx-alignment: TOP-RIGHT;
+}
+#save_button {
+    -fx-background-color: #588157;
+    -fx-alignment: TOP-RIGHT;
+    -fx-padding: 10px;
+    -fx-text-fill: #FDFBF6;
+}
+#addTime {
+    -fx-alignment: CENTER;
+}
+#add_time_button {
+    -fx-padding: 10px;
+    -fx-background-color: #588157;
+
+}
+#timeline_main {
+    -fx-padding: 10px;
+    -fx-alignment: CENTER;
+    -fx-spacing: 30px;
+}
+#timeslot_1 {
+    -fx-background-color: #A3B18A;
+    -fx-padding: 10px;
+}
+#timeslot_2 {
+    -fx-background-color: #A3B18A;
+    -fx-padding: 10px;
+}
+#timeslot_3 {
+    -fx-background-color: #A3B18A;
+    -fx-padding: 10px;
+}
+#timeslot_4 {
+    -fx-background-color: #A3B18A;
+    -fx-padding: 10px;
+}
+#timeslot_5 {
+    -fx-background-color: #A3B18A;
+    -fx-padding: 10px;
+}
+
+#bottomSection {
+    -fx-padding: 28px;
+    -fx-spacing: 50px;
+}
+#bottom1 {
+    -fx-alignment: CENTER;
+}
+#timeTitles {
+    -fx-alignment: CENTER;
+    -fx-spacing: 10px;
+}
+#enterTime {
+    -fx-alignment: CENTER;
+    -fx-padding: 10px;
+    -fx-spacing: 10px;
+}
+#timeline_name {
+    -fx-font-size: 16px;
+}
+#NM_button{
+    -fx-background-color: #588157;
+    -fx-text-fill: #FDFBF6;
+}
+#bottom2 {
+    -fx-alignment: TOP-RIGHT;
+    -fx-spacing: 15px;
+}
+#brightnessTester {
+    -fx-alignment: CENTER;
+}
+#brightnessSlider {
+    -fx-alignment: BOTTOM-RIGHT;
+}
+#saveButton{
+    -fx-alignment: CENTER;
+}

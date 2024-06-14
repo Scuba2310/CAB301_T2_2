@@ -4,10 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f6207e56-6f06-45c5-8a54-f7bb59653c78" name="Changes" comment="fixing signup. can now signup and login">
-      <changelist_data name="elizaaajane" email="n11303816@qut.edu.au" />
+    <list default="true" id="f6207e56-6f06-45c5-8a54-f7bb59653c78" name="Changes" comment="Profile page fxml fully fixed">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/jesh/project/jeshproject/ProfilePage.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/jesh/project/jeshproject/ProfilePage.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/jesh/project/jeshproject/MainPage.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/jesh/project/jeshproject/MainPage.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/users.db" beforeDir="false" afterPath="$PROJECT_DIR$/users.db" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -19,9 +19,9 @@
       <list>
         <option value="JavaFXApplication" />
         <option value="Interface" />
-        <option value="FxmlFile" />
         <option value="Class" />
         <option value="Enum" />
+        <option value="FxmlFile" />
       </list>
     </option>
   </component>
@@ -29,9 +29,14 @@
     <option name="BRANCH" value="MainPage_touchup" />
   </component>
   <component name="Git.Settings">
+    <option name="PREVIOUS_COMMIT_AUTHORS">
+      <list>
+        <option value="Sanda223 &lt;sandaru3940@gmail.com&gt;" />
+      </list>
+    </option>
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="CSS-JS" />
+        <entry key="$PROJECT_DIR$" value="master" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -71,7 +76,7 @@
     &quot;Repository.Attach.Sources&quot;: &quot;false&quot;,
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;CSS-SN&quot;,
     &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
     &quot;last_opened_file_path&quot;: &quot;C:/Users/AAA/IdeaProjects/CAB302_A1_testing_working&quot;,
@@ -83,6 +88,7 @@
 }</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\AAA\IdeaProjects\CAB302_A1_lastlast\src\main\resources\jesh\project\jeshproject" />
       <recent name="C:\Users\LizaJ\IdeaProjects\jesh-project\src\main\resources\jesh\project\jeshproject" />
     </key>
   </component>
@@ -151,8 +157,6 @@
         <item itemvalue="JUnit.tests in jesh-project" />
         <item itemvalue="JUnit.AuthenticateTests.goodSignUp" />
         <item itemvalue="JUnit.All in jesh-project" />
-        <item itemvalue="JUnit.tests in jesh-project" />
-        <item itemvalue="JUnit.AuthenticateTests.goodSignUp" />
       </list>
     </recent_temporary>
   </component>
@@ -261,7 +265,39 @@
       <option name="project" value="LOCAL" />
       <updated>1718104270114</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="error fixing">
+      <option name="closed" value="true" />
+      <created>1718320144885</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1718320144885</updated>
+    </task>
+    <task id="LOCAL-00014" summary="no updates">
+      <option name="closed" value="true" />
+      <created>1718320332091</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1718320332091</updated>
+    </task>
+    <task id="LOCAL-00015" summary="CSS branch merged with master">
+      <option name="closed" value="true" />
+      <created>1718320407101</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1718320407101</updated>
+    </task>
+    <task id="LOCAL-00016" summary="Profile page fxml fully fixed">
+      <option name="closed" value="true" />
+      <created>1718323371205</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1718323371205</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -304,6 +340,10 @@
     <MESSAGE value="fixing signup. can now signup and login" />
     <MESSAGE value="database fixes" />
     <MESSAGE value="saving timeline fixes - not working yet" />
-    <option name="LAST_COMMIT_MESSAGE" value="saving timeline fixes - not working yet" />
+    <MESSAGE value="error fixing" />
+    <MESSAGE value="no updates" />
+    <MESSAGE value="CSS branch merged with master" />
+    <MESSAGE value="Profile page fxml fully fixed" />
+    <option name="LAST_COMMIT_MESSAGE" value="Profile page fxml fully fixed" />
   </component>
 </project>

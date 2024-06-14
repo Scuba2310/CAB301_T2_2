@@ -17,19 +17,20 @@ HBox {
     -fx-background-color: #588157;
     -fx-padding: 15px;
     -fx-font-size: 15.0;
+    -fx-text-fill: #FDFBF6;
     -fx-color: #FDFBF6;
 }
 #Button {
     -fx-margin:20px;
     -fx-padding:20px;
 }
-#description {
-    -fx-maxWidth: 100;
-}
+
 #description {
     -fx-padding: 20px;
     -fx-pref-width: 200px;
     -fx-pref-height: 300px;
+    -fx-display: block;
+    -fx-word-wrap: break-word;
 }
 #button1 {
     -fx-padding: 20px;

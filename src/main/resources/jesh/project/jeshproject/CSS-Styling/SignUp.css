@@ -11,8 +11,7 @@
     -fx-padding:20px;
 }
 #fieldsBox {
- -fx-spacing: 40px;
- -fx-alignment: CENTER;
+    -fx-spacing: 40px;
 }
 #buttonBox {
     -fx-spacing: 25px;
@@ -25,8 +24,10 @@
 #signUpButton{
     -fx-background-color: #588157;
     -fx-padding: 12px;
+    -fx-text-fill: #FDFBF6;
 }
 #goBackButton {
     -fx-background-color: #588157;
     -fx-padding: 12px;
+    -fx-text-fill: #FDFBF6;
 }

@@ -38,8 +38,9 @@ public class HomePage {
     @FXML
     public void initialize() {
         title.setText("SleepWell");
-        description.setText("Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.");
+        description.setText("Are you struggling to get a good night's sleep because of screen time? Meet SleepWell, the app designed to reduce visual strain and improve sleep quality. Customize your screen brightness and color based on your schedule, and minimize blue light exposure in the evening. Enhance your digital wellness and wake up refreshed with SleepWell. Start your journey to better sleep today!");
         description.setWrappingWidth(600);
+        description.setTextAlignment(TextAlignment.CENTER);
     }
 
     //SqliteUserDAO userDAO = new SqliteUserDAO();
