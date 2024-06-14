@@ -4,9 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f6207e56-6f06-45c5-8a54-f7bb59653c78" name="Changes" comment="profile page CSS">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/jesh/project/jeshproject/MainPage.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/jesh/project/jeshproject/MainPage.fxml" afterDir="false" />
+    <list default="true" id="f6207e56-6f06-45c5-8a54-f7bb59653c78" name="Changes" comment="Minor appearance fixes to the main page fxml file">
+      <change beforePath="$PROJECT_DIR$/src/main/resources/jesh/project/jeshproject/HomePage.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/jesh/project/jeshproject/HomePage.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/users.db" beforeDir="false" afterPath="$PROJECT_DIR$/users.db" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -305,7 +304,15 @@
       <option name="project" value="LOCAL" />
       <updated>1718356835090</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="Minor appearance fixes to the main page fxml file">
+      <option name="closed" value="true" />
+      <created>1718361586716</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1718361586716</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -353,6 +360,7 @@
     <MESSAGE value="CSS branch merged with master" />
     <MESSAGE value="Profile page fxml fully fixed" />
     <MESSAGE value="profile page CSS" />
-    <option name="LAST_COMMIT_MESSAGE" value="profile page CSS" />
+    <MESSAGE value="Minor appearance fixes to the main page fxml file" />
+    <option name="LAST_COMMIT_MESSAGE" value="Minor appearance fixes to the main page fxml file" />
   </component>
 </project>

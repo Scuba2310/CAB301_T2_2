@@ -25,13 +25,10 @@
     </VBox>
     <HBox>
         <VBox fx:id="button1">
-        <Button fx:id="loginButton" text="Login" onAction="#goToLoginPage" styleClass="loginButton" style="margin-right: 20px"/>
+        <Button fx:id="loginButton" text="Login" onAction="#goToLoginPage" styleClass="loginButton" style="-fx-padding: 10 15;"/>
         </VBox>
         <VBox fx:id="button2">
-        <Button fx:id="signupButton" text="Sign Up" onAction="#goToSignupPage"/>
-        </VBox>
-        <VBox fx:id="button3">
-        <Button fx:id="bypassButton" text="Bypass Login" onAction="#goToMainPage"/>
+        <Button fx:id="signupButton" text="Sign Up" onAction="#goToSignupPage" style="-fx-padding: 10 15;"/>
         </VBox>
     </HBox>
 </VBox>
