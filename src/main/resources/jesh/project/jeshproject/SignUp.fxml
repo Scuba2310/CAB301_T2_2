@@ -16,35 +16,35 @@
             </font>
         </Text>
         </VBox>
-        <HBox fx:id="fieldsBox">
+        <HBox fx:id="fieldsBox" alignment="CENTER">
             <VBox fx:id="leftFields">
-                <TextField fx:id="firstNameField" promptText="First Name" onKeyPressed="#handleFieldInput"/>
+                <TextField fx:id="firstNameField" prefWidth="250" promptText="First Name" onKeyPressed="#handleFieldInput" alignment="CENTER" style="-fx-font-size: 15px;"/>
                 <Label fx:id="firstNameErrorLabel"/>
-                <TextField fx:id="usernameField" promptText="Username" onKeyPressed="#handleFieldInput"/>
+                <TextField fx:id="usernameField" promptText="Username" onKeyPressed="#handleFieldInput" alignment="CENTER" style="-fx-font-size: 15px;"/>
                 <Label fx:id="usernameErrorLabel"/>
             </VBox>
             <VBox fx:id="rightFields">
-                <TextField fx:id="lastNameField" promptText="Last Name" onKeyPressed="#handleFieldInput"/>
+                <TextField fx:id="lastNameField" prefWidth="250" promptText="Last Name" onKeyPressed="#handleFieldInput" alignment="CENTER" style="-fx-font-size: 15px;"/>
                 <Label fx:id="lastNameErrorLabel"/>
-                <TextField fx:id="birthdayField" promptText="Birthday" onKeyPressed="#handleFieldInput"/>
+                <TextField fx:id="birthdayField" promptText="Birthday" onKeyPressed="#handleFieldInput" alignment="CENTER" style="-fx-font-size: 15px;"/>
                 <Label fx:id="birthdayErrorLabel"/>
             </VBox>
         </HBox>
 
-        <TextField fx:id="emailField" promptText="Email" onKeyPressed="#handleFieldInput"/>
+        <TextField fx:id="emailField" promptText="Email" onKeyPressed="#handleFieldInput" alignment="CENTER" style="-fx-font-size: 15px;"/>
         <Label fx:id="emailErrorLabel"/>
-        <TextField fx:id="passwordField" promptText="Password" onKeyPressed="#handleFieldInput"/>
+        <TextField fx:id="passwordField" promptText="Password" onKeyPressed="#handleFieldInput" alignment="CENTER" style="-fx-font-size: 15px;"/>
         <Label fx:id="passwordErrorLabel"/>
         <Label fx:id="errorMessage"/>
 
         <HBox fx:id="buttonBox">
-            <Button fx:id="signUpButton" text="Sign Up" onAction="#signup"/>
-            <Button fx:id="goBackButton" onAction="#goBacktoHome" text="Go Back"/>
+            <Button fx:id="signUpButton" text="Sign Up" onAction="#signup" style="-fx-padding: 10 15;"/>
+            <Button fx:id="goBackButton" onAction="#goBacktoHome" text="Go Back" style="-fx-padding: 10 15;"/>
         </HBox>
 
-        <HBox fx:id="login">
+        <HBox fx:id="login" spacing="20.0">
             <Text fx:id="LoginLink">Already have an account?</Text>
-            <Button fx:id="loginLink" onAction="#goToLoginPage" text="Login"/>
+            <Button fx:id="loginLink" onAction="#goToLoginPage" text="Login" style="-fx-padding: 10 15;"/>
         </HBox>
 
     </VBox>

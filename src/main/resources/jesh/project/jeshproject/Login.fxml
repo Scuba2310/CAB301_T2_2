@@ -27,12 +27,12 @@
         </VBox>
     <Label fx:id="errorMessage"/>
         <HBox fx:id="ButtonBox">
-            <Button fx:id="loginButton" text="Login" onAction="#login"/>
-            <Button fx:id="goBackButton" onAction="#goBacktoHome" text="Go Back"/>
+            <Button fx:id="loginButton" text="Login" onAction="#login" style="-fx-padding: 10 15;"/>
+            <Button fx:id="goBackButton" onAction="#goBacktoHome" text="Go Back" style="-fx-padding: 10 15;"/>
         </HBox>
-            <HBox fx:id="signup">
+            <HBox fx:id="signup" spacing="20">
             <Text fx:id="signupLink">Don't have an account?</Text>
-            <Button fx:id="SignupLink" onAction="#goToSignupPage" text="Sign Up"/>
+            <Button fx:id="SignupLink" onAction="#goToSignupPage" text="Sign Up" style="-fx-padding: 10 15;"/>
         </HBox>
     </VBox>
 </VBox>
